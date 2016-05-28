@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#
+# This script builds the site and installs Wordpress for the first time.
+#
+
+# Install dependencies
+
+npm install
+composer install
+
+# Build using Phing
+
+bin/phing build
+bin/phing db:create
+bin/phing wordpress:install
+
+# Compile assets
+
+node_modules/.bin/gulp build
+
+# Start site
+
+sudo bin/phing build:server

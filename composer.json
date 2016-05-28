@@ -1,0 +1,80 @@
+{
+    "name": "TropicalRobot/finding-beyond",
+
+    "type": "project",
+
+    "license": "MIT",
+
+    "description": "Finding Beyond",
+
+    "homepage": "https://github.com/TropicalRobot/finding-beyond",
+
+    "authors": [
+        {
+            "name": "3ev",
+            "email": "info@3ev.com",
+            "homepage": "http://www.3ev.com"
+        }
+    ],
+
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress",
+                "type": "webroot",
+                "version": "4.4.2",
+                "dist": {
+                "type": "zip",
+                    "url": "https://github.com/WordPress/WordPress/archive/4.4.2.zip"
+                },
+                "require": {
+                    "fancyguy/webroot-installer": "1.1"
+                }
+            }
+        }
+    ],
+
+    "require": {
+        "php": ">=5.5.9",
+        "wordpress": "4.4.2",
+        "fancyguy/webroot-installer": "~1.1",
+        "vlucas/phpdotenv": "~2.2",
+        "3ev/phingy": "~3.0",
+        "3ev/wordpress-core": "~2.0",
+        "wp-cli/wp-cli": "~0.22",
+        "3ev/zencache-cli": "~1.0",
+        "wpackagist-plugin/wordpress-seo": "~3.1",
+        "wpackagist-plugin/comet-cache": "*",
+        "aaemnnosttv/wp-cli-dotenv-command": "~0.1"
+    },
+
+    "scripts": {
+        "post-install-cmd": [
+            "Tev\\Phingy\\ComposerScripts::postInstall"
+        ]
+    },
+
+    "config": {
+        "preferred-install": "dist",
+        "bin-dir": "bin"
+    },
+
+    "minimum-stability": "dev",
+
+    "prefer-stable": true,
+
+    "extra": {
+        "installer-paths": {
+            "public/app/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/app/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "webroot-dir": "public/wp",
+        "webroot-package": "wordpress"
+    }
+}

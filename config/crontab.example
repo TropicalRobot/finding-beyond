@@ -1,0 +1,12 @@
+#
+# Copy this file /etc/cron.d (or the appropriate place for your distro), and
+# use it as a base for project cron scripts.
+#
+
+# Don't send any cron emails
+
+MAILTO=""
+
+# Run Wordpress scheduled jobs every 5 minutes
+
+*/5 * * * * root php -q /path/to/site/public/wp/wp-cron.php
