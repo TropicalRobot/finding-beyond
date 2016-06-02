@@ -6,6 +6,8 @@
  */
 namespace WebSharks\CometCache;
 
+use WebSharks\CometCache\Classes;
+
 if (!defined('WPINC')) {
     exit('Do NOT access this file directly: '.basename(__FILE__));
 }
@@ -33,8 +35,8 @@ if (defined('WP_DEBUG') && WP_DEBUG) {
 } elseif ((@include_once(dirname(COMET_CACHE_PLUGIN_FILE).'/src/includes/functions/wp-cache-postload.php')) === false) {
     return; // Unable to find postload function(s). Fail softly.
 }
-AdvCacheBackCompat::zenCacheConstants();
-AdvCacheBackCompat::zcRequestVars();
+Classes\AdvCacheBackCompat::zenCacheConstants();
+Classes\AdvCacheBackCompat::zcRequestVars();
 
 if (!defined('COMET_CACHE_PRO')) {
     /**
@@ -64,7 +66,7 @@ if (!defined('COMET_CACHE_DEBUGGING_ENABLE')) {
      *
      * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
      */
-    define('COMET_CACHE_DEBUGGING_ENABLE', '0');
+    define('COMET_CACHE_DEBUGGING_ENABLE', '1');
 }
 if (!defined('COMET_CACHE_ALLOW_BROWSER_CACHE')) {
     /**
@@ -87,7 +89,7 @@ if (!defined('COMET_CACHE_GET_REQUESTS')) {
      *
      * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
      */
-    define('COMET_CACHE_GET_REQUESTS', '1');
+    define('COMET_CACHE_GET_REQUESTS', '0');
 }
 if (!defined('COMET_CACHE_CACHE_404_REQUESTS')) {
     /**
@@ -218,9 +220,13 @@ if (!defined('COMET_CACHE_404_CACHE_FILENAME')) {
 
 
 
-$GLOBALS[GLOBAL_NS.'_advanced_cache']  = new AdvancedCache();
+$GLOBALS[GLOBAL_NS.'_advanced_cache']  = new Classes\AdvancedCache();
 $GLOBALS[GLOBAL_NS.'__advanced_cache'] = &$GLOBALS[GLOBAL_NS.'_advanced_cache'];
 if (!isset($GLOBALS['zencache__advanced_cache'])) {
     $GLOBALS['zencache_advanced_cache'] = &$GLOBALS[GLOBAL_NS.'_advanced_cache'];
     $GLOBALS['zencache__advanced_cache'] = &$GLOBALS[GLOBAL_NS.'_advanced_cache'];
+}
+if (!isset($GLOBALS['quick_cache__advanced_cache'])) {
+    $GLOBALS['quick_cache_advanced_cache'] = &$GLOBALS[GLOBAL_NS.'_advanced_cache'];
+    $GLOBALS['quick_cache__advanced_cache'] = &$GLOBALS[GLOBAL_NS.'_advanced_cache'];
 }

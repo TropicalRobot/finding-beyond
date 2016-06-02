@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'futuraLight';
+    src: url('../fonts/FuturaLight.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: futura;
+    p {
+       font-family: 'futuraLight';
+            font-size: 18px;
+            line-height: 30px;
+    }
+    .single-content {
+        p {
+            font-size: 18px;
+            line-height: 30px;
+        }
+    }
+    .sidebar {
+        p {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+}
+
+.site-header {
+    position: fixed;
+    z-index: 100;
+    color: white;
+    background-color: rgba(37, 37, 37, 0.86);
+    width: 100%;
+    height: 50px;
+    .site-logo-wrapper {
+        float: left;
+        padding: 10px 0;
+        img {
+            height: 30px;
+        }
+    }
+
+}
+
+.primary-nav {
+    font-size: 14px;
+    text-transform: uppercase;
+    &__menu {
+        float: right;
+    }
+    .menu-item {
+        line-height: 50px;
+        display: inline-block;
+        padding: 0 20px;
+        &.current-menu-item {
+            background-color: white;
+            a {
+                color: #2F2F2F;
+            }
+        }
+        a {
+            color: white;
+        }
+    }
+}
+
+.hero {
+    text-align: center;
+    color: white;
+    width:100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'futuraLight';
+    &__title {
+        line-height: 1.3;
+        font-size: 48px;
+        text-transform: uppercase;
+    }
+}
+
+.cta {
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    font-family: futura;
+    cursor: pointer;
+    &__text {
+        background-color: rgba(black, 0.75);
+        color: white;
+        width: 100%;
+        padding: 20px;
+    }
+    &__title {
+        font-size: 22px;
+    }
+    &__trans {
+        // max-height: 0;
+        // transition: max-height 0.3s linear;
+        // overflow: hidden;
+        // margin-bottom: 20px;
+    }
+    &:hover {
+        .cta__trans {
+            // max-height: 100px;
+        }
+    }
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.primary-color {
+    color: #FFCB00;
+}
+
+.full-width-section {
+    margin-top: 20px;
+}
+
+.site-footer {
+    font-size: 14px;
+    background-color: rgba(black, 0.8);
+    color: white;
+    padding: 40px 0;
+}

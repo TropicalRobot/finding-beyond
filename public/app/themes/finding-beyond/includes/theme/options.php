@@ -9,3 +9,13 @@ add_theme_support('post-thumbnails');
 add_filter('excerpt_more', function () {
     return '&hellip;';
 });
+
+// Register theme menus
+
+add_action('after_setup_theme', function () {
+    register_nav_menus(array(
+        'utility' => 'Utility',
+        'primary' => 'Header',
+        'footer'  => 'Footer'
+    ));
+});

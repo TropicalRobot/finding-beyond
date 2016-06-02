@@ -2,8 +2,17 @@
  * Theme SASS entry point.
  */
 
-
+@import 'utils/variables';
 
 // Import Bootstrap SASS
 
 @import 'bootstrap';
+
+@import 'utils/mixins';
+
+@import 'base/typography';
+
+@import 'layout/global';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/footer';
