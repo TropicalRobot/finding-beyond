@@ -1,16 +1,26 @@
 <?php get_header(); ?>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="jumbotron">
-                <h1><?php bloginfo('name'); ?></h1>
+<?php while (have_posts()): $p = tev_post_factory(); ?>
 
-                <p>Your site is up and running! This template will be used for all pages, so
-                start adding some <a href="https://codex.wordpress.org/Template_Hierarchy">more template files</a> to build your site.</p>
-            </div>
+    <div class="hero hero--single" style="background-image:url(<?php echo $p->getFeaturedImageUrl('large');?>);">
+        <div class="hero__header container">
+            <h1 class="hero__heading"><?php echo $p->getTitle(); ?></h1>
         </div>
     </div>
-</div>
 
+
+    <section class="full-width-section single-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" style="margin-top: 50px;">
+                    <?php echo $p->getContent(); ?>
+                </div>
+                <div class="col-md-3 col-md-offset-1 sidebar" style="margin-top: 50px;">
+                    <?php echo tev_partial('partials/sidebar'); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<?php endwhile; ?>
 <?php get_footer(); ?>

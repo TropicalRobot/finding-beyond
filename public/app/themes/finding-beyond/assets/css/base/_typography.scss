@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'futuraLight';
+    src: url('../fonts/FuturaLight.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sketch';
+    src: url('../fonts/SketchRockwell.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'grutch';
+    src: url('../fonts/GrutchShaded.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kgsun';
+    src: url('../fonts/KGSummerSunshine.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kgblack';
+    src: url('../fonts/KGSummerSunshineBlackout.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kgshadow';
+    src: url('../fonts/KGSummerSunshineShadow.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(http://db.onlinewebfonts.com/c/d7b1b1488e2b196852b4ce2be77fd807?family=Sketchetik);
+
+@font-face {font-family: "Sketchetik";
+    src: url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.eot");
+    src: url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.eot?#iefix") format("embedded-opentype"),
+    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.woff2") format("woff2"),
+    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.woff") format("woff"),
+    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.ttf") format("truetype"),
+    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.svg#Sketchetik") format("svg");
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//     font-family: kgshadow;
+// }

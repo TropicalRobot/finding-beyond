@@ -1,0 +1,50 @@
+/*
+ * Font face
+ */
+
+@mixin font-face($name) {
+    $filepath: "../fonts/" + $name;
+    @font-face {
+        font-family: "#{$name}";
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
+             url($filepath + ".woff") format('woff'),
+             url($filepath + ".ttf")  format('truetype'),
+             url($filepath + ".svg#" + $name) format('svg');
+    }
+}
+
+
+/*
+ * Icon font
+ */
+
+@mixin icon-font {
+    font-family: "finding-beyond" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * Media queries
+*/
+
+// _mixins.scss
+@mixin respond-to($breakpoint) {
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($grid-breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$grid-breakpoints` map.";
+  }
+}

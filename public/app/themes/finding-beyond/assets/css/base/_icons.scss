@@ -1,0 +1,37 @@
+@include font-face(finding-beyond);
+
+a:hover, a:focus {
+    [class^="icon"],
+    [class*=" icon-"] {
+        text-decoration: none;
+    }
+
+    &[class^="icon"],
+    &[class*=" icon-"] {
+        text-decoration: none;
+    }
+}
+
+[class^="icon"]:before,
+[class*=" icon-"]:before {
+    @include icon-font;
+}
+
+.icon-plane:before {
+  content: "\61";
+}
+.icon-globe:before {
+  content: "\62";
+}
+.icon-palm-tree:before {
+  content: "\63";
+}
+.icon-facebook:before {
+  content: "\64";
+}
+.icon-twitter:before {
+  content: "\65";
+}
+.icon-instagram:before {
+  content: "\66";
+}

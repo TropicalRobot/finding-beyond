@@ -1,0 +1,36 @@
+.social-bar {
+    position: fixed;
+    top: -460px;
+    background-color: white;
+    width: 100%;
+    padding: 40px 0 20px 0;
+    transition: transform 0.2s linear;
+    z-index: 1;
+    display: none;
+
+    @include respond-to(md) {
+        display: block;
+    }
+    &__item {
+        border-top: 4px solid black;
+        border-bottom: 4px solid black;
+        padding: 20px 0;
+    }
+    .icon {
+        background-color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        position: absolute;
+        top: -20px;
+        left: calc(50% - 20px);
+        box-shadow: black 0px 0px 0px;
+        font-size: 20px;
+    }
+
+    .social-bar-open & {
+        transform: translateY(510px);
+    }
+}

@@ -1,0 +1,61 @@
+$component: 'cta';
+.#{$component} {
+    position: relative;
+    &--full-width {
+        width:100%;
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'futuraLight';
+        text-align: center;
+        color: white;
+        .#{$component} {
+            &__header {
+                border-top: 5px solid rgba(255, 255, 255, 0.59);
+                border-bottom: 5px solid rgba(255, 255, 255, 0.6);
+                padding: 38px;
+            }
+            &__heading {
+                line-height: 1.3;
+                font-size: 48px;
+                text-transform: uppercase;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &--card {
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-end;
+        font-family: futura;
+        cursor: pointer;
+        .#{$component} {
+            &__text {
+                background-color: rgba(black, 0.75);
+                color: white;
+                width: 100%;
+                padding: 20px;
+            }
+            &__title {
+                font-size: 22px;
+            }
+            &__trans {
+                // max-height: 0;
+                // transition: max-height 0.3s linear;
+                // overflow: hidden;
+                // margin-bottom: 20px;
+            }
+            &:hover {
+                .cta__trans {
+                    // max-height: 100px;
+                }
+            }
+        }
+    }
+}
+

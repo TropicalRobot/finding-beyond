@@ -2,7 +2,7 @@
 
 // Enable caching
 
-define('WP_CACHE', true);
+
 
 // WP config - do not edit, edit config/application.php instead
 
