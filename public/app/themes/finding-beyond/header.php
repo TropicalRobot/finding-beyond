@@ -8,7 +8,7 @@
         <link href="//db.onlinewebfonts.com/c/d7b1b1488e2b196852b4ce2be77fd807?family=Sketchetik" rel="stylesheet" type="text/css"/>
         <title><?php wp_title('|', true, 'right'); ?></title>
         <?php wp_head(); ?>
-        <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
 
         <script type="text/javascript">
         window.onload = function() {
