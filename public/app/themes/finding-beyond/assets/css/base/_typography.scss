@@ -6,29 +6,8 @@
 }
 
 @font-face {
-    font-family: 'sketch';
-    src: url('../fonts/SketchRockwell.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'grutch';
-    src: url('../fonts/GrutchShaded.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'kgsun';
     src: url('../fonts/KGSummerSunshine.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'kgblack';
-    src: url('../fonts/KGSummerSunshineBlackout.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -40,17 +19,27 @@
     font-style: normal;
 }
 
-@import url(http://db.onlinewebfonts.com/c/d7b1b1488e2b196852b4ce2be77fd807?family=Sketchetik);
-
-@font-face {font-family: "Sketchetik";
-    src: url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.eot");
-    src: url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.eot?#iefix") format("embedded-opentype"),
-    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.woff2") format("woff2"),
-    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.woff") format("woff"),
-    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.ttf") format("truetype"),
-    url("http://db.onlinewebfonts.com/t/d7b1b1488e2b196852b4ce2be77fd807.svg#Sketchetik") format("svg");
+@font-face {
+    font-family: 'amatic';
+    src: url('../fonts/Amatic-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
 }
 
-// h1, h2, h3, h4, h5, h6 {
-//     font-family: kgshadow;
-// }
+@font-face {
+    font-family: 'catalan';
+    src: url('../fonts/CatatanPerjalanan.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inhousecond';
+    src: url('../fonts/In-HouseEditionCondensed.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comfortaa', cursive;
+}

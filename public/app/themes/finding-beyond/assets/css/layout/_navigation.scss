@@ -11,7 +11,7 @@
         &.current-menu-item {
             background-color: white;
             a {
-                color: #2F2F2F;
+                color: palette('primary');
             }
         }
         a {

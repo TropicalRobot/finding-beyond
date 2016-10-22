@@ -5,7 +5,10 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="charset" content="<?php bloginfo('charset'); ?>">
         <meta name="theme-color" content="#ffffff">
-        <link href="//db.onlinewebfonts.com/c/d7b1b1488e2b196852b4ce2be77fd807?family=Sketchetik" rel="stylesheet" type="text/css"/>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,100' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Monoton" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa|Londrina+Shadow|Vast+Shadow" rel="stylesheet">
         <title><?php wp_title('|', true, 'right'); ?></title>
         <?php wp_head(); ?>
         <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
@@ -29,11 +32,10 @@
 
     <header id="site-header" class="site-header">
         <div class="container">
-            <a href="/" class="site-logo-wrapper">
-                <img src="<?php echo get_template_directory_uri().'/assets/img/fb-logo.png';?>">
-            </a>
-            <div id="social-bar-toggle" class="pull-right" style="line-height: 50px;
-    text-transform: uppercase; cursor: pointer; padding-left: 20px; font-size: 24px;line-height: 43px;"><span class="icon-globe"></span></div>
+            <span class="site-logo-wrapper">
+            Finding Beyond
+             <!--    <img src="<?php echo get_template_directory_uri().'/assets/img/fb-logo.png';?>"> -->
+            </span>
             <?php wp_nav_menu([
                 "theme_location" => "primary",
                 "container" => "nav",
@@ -42,6 +44,3 @@
                 ]);?>
         </div>
     </header>
-            <div class="social-bar">
-        <?php echo tev_partial('partials/social-bar'); ?>
-        </div>

@@ -16,6 +16,7 @@ Template Name: Post List
     <div class="container">
         <div class="row">
             <div class="col-md-8" style="margin-top: 50px;">
+            <h1>Posts</h1>
                 <?php while ($query->have_posts()): $query->the_post(); $p = tev_post_factory($post)?>
 
                     <?php $p = tev_post_factory($post); ?>
@@ -25,7 +26,15 @@ Template Name: Post List
                             <img class="media-object" data-src="<?php echo $p->getFeaturedImageUrl('thumbnail'); ?>" src="<?php echo $p->getFeaturedImageUrl('thumbnail'); ?>" alt="<?php echo $p->getTitle(); ?>">
                         </a>
                         <div class="media-body">
+                            <div class="text-small primary-color">
+                                <?php echo $p->getPublishedDate()->format('d M Y'); ?>
+                            </div>
                             <h4 class="media-heading"><?php echo $p->getTitle();?></h4>
+                            <div>
+                                <?php foreach ($p->getCategories() as $cat): ?>
+                                    <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?> / </a>
+                                <?php endforeach; ?>
+                            </div>
                             <?php echo $p->getExcerpt();?>
                         </div>
                     </div>
@@ -35,7 +44,7 @@ Template Name: Post List
             <?php echo tev_partial('partials/pagination', ['total' => $query->max_num_pages]);?>
 
             </div>
-            <div class="col-md-3 col-md-offset-1 sidebar" style="margin-top: 50px;">
+            <div class="col-md-3 offset-md-1 sidebar" style="margin-top: 50px;">
                <?php echo tev_partial('partials/sidebar'); ?>
             </div>
         </div>

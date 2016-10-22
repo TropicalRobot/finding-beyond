@@ -15,7 +15,7 @@
                 <div class="col-md-8" style="margin-top: 50px;">
                     <?php echo $p->getContent(); ?>
                 </div>
-                <div class="col-md-3 col-md-offset-1 sidebar" style="margin-top: 50px;">
+                <div class="col-md-3 offset-md-1 sidebar" style="margin-top: 50px;">
                     <?php echo tev_partial('partials/sidebar'); ?>
                 </div>
             </div>

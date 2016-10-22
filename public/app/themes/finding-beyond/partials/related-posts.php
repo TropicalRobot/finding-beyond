@@ -22,7 +22,7 @@
             <?php echo $p->getPublishedDate()->format('d M Y'); ?>
         </div>
         <h4 class="card-title"><?php echo $p->getTitle(); ?></h4>
-        <a href="" class="btn btn-primary">Read More</a>
+        <a href="<?php echo $p->getUrl(); ?>" class="btn btn-primary">Read More</a>
       </div>
     </div>
 

@@ -8,7 +8,8 @@
 
 @import 'bootstrap';
 
-@import 'utils/mixins';
+@import 'utils/mixins',
+        'utils/helpers';
 
 @import 'base/typography',
         'base/images',
@@ -17,10 +18,10 @@
 @import 'vendor/photoswipe',
         'vendor/slick';
 
-@import 'layout/global';
-@import 'layout/header';
-@import 'layout/navigation';
-@import 'layout/footer';
+@import 'layout/global',
+        'layout/header',
+        'layout/navigation',
+        'layout/footer';
 
 @import 'components/hero',
         'components/cta',

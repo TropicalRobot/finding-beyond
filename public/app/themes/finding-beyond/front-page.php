@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<div class="hero hero--full-height" style="background-image:url('http://findingbeyond.ryan.3ev.in/app/uploads/2016/05/33-1.jpg');">
+<div class="hero hero--full-height" style="background-image:url(<?php echo get_template_directory_uri().'/assets/img/site-header.jpg'; ?>)">
     <div class="hero__header">
         <h1 class="hero__title">Travel & Lifestyle<br>Beyond the expected</h1>
     </div>
@@ -55,7 +55,7 @@
                     </div>
                     <h4 class="card-title"><?php echo $p->getTitle(); ?></h4>
                     <p class="card-text"><?php echo $p->getExcerpt(); ?></p>
-                    <a href="" class="btn btn-primary">Read More</a>
+                    <a href="<?php echo $p->getUrl(); ?>" class="btn btn-primary">Read More</a>
                   </div>
                 </div>
             </div>
@@ -64,20 +64,18 @@
     </div>
 </section>
 
-<?php $query = new WP_Query([
-    'posts_per_page' => 3
-]); ?>
+<?php while (have_posts()): $p = tev_post_factory(); ?>
 
+<?php if($p->field('curated_posts_enable')->val()): ?>
 <section class="full-width-section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-xs-center">
-                <h2 class="section-header" style="margin-bottom: 20px;">SELECTED POSTS</h2>
+                <h2 class="section-header" style="margin-bottom: 20px;"><?php echo $p->field('curated_posts_heading')->val(); ?></h2>
             </div>
         </div>
         <div class="row">
-            <?php foreach ($query->posts as $post) : ?>
-            <?php $p = tev_post_factory($post)?>
+            <?php foreach ($p->field('curated_posts_items')->val() as $p) : ?>
             <div class="col-md-4">
                 <a href="<?php echo $p->getUrl(); ?>" class="cta cta--card" style="background-image: url(<?php echo $p->getFeaturedImageUrl('large');?>); height: 300px;">
                     <div class="cta__text">
@@ -91,16 +89,25 @@
                 </a>
             </div>
             <?php endforeach; ?>
-                    <div class="row" style="text-align: center;">
+</section>
+
+<?php endif;?>
+<?php endwhile; ?>
+
+<section class="full-width-section">
+
+    <div class="container">
+        <div class="row" style="text-align: center;">
             <a href="http://findingbeyond.ryan.3ev.in/posts/" style="border-top: 4px solid rgba(0,0,0, 0.8);
     border-bottom: 4px solid rgba(0,0,0, 0.8);
     padding: 15px 40px; display: inline-block; margin: 20px auto;">
                 VIEW ALL POSTS &nbsp; >
             </a>
         </div>
+    </div>
 </section>
 
-<section class="full-width-section" style="margin-top: 30px;">
+<section class="full-width-section">
 
     <div class="container">
         <div class="row">
@@ -121,6 +128,10 @@
     <div class="cta__header">
         <h1 class="cta__heading">Photos</h1>
     </div>
+</section>
+
+<section class="full-width-section">
+    <?php echo tev_partial('partials/social-bar'); ?>
 </section>
 
 <?php get_footer(); ?>

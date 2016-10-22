@@ -30,32 +30,30 @@ $component: 'cta';
         background-size: cover;
         background-position: center;
         margin-bottom: 20px;
-        display: flex;
-        align-items: flex-end;
         font-family: futura;
         cursor: pointer;
+        display: flex;
         .#{$component} {
             &__text {
-                background-color: rgba(black, 0.75);
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                background-color: rgba(black, 0.5);
                 color: white;
                 width: 100%;
                 padding: 20px;
+                height: 100%;
             }
             &__title {
                 font-size: 22px;
             }
-            &__trans {
-                // max-height: 0;
-                // transition: max-height 0.3s linear;
-                // overflow: hidden;
-                // margin-bottom: 20px;
-            }
-            &:hover {
-                .cta__trans {
-                    // max-height: 100px;
-                }
-            }
         }
+    }
+}
+
+.card {
+    img {
+        max-width: 100%;
     }
 }
 

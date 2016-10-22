@@ -1,22 +1,18 @@
 .social-bar {
-    position: fixed;
-    top: -460px;
-    background-color: white;
-    width: 100%;
-    padding: 40px 0 20px 0;
-    transition: transform 0.2s linear;
-    z-index: 1;
-    display: none;
-
-    @include respond-to(md) {
-        display: block;
+    &__item-wrapper {
+        &:not(:last-of-type) {
+            border-right: 1px solid rgba(black, 0.1);
+        }
     }
     &__item {
-        border-top: 4px solid black;
-        border-bottom: 4px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
         padding: 20px 0;
     }
     .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: white;
         border-radius: 50%;
         width: 40px;
@@ -26,11 +22,6 @@
         position: absolute;
         top: -20px;
         left: calc(50% - 20px);
-        box-shadow: black 0px 0px 0px;
-        font-size: 20px;
-    }
-
-    .social-bar-open & {
-        transform: translateY(510px);
+        font-size: 26px;
     }
 }

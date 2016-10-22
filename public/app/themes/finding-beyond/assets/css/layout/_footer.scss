@@ -1,0 +1,19 @@
+.site-footer {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__social {
+        [class*="icon-"] {
+            font-size: 26px;
+            transition: transform 0.15s;
+            &:hover {
+                transform: scale3d(1.2,1.2,1.2);
+            }
+            &:not:first-of-type {
+                padding-left: 10px;
+            }
+        }
+    }
+}
