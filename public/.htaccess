@@ -1,7 +1,8 @@
 
 # Uploads
 
-
+php_value upload_max_filesize 30M
+php_value post_max_size 40M
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
