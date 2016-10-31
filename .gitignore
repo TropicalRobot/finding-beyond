@@ -10,6 +10,9 @@ public/wp
 # Application
 
 public/app/plugins/*
+!public/app/plugins/advanced-custom-fields-pro
+!public/app/plugins/finding-beyond-photos
+!public/app/plugins/bootstrap-ninja-forms
 !public/app/plugins/.gitkeep
 public/app/upgrade
 public/app/uploads/*
@@ -46,6 +49,8 @@ storage/database/*
 # Assets
 
 */**/assets/build/
+!*/**/assets/css/vendor
+!*/**/assets/js/vendor
 
 # Misc.
 
