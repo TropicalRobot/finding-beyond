@@ -77,11 +77,24 @@ gulp.task('build:css', ['clean:css'], function () {
         .pipe(gulp.dest(trgPath + '/css'))
 })
 
+// Copy fonts
+
+gulp.task('copy:fonts', ['clean:fonts'], function() {
+    return gulp.src(srcPath + 'fonts/**')
+        .pipe(gulp.dest(trgPath + 'fonts/'))
+})
+
+// Clean Fonts
+
+gulp.task('clean:fonts', function(){
+    return del([trgPath + '/fonts/**'])
+})
+
 
 
 // Main build task. Compile everything
 
-gulp.task('build', ['build:js', 'build:css'])
+gulp.task('build', ['build:js', 'build:css', 'copy:fonts'])
 
 
 
