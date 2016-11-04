@@ -1,37 +1,4 @@
 /*
- * Font face
- */
-
-@mixin font-face($name) {
-    $filepath: "../fonts/" + $name;
-    @font-face {
-        font-family: "#{$name}";
-        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
-             url($filepath + ".woff") format('woff'),
-             url($filepath + ".ttf")  format('truetype'),
-             url($filepath + ".svg#" + $name) format('svg');
-    }
-}
-
-
-/*
- * Icon font
- */
-
-@mixin icon-font {
-    font-family: "finding-beyond" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    vertical-align: middle;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/*
  * Media queries
 */
 
@@ -48,3 +15,136 @@
         + "Please make sure it is defined in `$grid-breakpoints` map.";
   }
 }
+
+/*
+ * Font
+ */
+
+@function calculateRem($size) {
+  $remSize: $size / $font-size-base;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+@mixin text-shadow() {
+    text-shadow: 0 2px 4px rgba(black, 0.5);
+}
+
+/*
+ * Links
+ */
+
+@mixin link-underline($color: white) {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: $color;
+    &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        border-bottom: 1px solid $color;
+        transition: all 0.15s;
+    }
+    &:hover {
+        color: $color;
+        text-decoration: none;
+        &:after {
+            width: 0;
+        }
+    }
+}
+
+
+@mixin link-underline-reveal($color: white) {
+    @include link-underline($color);
+    &:after {
+        width: 0;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+
+@mixin link-hover-grow {
+    transition: transform 0.15s;
+    &:hover {
+        transform: scale3d(1.2,1.2,1.2);
+    }
+}
+
+@mixin link-clean {
+    text-decoration: none;
+    color: inherit;
+    &:hover, &:active, &:focus {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+@mixin link-color($color) {
+    color: $color;
+    transition: all 0.2s;
+    &:hover, &:active, &:focus {
+        color: darken($color, 10%);
+    }
+}
+
+@mixin absolute-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin gradient($color) {
+    @if ($color == 'secondary') {
+        background: -moz-linear-gradient(left,  palette('verdunGreen') 0%, palette('apple') 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  palette('verdunGreen') 0%,palette('apple') 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  palette('verdunGreen') 0%,palette('apple') 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    } @else {
+        background: -moz-linear-gradient(left,  palette('deepCerulean') 0%, palette('cerulean') 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  palette('deepCerulean') 0%,palette('cerulean') 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  palette('deepCerulean') 0%,palette('cerulean') 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+}
+
+/*
+ * Media queries
+ */
+
+@mixin media-sm {
+    @media (min-width: grid-breakpoints('sm')) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media (min-width: grid-breakpoints('md')) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media (min-width: grid-breakpoints('lg')) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media (min-width: grid-breakpoints('xl')) {
+        @content;
+    }
+}
+

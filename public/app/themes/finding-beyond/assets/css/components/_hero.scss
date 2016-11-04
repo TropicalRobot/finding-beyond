@@ -1,27 +1,42 @@
 $component: 'hero';
 .#{$component} {
-    background-attachment: fixed;
     background-size: cover;
     width:100%;
     color: white;
     text-align: center;
+    @include media-sm {
+        background-attachment: fixed;
+    }
     &--full-height {
-        height: 100vh;
-        background-position: center top;
+        height: 300px;
+        background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'futuraLight';
+        @include media-sm {
+            height: 500px;
+        }
         .#{$component} {
             &__title {
+                @include font-size(24px);
+                @include text-shadow;
+                margin-bottom: 0;
                 line-height: 1.3;
-                font-size: 48px;
                 text-transform: uppercase;
+                @include media-sm {
+                    @include font-size(48px);
+                }
+                p {
+                    margin-bottom: 0;
+                }
             }
             &__header {
-                border-top: 5px solid rgba(255, 255, 255, 0.8);
-                border-bottom: 5px solid rgba(255, 255, 255, 0.8);
-                padding: 38px;
+                margin-top: calc(#{$header-height}/2);
+                @include media-sm {
+                    padding: 38px;
+                    border-top: 5px solid rgba(255, 255, 255, 0.8);
+                    border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+                }
             }
         }
     }
@@ -31,30 +46,18 @@ $component: 'hero';
         background-position: center;
         .#{$component} {
             &__heading {
-                // padding: 12px 12px;
-                // color: #ffffff;
-                // width: 50%;
-                // background-color: rgba(246, 247, 249, 0.3);
-                // border: 2px solid white;
-                // text-align: center;
-                // height: auto;
-                // display: inline-block;
-                //                           background-color: rgba(132,10,133,0.3);
-                //    padding: 100px 60px;
-
-
-                       padding: 12px 12px;
-    color: #ffffff;
-    width: 45%;
-    background-color: rgba(142,145,20,0.2);
-    border-right: 2px solid white;
-    text-align: center;
-    height: calc(100% - 50px);
-    display: inline-block;
-    margin-bottom: 0;
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
+                padding: 12px 12px;
+                color: #ffffff;
+                width: 45%;
+                background-color: rgba(142,145,20,0.2);
+                border-right: 2px solid white;
+                text-align: center;
+                height: calc(100% - #{$header-height});
+                display: inline-block;
+                margin-bottom: 0;
+                margin-top: #{$header-height};
+                display: flex;
+                align-items: center;
             }
             &__header {
                 display: flex;

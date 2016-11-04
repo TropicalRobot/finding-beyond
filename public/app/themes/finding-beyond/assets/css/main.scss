@@ -1,6 +1,9 @@
-/*
- * Theme SASS entry point.
- */
+
+// Base styles
+
+@import 'base/typography',
+        'base/icons';
+
 
 @import 'utils/variables';
 
@@ -11,9 +14,8 @@
 @import 'utils/mixins',
         'utils/helpers';
 
-@import 'base/typography',
-        'base/images',
-        'base/icons';
+@import 'base/images',
+        'base/forms';
 
 @import 'vendor/photoswipe',
         'vendor/slick';
@@ -25,4 +27,6 @@
 
 @import 'components/hero',
         'components/cta',
+        'components/card',
+        'components/content-block',
         'components/social-bar';

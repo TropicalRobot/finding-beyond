@@ -1,45 +1,24 @@
-@font-face {
-    font-family: 'futuraLight';
-    src: url('../fonts/FuturaLight.otf');
-    font-weight: normal;
-    font-style: normal;
+/*
+ * Font face
+ */
+
+@mixin font-face($name) {
+    $filepath: "../fonts/" + $name;
+    @font-face {
+        font-family: "#{$name}";
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
+             url($filepath + ".woff") format('woff'),
+             url($filepath + ".ttf")  format('truetype'),
+             url($filepath + ".svg#" + $name) format('svg');
+    }
 }
 
-@font-face {
-    font-family: 'kgsun';
-    src: url('../fonts/KGSummerSunshine.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'kgshadow';
-    src: url('../fonts/KGSummerSunshineShadow.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'amatic';
-    src: url('../fonts/Amatic-Bold.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'catalan';
-    src: url('../fonts/CatatanPerjalanan.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'inhousecond';
-    src: url('../fonts/In-HouseEditionCondensed.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Comfortaa', cursive;
+@mixin font($family: 'body', $weight: 'normal') {
+    @if $family == 'alt' {
+        font-family: 'Comfortaa', cursive;
+    }
+    @else {
+        font-family: 'Open Sans', sans-serif;
+    }
+    font-weight: $weight;
 }

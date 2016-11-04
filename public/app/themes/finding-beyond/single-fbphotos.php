@@ -15,7 +15,7 @@
 <section class="full-width-section single-content">
     <div class="container">
         <div class="row">
-            <div class="col-md-12" style="margin-top: 50px;">
+            <div class="offset-md-1 col-md-10" style="margin-top: 50px;">
 
                 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
                 <div class="masonry-grid">

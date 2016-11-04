@@ -12,6 +12,19 @@ a:hover, a:focus {
     }
 }
 
+@mixin icon-font {
+    font-family: "finding-beyond" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 [class^="icon"]:before,
 [class*=" icon-"]:before {
     @include icon-font;

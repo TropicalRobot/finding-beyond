@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
+    "bootstrap": "^4.0.0-alpha.4",
     "masonry-layout": "^4.1.0",
     "photoswipe": "^4.1.1",
     "slick-carousel": "^1.6.0",

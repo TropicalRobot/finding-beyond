@@ -1,11 +1,11 @@
 {
-    "key": "group_curated_posts",
-    "title": "Curated Posts",
+    "key": "group_hero",
+    "title": "Hero",
     "fields": [
         {
-            "key": "field_curated_posts_enable",
+            "key": "field_hero_enable",
             "label": "enable",
-            "name": "curated_posts_enable",
+            "name": "hero_enable",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -19,16 +19,16 @@
             "default_value": 0
         },
         {
-            "key": "field_curated_posts_heading",
-            "label": "Heading",
-            "name": "curated_posts_heading",
-            "type": "text",
+            "key": "field_hero_image",
+            "label": "Image",
+            "name": "hero_image",
+            "type": "image",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_curated_posts_enable",
+                        "field": "field_hero_enable",
                         "operator": "==",
                         "value": "1"
                     }
@@ -39,25 +39,28 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Curated Posts",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
-            "key": "field_curated_posts_items",
-            "label": "Selected Posts",
-            "name": "curated_posts_items",
-            "type": "relationship",
+            "key": "hero_heading",
+            "label": "Heading",
+            "name": "hero_heading",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_curated_posts_enable",
+                        "field": "field_hero_enable",
                         "operator": "==",
                         "value": "1"
                     }
@@ -68,22 +71,13 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post"
-            ],
-            "taxonomy": [
-
-            ],
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "elements": [
-                "featured_image"
-            ],
-            "min": 3,
-            "max": 3,
-            "return_format": "object"
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -93,9 +87,16 @@
                 "operator": "==",
                 "value": "front_page"
             }
+        ],
+        [
+              {
+                "param":"page_template",
+                "operator":"==",
+                "value":"default"
+              }
         ]
     ],
-    "menu_order": 50,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",

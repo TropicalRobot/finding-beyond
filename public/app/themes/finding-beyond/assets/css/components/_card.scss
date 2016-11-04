@@ -1,0 +1,53 @@
+.card {
+    overflow: hidden;
+    position: relative;
+    img {
+        max-width: 100%;
+    }
+    &:hover {
+        .card-slide {
+            opacity: 1;
+            visibility: visible;
+        }
+        .card-slide-content {
+            transform: scale(1,1);
+        }
+    }
+}
+
+.card-slide {
+    padding: 20px;
+    color: white;
+    background-color: rgba($brand-primary, 0.9);
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+    font-weight: 100;
+    .card-slide-more {
+        margin-top: auto;
+    }
+}
+
+.card-slide-content {
+    transition: all 0.4s;
+    transform: scale(0.7,0.7);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.card-meta {
+    @include font-size(12px);
+    margin-bottom: 6px;
+}
+
+.card-link {
+    @include absolute-fill;
+    z-index: 1;
+}

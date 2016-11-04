@@ -24,7 +24,7 @@ Template Name: Photo Galleries Landing Page
 <section class="full-width-section single-content">
     <div class="container">
         <div class="row">
-            <div class="col-md-8" style="margin-top: 50px;">
+            <div class="offset-md-1 col-md-10" style="margin-top: 50px;">
             <?php if(count($photoGalleries)) : ?>
 
                 <?php foreach ($photoGalleries as $post): ?>
@@ -44,9 +44,9 @@ Template Name: Photo Galleries Landing Page
 
             </div>
 
-            <div class="col-md-3 offset-md-1 sidebar" style="margin-top: 50px;">
+   <!--          <div class="col-md-3 offset-md-1 sidebar" style="margin-top: 50px;">
                 <?php echo tev_partial('partials/sidebar'); ?>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

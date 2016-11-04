@@ -14,16 +14,9 @@
 ]); ?>
 
 <?php foreach ($query->posts as $post): ?>
-<?php $p = tev_post_factory($post); ?>
-    <div class="card">
-      <img class="card-img-top" src="<?php echo $p->getFeaturedImageUrl('card');?>" alt="Card image cap">
-      <div class="card-block">
-        <div class="text-small primary-color">
-            <?php echo $p->getPublishedDate()->format('d M Y'); ?>
-        </div>
-        <h4 class="card-title"><?php echo $p->getTitle(); ?></h4>
-        <a href="<?php echo $p->getUrl(); ?>" class="btn btn-primary">Read More</a>
-      </div>
-    </div>
+    <?php echo tev_partial('partials/card', [
+        'post' => tev_post_factory($post),
+        'slide' => false
+    ]); ?>
 
 <?php endforeach; ?>

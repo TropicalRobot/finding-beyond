@@ -1,3 +1,31 @@
-.aligncenter {
-    margin: auto;
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+.wp-caption-text {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.3;
+    padding: 6px 0;
+}
+
+.wp-caption, img {
+    max-width: 100%;
+    &.alignleft {
+        float: left;
+        margin-right: 16px;
+    }
+    &.alignright {
+        float: right;
+        margin-left: 16px;
+    }
+    &.aligncenter {
+        display: block;
+        margin: auto;
+    }
 }

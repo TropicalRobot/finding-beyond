@@ -3,11 +3,11 @@
     <footer class="site-footer">
         <div class="container">
             <div class="site-footer__container">
-                <div>&copy; 2016 <span class="primary-color">FINDING BEYOND</span></div>
+                <div class="site-footer__copy">&copy; 2016 <span class="primary-color">FINDING BEYOND</span></div>
                 <div class="site-footer__social">
-                    <a href="#"><span class="icon-facebook"></span></a>
-                    <a href="#"><span class="icon-twitter"></span></a>
-                    <a href="#"><span class="icon-instagram"></span></a>
+                    <a class="social-icon-circled a-clean" href="https://www.facebook.com/findingbeyond/" target="_blank"><span class="icon-facebook"></span></a>
+                    <a class="social-icon-circled a-clean" href="https://www.instagram.com/findingbeyond/" target="_blank"><span class="icon-instagram"></span></a>
+                    <a class="social-icon-circled a-clean" href="https://twitter.com/FindingBeyond" target="_blank"><span class="icon-twitter"></span></a>
                 </div>
             </div>
         </div>

@@ -18,8 +18,7 @@ require('slick-carousel')
 
 $('#slick-hero').slick();
 
-// $('#social-bar-toggle').click(function() {
-//     $('body').toggleClass('social-bar-open')
-//     $('.body-mask').fadeToggle(200)
-// })
+$('.mobile-menu-trigger').click (function(){
+  $('body').toggleClass('mobile-menu-active')
+})
 
