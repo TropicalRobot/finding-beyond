@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-xs-center">
-                <h2 class="section-header"><?php echo $p->field('curated_posts_heading')->val(); ?></h2>
+                <h2 class="section-header"><span><?php echo $p->field('curated_posts_heading')->val(); ?><span></h2>
             </div>
         </div>
         <div class="row">

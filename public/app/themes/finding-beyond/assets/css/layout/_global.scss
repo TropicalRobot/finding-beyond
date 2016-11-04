@@ -52,18 +52,21 @@ body {
 }
 
 .section-header {
-    display: inline-block;
-    background-color: white;
-    z-index: 1;
-    padding: 14px 14px;
     margin-bottom:  20px;
-    &:before {
-        z-index: -1;
+    span {
+        background: white;
+        z-index: 10;
+        display: inline-block;
+        position: relative;
+        padding: 0 12px;
+    }
+    &:after {
+        z-index: 1;
         content: '';
         position: absolute;
         top: 36%;
-        left: 0;
-        right: 0;
+        left: 0.9375rem;
+        width: calc(100% - 2*0.9375rem);
         border-bottom: 4px solid black;
     }
 }
