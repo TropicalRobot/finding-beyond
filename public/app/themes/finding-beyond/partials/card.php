@@ -1,4 +1,4 @@
-
+<div class="card-wrapper <?php echo $colClass; ?>">
 <div class="card">
     <?php if (!empty($slide) && $slide): ?>
         <a href="<?php echo $post->getUrl(); ?>" class="card-link a-clean"></a>
@@ -22,4 +22,5 @@
             <a href="<?php echo $post->getUrl(); ?>" class="btn btn-primary">Read More</a>
         <?php endif;?>
     </div>
+</div>
 </div>

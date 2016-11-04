@@ -1,0 +1,13 @@
+.latest-posts-wrappper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.latest-posts {
+    &__post {
+        display: flex;
+        flex-direction: column;
+    }
+    &__row {
+        height: 100%;
+    }
+}
