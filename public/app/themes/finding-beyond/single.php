@@ -2,7 +2,8 @@
 
 <?php while (have_posts()): $p = tev_post_factory(); ?>
 
-    <div class="hero hero--single" style="background-image:url(<?php echo $p->getFeaturedImageUrl('large');?>);">
+    <div class="hero hero--single">
+        <div class="hero__image" style="background-image:url(<?php echo $p->getFeaturedImageUrl('hero');?>)"></div>
         <div class="hero__header container">
             <h1 class="hero__heading"><?php echo $p->getTitle(); ?></h1>
         </div>

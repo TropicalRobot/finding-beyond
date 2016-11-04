@@ -1,21 +1,30 @@
 $component: 'hero';
 .#{$component} {
-    background-size: cover;
-    width:100%;
+    position: relative;
+    width: 100%;
     color: white;
     text-align: center;
+    height: $hero-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include media-sm {
-        background-attachment: fixed;
+        height: $hero-height-sm;
+    }
+    &__image {
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: $hero-height;
+        @include media-sm {
+            height: $hero-height-sm;
+        }
     }
     &--full-height {
-        height: 300px;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include media-sm {
-            height: 500px;
-        }
         .#{$component} {
             &__title {
                 @include font-size(24px);
@@ -42,8 +51,6 @@ $component: 'hero';
     }
 
     &--single {
-        height: 500px;
-        background-position: center;
         .#{$component} {
             &__heading {
                 padding: 12px 12px;
