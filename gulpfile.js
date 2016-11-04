@@ -80,8 +80,8 @@ gulp.task('build:css', ['clean:css'], function () {
 // Copy fonts
 
 gulp.task('copy:fonts', ['clean:fonts'], function() {
-    return gulp.src(srcPath + 'fonts/**')
-        .pipe(gulp.dest(trgPath + 'fonts/'))
+    return gulp.src(srcPath + '/fonts/**')
+        .pipe(gulp.dest(trgPath + '/fonts/'))
 })
 
 // Clean Fonts
