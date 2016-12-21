@@ -41,7 +41,7 @@
 <section class="full-width-section">
     <div class="container">
         <div class="row" style="text-align: center;">
-            <a href="http://findingbeyond.ryan.3ev.in/posts/" style="border-top: 4px solid rgba(0,0,0, 0.8);
+            <a href="<?php echo home_url( 'posts' ); ?>" style="border-top: 4px solid rgba(0,0,0, 0.8);
     border-bottom: 4px solid rgba(0,0,0, 0.8);
     padding: 15px 40px; display: inline-block; margin: 20px auto;">
                 VIEW ALL POSTS &nbsp; >
