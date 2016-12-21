@@ -14,8 +14,7 @@ add_filter('excerpt_more', function () {
 
 add_action('after_setup_theme', function () {
     register_nav_menus(array(
-        'utility' => 'Utility',
         'primary' => 'Header',
-        'footer'  => 'Footer'
+        'categories' => 'Categories'
     ));
 });

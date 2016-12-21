@@ -6,47 +6,46 @@ Template Name: Post List
 
 <?php get_header(); ?>
 
-<?php $query = new WP_Query([
-    'posts_per_page' => 10,
-    'paged' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
-]); ?>
-
-
-<section style="padding-top: 100px;">
+<div class="cat-nav-wrapper">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8" style="margin-top: 50px;">
-            <h1>Posts</h1>
-                <?php while ($query->have_posts()): $query->the_post(); $p = tev_post_factory($post)?>
+    <?php wp_nav_menu([
+        "theme_location" => "categories",
+        "container" => "nav",
+        "container_class" => "cat-nav",
+        "menu_class"      => "cat-nav__menu list--unstyled",
+        ]);?>
+    </div>
+</div>
 
-                    <?php $p = tev_post_factory($post); ?>
-
-                    <div class="media">
-                        <a class="media-left" href="<?php echo $p->getUrl(); ?>">
-                            <img class="media-object" data-src="<?php echo $p->getFeaturedImageUrl('thumbnail'); ?>" src="<?php echo $p->getFeaturedImageUrl('thumbnail'); ?>" alt="<?php echo $p->getTitle(); ?>">
-                        </a>
-                        <div class="media-body">
-                            <div class="text-small primary-color">
-                                <?php echo $p->getPublishedDate()->format('d M Y'); ?>
-                            </div>
-                            <h4 class="media-heading"><?php echo $p->getTitle();?></h4>
-                            <div>
-                                <?php foreach ($p->getCategories() as $cat): ?>
-                                    <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?> / </a>
-                                <?php endforeach; ?>
-                            </div>
-                            <?php echo $p->getExcerpt();?>
-                        </div>
-                    </div>
-
-                <?php endwhile; ?>
-
-            <?php echo tev_partial('partials/pagination', ['total' => $query->max_num_pages]);?>
-
+<section class="page-section">
+    <div class="container">
+        <div class="row flex-items-xs-middle">
+            <div class="col-xs-12">
+            <?php while (have_posts()): $page = tev_post_factory(); ?>
+                <h1><?php echo $page->getTitle();?></h1>
+            <?php endwhile; ?>
             </div>
-            <div class="col-md-3 offset-md-1 sidebar" style="margin-top: 50px;">
-               <?php echo tev_partial('partials/sidebar'); ?>
+            <div class="col-xs-12">
+                <div class="row">
+                <?php $query = new WP_Query([
+                    'posts_per_page' => 9,
+                    'paged' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
+                ]);
+                $posts = $query->get_posts();
+                ?>
+                    <?php foreach($posts as $post):?>
+                        <?php echo tev_partial('partials/card', [
+                            'post' => tev_post_factory($post),
+                            'text' => false,
+                            'slide' => true,
+                            'colClass' => 'col-xs-12 col-md-4'
+                        ]); ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
+        </div>
+        <div class="row flex-items-xs-around">
+            <?php echo tev_partial('partials/pagination', ['options' => ['total' => $query->max_num_pages]]);?>
         </div>
     </div>
 </section>

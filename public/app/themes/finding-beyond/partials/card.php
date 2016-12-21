@@ -5,11 +5,18 @@
         <div class="card-slide">
             <div class="card-slide-content">
                 <div><?php echo substr($post->getExcerpt(), 0, 160).'...'; ?></div>
-                <div class="card-slide-more btn btn-primary">Read more</div>
             </div>
         </div>
     <?php endif; ?>
-    <img class="card-img-top" src="<?php echo $post->getFeaturedImageUrl('card');?>" alt="Card image cap">
+    <div class="card-img-wrapper">
+            <img class="card-img-top" src="<?php echo $post->getFeaturedImageUrl('card');?>" alt="Card image cap">
+
+        <div class="card-tag">
+            <?php foreach ($post->getCategories() as $cat): ?>
+                <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?></a>
+            <?php endforeach; ?>
+        </div>
+    </div>
     <div class="card-block">
         <div class="card-meta">
             <?php echo $post->getPublishedDate()->format('d M Y'); ?>

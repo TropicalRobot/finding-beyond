@@ -1,5 +1,6 @@
 html {
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -69,5 +70,9 @@ body {
         width: calc(100% - 2*0.9375rem);
         border-bottom: 4px solid black;
     }
+}
+
+.page-section {
+    padding: 40px 0;
 }
 

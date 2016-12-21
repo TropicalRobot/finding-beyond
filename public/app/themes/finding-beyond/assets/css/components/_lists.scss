@@ -1,0 +1,14 @@
+.list {
+    &--unstyled {
+        @include list-unstyled;
+    }
+    &--inline {
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+ul:not(.list--unstyled) {
+    li { padding-left: 10px;}
+}

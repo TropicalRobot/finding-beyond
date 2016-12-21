@@ -5,8 +5,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="charset" content="<?php bloginfo('charset'); ?>">
         <meta name="theme-color" content="#ffffff">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,100' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700," rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400,300,100' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:700,400,300,100" rel="stylesheet">
 
         <?php $faviconPath =  get_template_directory_uri().'/assets/img/favicon'; ?>
         <link rel="shortcut icon" href="<?php echo $faviconPath.'/favicon.ico';?> type="image/x-icon" />
@@ -56,7 +56,7 @@
                     "theme_location" => "primary",
                     "container" => "nav",
                     "container_class" => "primary-nav",
-                    "menu_class"      => "primary-nav__menu",
+                    "menu_class"      => "primary-nav__menu list--unstyled",
                     ]);?>
             </div>
             <div class="mobile-menu-trigger">

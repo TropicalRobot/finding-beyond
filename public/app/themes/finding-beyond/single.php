@@ -4,9 +4,6 @@
 
     <div class="hero hero--single">
         <div class="hero__image" style="background-image:url(<?php echo $p->getFeaturedImageUrl('hero');?>)"></div>
-        <div class="hero__header container">
-            <h1 class="hero__heading"><?php echo $p->getTitle(); ?></h1>
-        </div>
     </div>
 
 <?php endwhile; ?>
@@ -16,19 +13,20 @@
     <div class="container">
         <div class="row">
             <div class="offset-md-2 col-md-8">
+            <h1 class="single-content__heading"><?php echo $p->getTitle(); ?></h1>
             <?php foreach ($p->getCategories() as $cat): ?>
                 <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?></a>
             <?php endforeach; ?>
-            <?php echo $p->getContent(); ?>
+            <div class="single-content__body">
+                <?php echo $p->getContent(); ?>
+            </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs">
-                <?php echo tev_partial('partials/related-posts', [
-                    'id' => $p->getId(),
-                    'cats' => wp_get_post_categories($p->getId())
-                ]); ?>
-            </div>
+            <?php echo tev_partial('partials/related-posts', [
+                'id' => $p->getId(),
+                'cats' => wp_get_post_categories($p->getId())
+            ]); ?>
         </div>
     </div>
 </section>

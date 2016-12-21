@@ -69,3 +69,25 @@
 .absolute-fill {
     @include absolute-fill;
 }
+
+// Links
+
+@each $brand-color, $color in $brand-colors {
+    .link-color--#{$brand-color} {
+        @include link-color-clean($color);
+    }
+}
+
+.link-color--white {
+    @include link-color-clean(white);
+}
+
+@each $brand-color, $color in $brand-colors {
+    .link-underline--#{$brand-color} {
+        @include link-underline($color);
+    }
+}
+
+.link-underline--white {
+    @include link-underline(white);
+}

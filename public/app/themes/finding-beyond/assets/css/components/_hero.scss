@@ -14,14 +14,11 @@ $component: 'hero';
     &__image {
         background-size: cover;
         background-position: center;
+        @include absolute-fill;
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
         z-index: -1;
-        height: $hero-height;
         @include media-sm {
-            height: $hero-height-sm;
+            height: calc(#{$hero-height-sm} + #{$header-height});
         }
     }
     &--full-height {

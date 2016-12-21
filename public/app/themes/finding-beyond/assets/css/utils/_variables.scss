@@ -9,16 +9,13 @@
 
 $palette: (
     'easternBlue': #1e9893,
-    'Supernova': #FFCB00,
+    'Supernova': #ffd436, //ffd436
     'mineShaft': #333
 );
 
 @function palette($key: 'primary') {
   @return map-get($palette, $key);
 }
-
-$brand-primary: palette('easternBlue');
-$brand-secondary: palette('Supernova');
 
 // Colors
 //
@@ -36,6 +33,15 @@ $brand-success:             #5cb85c !default;
 $brand-info:                #5bc0de !default;
 $brand-warning:             #f0ad4e !default;
 $brand-danger:              #d9534f !default;
+
+$brand-colors: (
+    primary: $brand-primary,
+    secondary: $brand-secondary,
+    success: $brand-success,
+    info: $brand-info,
+    warning: $brand-warning,
+    danger: $brand-danger
+);
 
 // Options
 //
@@ -124,7 +130,7 @@ $container-max-widths: (
   sm: 576px,
   md: 720px,
   lg: 940px,
-  xl: 1140px
+  xl: 1220px
 ) !default;
 
 
