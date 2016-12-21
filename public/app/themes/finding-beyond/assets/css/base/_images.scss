@@ -29,3 +29,16 @@ iframe {
         margin: auto;
     }
 }
+
+.bg-img-cover {
+    @include absolute-fill;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

@@ -145,12 +145,16 @@
     }
 }
 
-@mixin link-color-clean($color) {
+@mixin link-color-clean($color, $hoverColor: null) {
     text-decoration: none;
     color: $color;
     transition: all 0.2s;
     &:hover, &:active, &:focus {
-        color: darken($color, 10%);
+        @if $hoverColor != null {
+            color: $hoverColor
+        } @else {
+            color: darken($color, 10%);
+        }
         text-decoration: none;
     }
 }

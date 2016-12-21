@@ -76,3 +76,33 @@ body {
     padding: 40px 0;
 }
 
+.btn {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+}
+.tag-cloud {
+    a {
+        font-family: 'Comfortaa', cursive;
+        @include link-color-clean($brand-secondary, white);
+        display: inline-block;
+        transition: all 0.15s;
+        padding: 0 4px;
+        &:hover {
+            transform: scale3d(1.4,1.4,1.4);
+        }
+    }
+}
+
+.archive-cta {
+    background-color: rgba($brand-primary, 0.93);
+    position: relative;
+    &__btn {
+        margin-top: 30px;
+        background-color: $brand-secondary;
+        padding: 14px 24px;
+    }
+    &__bg-overlay {
+        @include absolute-fill;
+        background-color: rgba($brand-primary, 0.85);
+    }
+}

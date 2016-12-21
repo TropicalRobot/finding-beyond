@@ -8,6 +8,29 @@
 
 <?php while (have_posts()): $p = tev_post_factory(); ?>
 
+    <section class="full-width-section archive-cta bg-image" style="background-image: url(<?php echo get_template_directory_uri().'/assets/img/blogging-cover';?>)">
+    <div class="archive-cta__bg-overlay"></div>
+    <div class="container">
+        <div class="row flex-items-xs-center">
+            <div class="col-xs-10 col-xs-offset-1 tag-cloud">
+                <?php wp_tag_cloud([
+                    'smallest' => 14,
+                    'largest' => 36,
+                    'unit' => 'px',
+                    'taxonomy' => 'category'
+                ]); ?>
+            </div>
+        </div>
+        <div class="row flex-items-xs-center">
+            <div class="col-xs-2">
+                <a class="btn archive-cta__btn" href="<?php echo home_url( 'posts' ); ?>">
+                    VIEW ALL POSTS
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php if($p->field('curated_posts_enable')->val()): ?>
 <section class="full-width-section">
     <div class="container">
@@ -38,17 +61,6 @@
 <?php endif;?>
 <?php endwhile; ?>
 
-<section class="full-width-section">
-    <div class="container">
-        <div class="row" style="text-align: center;">
-            <a href="<?php echo home_url( 'posts' ); ?>" style="border-top: 4px solid rgba(0,0,0, 0.8);
-    border-bottom: 4px solid rgba(0,0,0, 0.8);
-    padding: 15px 40px; display: inline-block; margin: 20px auto;">
-                VIEW ALL POSTS &nbsp; >
-            </a>
-        </div>
-    </div>
-</section>
 
 <section class="full-width-section cta cta--full-width" style="background-image:url('http://findingbeyond.ryan.3ev.in/app/uploads/2016/05/177-1.jpg');">
     <a class="cta__link link-block" href="http://findingbeyond.ryan.3ev.in/photos"></a>
