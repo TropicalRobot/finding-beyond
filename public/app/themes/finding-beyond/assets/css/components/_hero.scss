@@ -50,18 +50,9 @@ $component: 'hero';
     &--single {
         .#{$component} {
             &__heading {
-                padding: 12px 12px;
-                color: #ffffff;
-                width: 45%;
-                background-color: rgba(142,145,20,0.2);
-                border-right: 2px solid white;
-                text-align: center;
-                height: calc(100% - #{$header-height});
-                display: inline-block;
-                margin-bottom: 0;
-                margin-top: #{$header-height};
-                display: flex;
-                align-items: center;
+                border-top: 5px solid rgba(255, 255, 255, 0.59);
+                border-bottom: 5px solid rgba(255, 255, 255, 0.6);
+                padding: 38px;
             }
             &__header {
                 display: flex;

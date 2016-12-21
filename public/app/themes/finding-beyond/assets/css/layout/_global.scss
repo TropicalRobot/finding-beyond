@@ -94,7 +94,6 @@ body {
 }
 
 .archive-cta {
-    background-color: rgba($brand-primary, 0.93);
     position: relative;
     &__btn {
         margin-top: 30px;
@@ -103,6 +102,6 @@ body {
     }
     &__bg-overlay {
         @include absolute-fill;
-        background-color: rgba($brand-primary, 0.85);
+        background-color: rgba($brand-primary, 0.5);
     }
 }

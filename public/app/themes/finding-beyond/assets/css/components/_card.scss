@@ -17,15 +17,15 @@
     img {
         max-width: 100%;
     }
-    &:hover {
-        .card-slide {
-            opacity: 1;
-            visibility: visible;
-        }
-        .card-slide-content {
-            transform: scale(1,1);
-        }
-    }
+    // &:hover {
+    //     .card-slide {
+    //         opacity: 1;
+    //         visibility: visible;
+    //     }
+    //     .card-slide-content {
+    //         transform: scale(1,1);
+    //     }
+    // }
 }
 
 .card-tag {
