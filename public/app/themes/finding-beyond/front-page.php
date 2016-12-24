@@ -56,7 +56,7 @@
 <?php endwhile; ?>
 
 
-<section class="full-width-section cta cta--full-width" style="background-image:url('http://findingbeyond.ryan.3ev.in/app/uploads/2016/05/177-1.jpg');">
+<section class="full-width-section cta cta--full-width" style="background-image:url(<?php echo get_template_directory_uri().'/assets/img/photos.jpg';?>);">
     <a class="cta__link link-block" href="http://findingbeyond.ryan.3ev.in/photos"></a>
     <div class="cta__header">
         <h1 class="cta__heading">Photos</h1>
