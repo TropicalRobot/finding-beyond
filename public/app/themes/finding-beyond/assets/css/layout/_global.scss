@@ -5,17 +5,28 @@ html {
 
 body {
     background-color: white;
-    .single-content {
-        p {
-            font-size: 18px;
-            line-height: 30px;
-        }
+    p {
+        font-weight: 100;
+        line-height: 1.7;
     }
-    .sidebar {
-        p {
-            font-size: 16px;
-            line-height: 26px;
-        }
+}
+
+.single-content {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 20px;
+    }
+}
+.sidebar {
+    p {
+        font-size: 16px;
+        line-height: 26px;
     }
 }
 
@@ -26,13 +37,6 @@ body {
 .full-width-section {
     background-color: white;
     padding: 40px 0;
-}
-
-.single-content {
-    margin-top: 30px;
-    font-size: 18px;
-    line-height: 30px;
-    font-weight: 100;
 }
 
 .link-block {
@@ -103,5 +107,28 @@ body {
     &__bg-overlay {
         @include absolute-fill;
         background-color: rgba($brand-primary, 0.5);
+    }
+}
+
+.prev-next-posts {
+    background-color: $brand-primary;
+    padding: 20px 0;
+    a {
+        @include link-color-clean(white);
+    }
+}
+
+.prev-next-btn {
+    display: flex;
+    align-items: center;
+    [class*="icon-"] {
+        padding: 0 16px;
+        font-size: 28px;
+    }
+    &:first-of-type {
+        border-right: 1px solid rgba(white, 0.4);
+    }
+    &:last-of-type {
+        justify-content: flex-end;
     }
 }

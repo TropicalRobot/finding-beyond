@@ -17,22 +17,42 @@
     img {
         max-width: 100%;
     }
-    // &:hover {
-    //     .card-slide {
-    //         opacity: 1;
-    //         visibility: visible;
-    //     }
-    //     .card-slide-content {
-    //         transform: scale(1,1);
-    //     }
-    // }
+    &__date {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background-color: $brand-primary;
+        border-radius: 50%;
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.2;
+        text-transform: uppercase;
+        width: 50px;
+        height: 50px;
+        &-year {
+            font-weight: 400;
+            font-size: 9px;
+        }
+    }
+    &__title {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    &__title-link {
+        @include link-color-clean($body-color);
+    }
 }
 
 .card-tag {
     @include font-size(11px);
     position: absolute;
     background: #ffffff;
-    bottom: 6px;
+    top: -28px;
     left: -10px;
     padding: 4px 10px;
     box-shadow: -1px 1px 5px rgba(128, 128, 128, 0.15);
@@ -47,9 +67,13 @@
         bottom: -10px;
         left: 0;
     }
+    a:not(:last-of-type):after {
+        content: ' /';
+    }
 }
 
 .card-block {
+    position: relative;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -94,4 +118,11 @@
 .card-link {
     @include absolute-fill;
     z-index: 1;
+}
+
+.comments-count-bubble {
+    color: $gray-light;
+    .comments-count {
+        font-size: 12px;
+    }
 }

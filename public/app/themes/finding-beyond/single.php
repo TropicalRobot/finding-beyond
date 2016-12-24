@@ -4,30 +4,77 @@
 
     <div class="hero hero--single">
         <div class="hero__image" style="background-image:url(<?php echo $p->getFeaturedImageUrl('hero');?>)"></div>
+        <div class="container">
+        <div class="card-tag">
+        <?php foreach ($p->getCategories() as $cat): ?>
+            <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?></a>
+        <?php endforeach; ?>
+        </div>
+        </div>
     </div>
+
+    <section class="full-width-section single-content">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-8">
+                <h1 class="single-content__heading"><?php echo $p->getTitle(); ?></h1>
+                <div class="addthis_inline_share_toolbox"></div>
+                <div class="single-content__body">
+                    <?php echo $p->getContent(); ?>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="prev-next-posts">
+        <div class="container">
+            <div class="row">
+            <?php if ($prevPost = get_previous_post()) :?>
+                <a href="<?php echo get_permalink( $prevPost->ID ); ?>" class="col-xs-6 prev-next-btn">
+                    <span class="icon-chevron-left"></span>
+                    <div class="post-pag-text">
+                        <strong><?php echo $prevPost->post_title; ?></strong>
+                        <div class="post-pag-meta">
+                            By <?php echo get_the_author_meta('display_name', $prevPost->post_author); ?> - <?php echo get_the_date('F j, Y ',$prevPost->the_ID); ?>
+                        </div>
+                    </div>
+                </a>
+                <?php endif; ?>
+                <?php if ($nextPost = get_next_post()) :?>
+                <a href="<?php echo get_permalink( $nextPost->ID ); ?>" class="col-xs-6 prev-next-btn">
+                    <div class="post-pag-text">
+                        <strong><?php echo $nextPost->post_title; ?></strong>
+                        <div class="post-pag-meta">
+                            By <?php echo get_the_author_meta('display_name', $nextPost->post_author); ?> - <?php echo get_the_date('F j, Y ',$nextPost->the_ID); ?>
+                        </div>
+                    </div>
+                    <span class="icon-chevron-right"></span>
+                </a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+    <section class="full-width-section">
+        <div class="container">
+            <div class="row">
+                <?php echo tev_partial('partials/related-posts', [
+                    'id' => $p->getId(),
+                    'cats' => wp_get_post_categories($p->getId())
+                ]); ?>
+            </div>
+        </div>
+    </section>
+    <section class="full-width-section">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-8">
+                    <?php comments_template(); ?>
+                </div>
+            </div>
+        </div>
+     </section>
+
 
 <?php endwhile; ?>
 
-
-<section class="full-width-section single-content">
-    <div class="container">
-        <div class="row">
-            <div class="offset-md-2 col-md-8">
-            <h1 class="single-content__heading"><?php echo $p->getTitle(); ?></h1>
-            <?php foreach ($p->getCategories() as $cat): ?>
-                <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?></a>
-            <?php endforeach; ?>
-            <div class="single-content__body">
-                <?php echo $p->getContent(); ?>
-            </div>
-            </div>
-        </div>
-        <div class="row">
-            <?php echo tev_partial('partials/related-posts', [
-                'id' => $p->getId(),
-                'cats' => wp_get_post_categories($p->getId())
-            ]); ?>
-        </div>
-    </div>
-</section>
 <?php get_footer(); ?>

@@ -13,6 +13,6 @@
         </div>
     </footer>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<!--     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5780b2f374093026"></script> -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5780b29be2ccbb76"></script>
     </body>
 </html>

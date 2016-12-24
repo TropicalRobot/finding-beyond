@@ -57,7 +57,8 @@
         "wpackagist-plugin/instagram-feed": "~1.4.6",
         "wpackagist-plugin/custom-twitter-feeds": "~1.1",
         "wpackagist-plugin/ninja-forms": "^2.9",
-        "wpackagist-plugin/regenerate-thumbnails": "^2.2"
+        "wpackagist-plugin/regenerate-thumbnails": "^2.2",
+        "wpackagist-plugin/disqus-comment-system": "~2.8"
     },
 
     "autoload": {

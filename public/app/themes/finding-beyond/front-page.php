@@ -41,18 +41,12 @@
         </div>
         <div class="row">
             <?php foreach ($p->field('curated_posts_items')->val() as $p) : ?>
-            <div class="col-md-4">
-                <a href="<?php echo $p->getUrl(); ?>" class="a-clean cta cta--card" style="background-image: url(<?php echo $p->getFeaturedImageUrl('large');?>)">
-                    <div class="cta__text">
-                        <div class="cta__meta">
-                            <?php echo $p->getPublishedDate()->format('d M Y'); ?>
-                        </div>
-                        <div class="cta__trans">
-                            <div class="cta__title"><?php echo $p->getTitle(); ?></div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    <?php echo tev_partial('partials/card', [
+                        'post' => $p,
+                        'text' => true,
+                        'slide' => false,
+                        'colClass' => 'col-xs-12 col-lg-4'
+                    ]); ?>
             <?php endforeach; ?>
         </div>
     </div>
