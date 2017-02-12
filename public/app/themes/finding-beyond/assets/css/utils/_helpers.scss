@@ -1,9 +1,50 @@
-//== Flexbox
-//
+// FLEX
 
-.flex-wrap {
+[class*="flex--"] {
     display: flex;
+}
+
+.flex__bottom {
+    margin-top: auto;
+}
+
+.flex--justify-space-between {
+    justify-content: space-between;
+}
+
+.flex--align-center {
+    align-items: center;
+}
+
+.flex--align-end {
+    align-items: flex-end;
+}
+
+.flex--justify-center {
+    justify-content: center;
+}
+
+.flex--row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.flex--row-wrap {
+    flex-direction: row;
     flex-wrap: wrap;
+}
+
+.flex--center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.text-center {
+    text-align: center;
 }
 
 //== Cursors

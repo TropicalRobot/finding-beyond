@@ -9,6 +9,13 @@ body {
         font-weight: 100;
         line-height: 1.7;
     }
+    a {
+        font-weight: 400;
+    }
+}
+
+b, strong {
+    font-weight: 600;
 }
 
 .single-content {
@@ -94,19 +101,6 @@ body {
         &:hover {
             transform: scale3d(1.4,1.4,1.4);
         }
-    }
-}
-
-.archive-cta {
-    position: relative;
-    &__btn {
-        margin-top: 30px;
-        background-color: $brand-secondary;
-        padding: 14px 24px;
-    }
-    &__bg-overlay {
-        @include absolute-fill;
-        background-color: rgba($brand-primary, 0.5);
     }
 }
 

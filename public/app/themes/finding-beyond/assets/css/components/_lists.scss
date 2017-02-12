@@ -12,3 +12,13 @@
 ul:not(.list--unstyled) {
     li { padding-left: 10px;}
 }
+
+.wp-caption {
+    text-align: center;
+    .wp-caption-text {
+        color: $gray-dark;
+        padding: 0;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}

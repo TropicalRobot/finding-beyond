@@ -33,6 +33,7 @@ $component: 'hero';
                     @include font-size(48px);
                 }
                 p {
+                    @include font('alt', 400);
                     margin-bottom: 0;
                 }
             }

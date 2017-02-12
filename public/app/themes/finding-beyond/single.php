@@ -5,11 +5,15 @@
     <div class="hero hero--single">
         <div class="hero__image" style="background-image:url(<?php echo $p->getFeaturedImageUrl('hero');?>)"></div>
         <div class="container">
-        <div class="card-tag">
-        <?php foreach ($p->getCategories() as $cat): ?>
-            <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?></a>
-        <?php endforeach; ?>
-        </div>
+            <?php $catIds = wp_get_post_categories($p->getId(), ['exclude' => '1']); ?>
+            <?php if(count($catIds)): ?>
+                <div class="card-tag">
+                <?php foreach ($catIds as $c): ?>
+                    <?php $cat = get_category( $c ); ?>
+                    <a href="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+                <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 

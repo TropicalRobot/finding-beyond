@@ -17,11 +17,15 @@
         <img class="card-img-top" src="<?php echo $post->getFeaturedImageUrl('card');?>" alt="Card image cap">
     </a>
     <div class="card-block">
-        <div class="card-tag">
-            <?php foreach ($post->getCategories() as $cat): ?>
-                <a href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?></a>
+        <?php $catIds = wp_get_post_categories($post->getId(), ['exclude' => '1']); ?>
+        <?php if(count($catIds)): ?>
+            <div class="card-tag">
+            <?php foreach ($catIds as $c): ?>
+                <?php $cat = get_category( $c ); ?>
+                <a href="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
             <?php endforeach; ?>
-        </div>
+            </div>
+        <?php endif; ?>
         <a class="card__title-link" href="<?php echo $post->getUrl(); ?>" class="clean-link">
             <h4 class="card__title"><?php echo $post->getTitle(); ?></h4>
         </a>

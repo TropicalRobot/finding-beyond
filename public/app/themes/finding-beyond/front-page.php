@@ -6,9 +6,7 @@
 
 <?php echo tev_partial('partials/latest-posts'); ?>
 
-<?php while (have_posts()): $p = tev_post_factory(); ?>
-
-    <section class="full-width-section archive-cta bg-image" style="background-image: url(<?php echo get_template_directory_uri().'/assets/img/blogging-cover';?>)">
+<!-- <section class="full-width-section archive-cta bg-image" style="background-image: url(<?php echo get_template_directory_uri().'/assets/img/blogging-cover';?>)">
     <div class="archive-cta__bg-overlay"></div>
     <div class="container">
         <div class="row flex-items-xs-center">
@@ -29,8 +27,13 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
+
+
+<?php echo tev_partial('partials/cta', ['type' => 'primary']); ?>
+
+<?php while (have_posts()): $p = tev_post_factory(); ?>
 <?php if($p->field('curated_posts_enable')->val()): ?>
 <section class="full-width-section">
     <div class="container">
@@ -56,12 +59,7 @@
 <?php endwhile; ?>
 
 
-<section class="full-width-section cta cta--full-width" style="background-image:url(<?php echo get_template_directory_uri().'/assets/img/photos.jpg';?>);">
-    <a class="cta__link link-block" href="<?php echo home_url( 'photos' ); ?>"></a>
-    <div class="cta__header">
-        <h1 class="cta__heading">Photos</h1>
-    </div>
-</section>
+<?php echo tev_partial('partials/cta', ['type' => 'secondary']); ?>
 
 <section class="full-width-section">
     <?php echo tev_partial('partials/social-bar'); ?>
