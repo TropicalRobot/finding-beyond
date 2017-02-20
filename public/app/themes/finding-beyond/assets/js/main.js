@@ -22,3 +22,7 @@ $('.mobile-menu-trigger').click (function(){
   $('body').toggleClass('mobile-menu-active')
 })
 
+$('.primary-nav .menu-item').click(function() {
+    $(this).toggleClass('active')
+})
+

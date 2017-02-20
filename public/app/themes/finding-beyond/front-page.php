@@ -6,31 +6,6 @@
 
 <?php echo tev_partial('partials/latest-posts'); ?>
 
-<!-- <section class="full-width-section archive-cta bg-image" style="background-image: url(<?php echo get_template_directory_uri().'/assets/img/blogging-cover';?>)">
-    <div class="archive-cta__bg-overlay"></div>
-    <div class="container">
-        <div class="row flex-items-xs-center">
-            <div class="col-xs-10 col-xs-offset-1 tag-cloud">
-                <?php wp_tag_cloud([
-                    'smallest' => 14,
-                    'largest' => 36,
-                    'unit' => 'px',
-                    'taxonomy' => 'category'
-                ]); ?>
-            </div>
-        </div>
-        <div class="row flex-items-xs-center">
-            <div class="col-xs-2">
-                <a class="btn archive-cta__btn" href="<?php echo home_url( 'posts' ); ?>">
-                    VIEW ALL POSTS
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-
 <?php echo tev_partial('partials/cta', ['type' => 'primary']); ?>
 
 <?php while (have_posts()): $p = tev_post_factory(); ?>

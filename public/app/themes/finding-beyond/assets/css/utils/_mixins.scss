@@ -221,3 +221,21 @@
     }
 }
 
+@mixin media-sm-max {
+    @media (max-width: grid-breakpoints('sm') - 1) {
+        @content;
+    }
+}
+
+@mixin media-md-max {
+    @media (max-width: grid-breakpoints('md') - 1) {
+        @content;
+    }
+}
+
+@mixin media-lg-max {
+    @media (max-width: grid-breakpoints('lg') - 1) {
+        @content;
+    }
+}
+

@@ -15,10 +15,12 @@ $component: 'hero';
         background-size: cover;
         background-position: center;
         @include absolute-fill;
-        position: fixed;
         z-index: -1;
         @include media-sm {
             height: calc(#{$hero-height-sm} + #{$header-height});
+        }
+        @include media-lg {
+            position: fixed;
         }
     }
     &--full-height {

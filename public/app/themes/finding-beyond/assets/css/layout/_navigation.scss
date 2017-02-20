@@ -1,26 +1,48 @@
 .primary-nav {
     @include font-size(14px);
     text-transform: uppercase;
+    @include media-lg-max {
+        padding: 20px 0;
+    }
     .sub-menu {
-        position: absolute;
-        top: 48px;
-        border: 2px solid white;
-        background: rgba(39, 39, 39, 0.95);
-        left: 0;
-        transform: rotateX(-90deg);
-        transform-origin: center top;
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-        transition: transform 0;
-        animation: flip-out .1s;
-        transition-delay: 0.5s;
-        padding: 14px;
-        margin-bottom: 0;
-        box-shadow: 2px 2px 6px rgba(black, 0.2);
+        @include media-lg-max {
+            padding: 0;
+            overflow: hidden;
+            max-height: 0;
+            text-align: center;
+            width: 100%;
+            transition: all 0.3s;
+            background: rgba(white, 0.65);
+            >li a {
+                color: $brand-primary;
+                font-weight: bold;
+            }
+
+        }
+        @include media-lg {
+            left: 0;
+            margin-bottom: 0;
+            transform: rotateX(-90deg);
+            transform-origin: center top;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            transition: transform 0;
+            animation: flip-out 0.3s;
+            transition-delay: 0.8s;
+            padding: 14px;
+            position: absolute;
+            top: 48px;
+            border: 2px solid white;
+            background: rgba(39, 39, 39, 0.95);
+            box-shadow: 2px 2px 6px rgba(black, 0.2);
+        }
         >li {
             padding: 0;
             justify-content: flex-start;
             >a {
+                @include media-lg-max {
+                    font-weight: bold;
+                }
                 padding: 0;
             }
         }
@@ -34,7 +56,7 @@
         list-style: none;
         margin-bottom: 0;
         padding: 3px 0 0;
-        @include media-md {
+        @include media-lg {
             display: flex;
             padding: 0;
             height: 100%;
@@ -49,6 +71,14 @@
         align-items: center;
         white-space: nowrap;
         @include link-color(white);
+        @include media-lg-max {
+            width: 100%;
+            text-align: center;
+            @include font-size(18px);
+            padding: 10px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
         a {
             @include link-clean();
             align-items: center;
@@ -56,17 +86,30 @@
             padding: 0 20px;
             color: white;
             z-index: 1;
+            width: 100%;
+            cursor: pointer;
         }
         &.current-menu-item, &:hover {
             a {
                 opacity: 0.7;
             }
         }
-        &:hover {
+        &:hover{
             .sub-menu {
-                animation: flip-in .5s;
-                transform: rotateX(0);
-                transition-delay: 0.1;
+                @include media-lg {
+                    animation: flip-in .5s;
+                    transform: rotateX(0);
+                    transition-delay: 0.1;
+                }
+            }
+        }
+        &.active {
+            .sub-menu {
+                @include media-lg-max {
+                    margin-top: 10px;
+                    max-height: 600px;
+                    padding: 20px 0;
+                }
             }
         }
     }
@@ -96,7 +139,7 @@
         visibility: visible;
         opacity:1;
     }
-    @include media-md {
+    @include media-lg {
         position: relative;
         visibility: visible;
         opacity: 1;
@@ -163,7 +206,7 @@
             }
         }
     }
-    @include media-md {
+    @include media-lg {
         display: none;
     }
 }
@@ -172,6 +215,8 @@
     margin-top: $header-height;
     background-color: $brand-secondary;
     border-bottom: 2px solid #e2bb2c;
+    width: 100%;
+    overflow-x: scroll;
 }
 
 .cat-nav {
