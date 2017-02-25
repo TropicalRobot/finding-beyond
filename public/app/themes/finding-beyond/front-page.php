@@ -4,9 +4,11 @@
 
 <?php echo tev_partial('partials/content-block'); ?>
 
+<?php echo tev_partial('partials/cta', ['type' => 'primary']); ?>
+
 <?php echo tev_partial('partials/latest-posts'); ?>
 
-<?php echo tev_partial('partials/cta', ['type' => 'primary']); ?>
+<?php echo tev_partial('partials/cta', ['type' => 'secondary']); ?>
 
 <?php while (have_posts()): $p = tev_post_factory(); ?>
 <?php if($p->field('curated_posts_enable')->val()): ?>
@@ -34,7 +36,7 @@
 <?php endwhile; ?>
 
 
-<?php echo tev_partial('partials/cta', ['type' => 'secondary']); ?>
+<?php echo tev_partial('partials/cta', ['type' => 'tertiary']); ?>
 
 <section class="full-width-section">
     <?php echo tev_partial('partials/social-bar'); ?>
