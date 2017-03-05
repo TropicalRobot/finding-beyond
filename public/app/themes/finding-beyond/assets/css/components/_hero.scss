@@ -32,6 +32,9 @@ $component: 'hero';
                 line-height: 1.3;
                 text-transform: uppercase;
                 @include media-sm {
+                    @include font-size(36px);
+                }
+                @include media-md {
                     @include font-size(48px);
                 }
                 p {

@@ -9,13 +9,17 @@ $component: 'cta';
         width:100%;
         background-size: cover;
         background-position: center;
-        height: 500px;
+        height: 300px;
+        max-height: 80vh;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: 'futuraLight';
         text-align: center;
         color: white;
+        @include media-md {
+            height: 460px;
+        }
         .#{$component} {
             &__header {
                 border-top: 5px solid rgba(255, 255, 255, 0.7);
