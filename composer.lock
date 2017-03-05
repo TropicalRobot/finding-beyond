@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "69fa2650a33b69855f4c20a79a046481",
-    "content-hash": "17c29f2f597b872439066ace85bc1973",
+    "hash": "8bb2b293cb7a06baa161490efa86c600",
+    "content-hash": "f961ce12c1840bcbc2651f86f60ca984",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -730,16 +730,16 @@
         },
         {
             "name": "mustangostang/spyc",
-            "version": "0.6.1",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mustangostang/spyc.git",
-                "reference": "022532641d61d383fd3ae666982bd46e61e5915e"
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mustangostang/spyc/zipball/022532641d61d383fd3ae666982bd46e61e5915e",
-                "reference": "022532641d61d383fd3ae666982bd46e61e5915e",
+                "url": "https://api.github.com/repos/mustangostang/spyc/zipball/23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
                 "shasum": ""
             },
             "require": {
@@ -776,7 +776,7 @@
                 "yaml",
                 "yml"
             ],
-            "time": "2016-10-21 00:03:34"
+            "time": "2017-02-24 16:06:33"
         },
         {
             "name": "nb/oxymel",
@@ -1972,16 +1972,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.11.1",
+            "version": "v0.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "5311a4b99103c0505db015a334be4952654d6e21"
+                "reference": "6d231e5538b2c0db909b2cb49d30a45faf20069a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/5311a4b99103c0505db015a334be4952654d6e21",
-                "reference": "5311a4b99103c0505db015a334be4952654d6e21",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/6d231e5538b2c0db909b2cb49d30a45faf20069a",
+                "reference": "6d231e5538b2c0db909b2cb49d30a45faf20069a",
                 "shasum": ""
             },
             "require": {
@@ -2018,7 +2018,7 @@
                 "cli",
                 "console"
             ],
-            "time": "2016-02-08 14:34:01"
+            "time": "2017-02-15 12:17:55"
         },
         {
             "name": "wp-cli/wp-cli",
@@ -2088,16 +2088,56 @@
             "time": "2016-10-25 15:14:00"
         },
         {
-            "name": "wpackagist-plugin/comet-cache",
-            "version": 161221,
+            "name": "wpackagist-plugin/akismet",
+            "version": "3.3",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/comet-cache/",
-                "reference": "tags/161221"
+                "url": "https://plugins.svn.wordpress.org/akismet/",
+                "reference": "tags/3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/comet-cache.161221.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/akismet/"
+        },
+        {
+            "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
+            "version": "4.2.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/"
+        },
+        {
+            "name": "wpackagist-plugin/comet-cache",
+            "version": 170220,
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/comet-cache/",
+                "reference": "tags/170220"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/comet-cache.170220.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2106,6 +2146,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/comet-cache/"
+        },
+        {
+            "name": "wpackagist-plugin/commentluv",
+            "version": "2.94.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/commentluv/",
+                "reference": "tags/2.94.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/commentluv.2.94.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/commentluv/"
         },
         {
             "name": "wpackagist-plugin/custom-facebook-feed",
@@ -2168,6 +2228,46 @@
             "homepage": "https://wordpress.org/plugins/disqus-comment-system/"
         },
         {
+            "name": "wpackagist-plugin/easyazon",
+            "version": "4.0.18",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/easyazon/",
+                "reference": "tags/4.0.18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/easyazon.4.0.18.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/easyazon/"
+        },
+        {
+            "name": "wpackagist-plugin/featured-images-for-rss-feeds",
+            "version": "1.4.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/featured-images-for-rss-feeds/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/featured-images-for-rss-feeds.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/featured-images-for-rss-feeds/"
+        },
+        {
             "name": "wpackagist-plugin/instagram-feed",
             "version": "1.4.8",
             "source": {
@@ -2188,6 +2288,26 @@
             "homepage": "https://wordpress.org/plugins/instagram-feed/"
         },
         {
+            "name": "wpackagist-plugin/mailchimp-forms-by-mailmunch",
+            "version": "2.1.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/mailchimp-forms-by-mailmunch/",
+                "reference": "tags/2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-forms-by-mailmunch.2.1.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/mailchimp-forms-by-mailmunch/"
+        },
+        {
             "name": "wpackagist-plugin/ninja-forms",
             "version": "2.9.58",
             "source": {
@@ -2206,6 +2326,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ninja-forms/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "2.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",

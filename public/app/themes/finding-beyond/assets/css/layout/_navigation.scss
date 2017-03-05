@@ -239,3 +239,11 @@
         }
     }
 }
+
+body {
+    overflow-x: hidden;
+    &.mobile-menu-active {
+        height: 100vh;
+        overflow: hidden;
+    }
+}

@@ -60,7 +60,9 @@
                     ]);?>
             </div>
             <div class="mobile-menu-trigger">
-                <div class="icon"></div>
+                <div class="relative">
+                    <div class="icon"></div>
+                </div>
             </div>
         </div>
     </header>
