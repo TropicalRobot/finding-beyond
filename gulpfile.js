@@ -77,6 +77,12 @@ gulp.task('build:css', ['clean:css'], function () {
         .pipe(gulp.dest(trgPath + '/css'))
 })
 
+// Copy photoswipe icons
+gulp.task('copy:icons', function() {
+    return gulp.src(srcPath + '/css/default-skin.svg')
+        .pipe(gulp.dest(trgPath + '/css/'))
+})
+
 // Copy fonts
 
 gulp.task('copy:fonts', ['clean:fonts'], function() {
@@ -94,7 +100,7 @@ gulp.task('clean:fonts', function(){
 
 // Main build task. Compile everything
 
-gulp.task('build', ['build:js', 'build:css', 'copy:fonts'])
+gulp.task('build', ['build:js', 'build:css', 'copy:fonts', 'copy:icons'])
 
 
 
