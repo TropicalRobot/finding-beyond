@@ -2,10 +2,12 @@
 
 <?php while (have_posts()): $p = tev_post_factory(); ?>
 
-    <div class="hero hero--single">
+    <div class="hero hero--full-height">
         <div class="hero__image" style="background-image:url(<?php echo $p->getFeaturedImageUrl('large');?>)"></div>
-        <div class="hero__header container">
-            <h1 class="hero__heading"><?php echo $p->getTitle(); ?></h1>
+        <div class="container">
+            <div class="hero__header">
+                <h1 class="hero__title"><?php echo $p->getTitle(); ?></h1>
+            </div>
         </div>
     </div>
 
@@ -25,7 +27,7 @@
                                 <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['sizes']['large-width'].'x'.$image['sizes']['large-height']; ?>">
                                     <img src="<?php echo $image['url']; ?>" itemprop="thumbnail" alt="Image description" />
                                 </a>
-                                <figcaption itemprop="caption description">Image caption  1</figcaption>
+                                <figcaption itemprop="caption description"><?php echo $image['caption']; ?></figcaption>
                             </figure>
 
                          <?php endforeach; ?>

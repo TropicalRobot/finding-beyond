@@ -31,26 +31,21 @@ Template Name: Photo Galleries Landing Page
             <?php if(count($photoGalleries)) : ?>
                 <div class="row">
                 <?php foreach ($photoGalleries as $post): ?>
-                <div class="col-xs-12 col-sm-6">
-                    <?php $p = tev_post_factory($post); ?>
-
-                    <div class="cta cta--full-width" style="background-image:url(<?php echo $p->getFeaturedImageUrl('large');?>); margin-bottom: 20px;">
-                        <a class="cta__link link-block" href="<?php echo $p->getUrl(); ?>"></a>
-                        <div class="cta__header">
-                            <h1 class="cta__heading"><?php echo $p->getTitle(); ?></h1>
+                    <div class="col-xs-12 col-sm-6">
+                        <?php $p = tev_post_factory($post); ?>
+                        <div class="full-width-section archive-cta cta cta--full-width" style="background-image:url(<?php echo $p->getFeaturedImageUrl('large');?>); margin-bottom: 20px;">
+                            <div class="cta__bg-overlay"></div>
+                            <div class="cta__header">
+                                <h1 class="cta__heading"><?php echo $p->getTitle(); ?></h1>
+                            </div>
+                            <a class="cta__link link-block" href="<?php echo $p->getUrl(); ?>"></a>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
                 </div>
             <?php else: ?>
             <?php endif; ?>
-
             </div>
-
-   <!--          <div class="col-md-3 offset-md-1 sidebar" style="margin-top: 50px;">
-                <?php echo tev_partial('partials/sidebar'); ?>
-            </div> -->
         </div>
     </div>
 </section>
