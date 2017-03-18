@@ -18,3 +18,17 @@ add_action('after_setup_theme', function () {
         'categories' => 'Categories'
     ));
 });
+
+
+// Register Widget Area
+if ( function_exists('register_sidebar') )
+  register_sidebar(array(
+    'id' => 'Sidebar',
+    'name' => 'Sidebar',
+    'before_widget' => '<div class = "Sidebar">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  )
+);
+

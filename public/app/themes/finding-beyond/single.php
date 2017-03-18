@@ -20,13 +20,19 @@
     <section class="full-width-section single-content">
         <div class="container">
             <div class="row">
-                <div class="offset-md-2 col-md-8">
+                <div class="col-md-8">
                     <h1 class="single-content__heading"><?php echo $p->getTitle(); ?></h1>
                     <div class="addthis_inline_share_toolbox"></div>
                     <div class="single-content__body">
                         <?php echo $p->getContent(); ?>
                     </div>
                 </div>
+
+                <div class="offset-md-1 col-md-3">
+                    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar') ) : ?>
+                    <?php endif;?>
+                </div>
+
             </div>
         </div>
     </section>
