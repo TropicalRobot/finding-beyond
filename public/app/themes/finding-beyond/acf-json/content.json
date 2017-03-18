@@ -81,6 +81,13 @@
                 "operator": "==",
                 "value": "front_page"
             }
+        ],
+        [
+              {
+                "param":"page_template",
+                "operator":"==",
+                "value":"default"
+              }
         ]
     ],
     "menu_order": 10,
