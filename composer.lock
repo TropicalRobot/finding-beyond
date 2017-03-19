@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "edf848a40fc5ae11dfe3e3d8a0bd4c89",
-    "content-hash": "a60c04a996ea36119ea29845b6d6c91b",
+    "hash": "ee4b7bbe2893f47eb9952e1f4a96116a",
+    "content-hash": "da492c679090dc9263ebb620d547ac45",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -1155,16 +1155,16 @@
         },
         {
             "name": "seld/cli-prompt",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/cli-prompt.git",
-                "reference": "8cbe10923cae5bcd7c5a713f6703fc4727c8c1b4"
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/cli-prompt/zipball/8cbe10923cae5bcd7c5a713f6703fc4727c8c1b4",
-                "reference": "8cbe10923cae5bcd7c5a713f6703fc4727c8c1b4",
+                "url": "https://api.github.com/repos/Seldaek/cli-prompt/zipball/a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
                 "shasum": ""
             },
             "require": {
@@ -1199,7 +1199,7 @@
                 "input",
                 "prompt"
             ],
-            "time": "2016-04-18 09:31:41"
+            "time": "2017-03-18 11:32:45"
         },
         {
             "name": "seld/jsonlint",
@@ -2132,26 +2132,6 @@
             "homepage": "https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/"
         },
         {
-            "name": "wpackagist-plugin/comet-cache",
-            "version": 170220,
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/comet-cache/",
-                "reference": "tags/170220"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/comet-cache.170220.zip",
-                "reference": "tags/170220",
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/comet-cache/"
-        },
-        {
             "name": "wpackagist-plugin/commentluv",
             "version": "2.94.7",
             "source": {
@@ -2272,6 +2252,46 @@
             "homepage": "https://wordpress.org/plugins/featured-images-for-rss-feeds/"
         },
         {
+            "name": "wpackagist-plugin/heartbeat-control",
+            "version": "1.0.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/heartbeat-control/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/heartbeat-control.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/heartbeat-control/"
+        },
+        {
+            "name": "wpackagist-plugin/insert-headers-and-footers",
+            "version": "1.4.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/insert-headers-and-footers/",
+                "reference": "tags/1.4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/insert-headers-and-footers.1.4.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/insert-headers-and-footers/"
+        },
+        {
             "name": "wpackagist-plugin/instagram-feed",
             "version": "1.4.8",
             "source": {
@@ -2350,6 +2370,46 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/social-warfare",
+            "version": "2.2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/social-warfare/",
+                "reference": "tags/2.2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/social-warfare.2.2.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/social-warfare/"
+        },
+        {
+            "name": "wpackagist-plugin/w3-total-cache",
+            "version": "0.9.5.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/w3-total-cache/",
+                "reference": "tags/0.9.5.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.5.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/w3-total-cache/"
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
