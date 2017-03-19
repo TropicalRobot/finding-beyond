@@ -67,7 +67,9 @@
         "wpackagist-plugin/mailchimp-forms-by-mailmunch": "~2.1",
         "wpackagist-plugin/heartbeat-control": "~1.0",
         "wpackagist-plugin/insert-headers-and-footers": "~1.4",
-        "wpackagist-plugin/social-warfare": "~2.2"
+        "wpackagist-plugin/social-warfare": "~2.2",
+        "wpackagist-plugin/imagify": "~1.6"
+
     },
 
     "autoload": {

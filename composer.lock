@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ee4b7bbe2893f47eb9952e1f4a96116a",
-    "content-hash": "da492c679090dc9263ebb620d547ac45",
+    "hash": "7cf9e8e59ec36f91c74c51442b55c110",
+    "content-hash": "e2e1675c7efbee3b021c0588f74ecb79",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -2262,7 +2262,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/heartbeat-control.zip",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -2270,6 +2270,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/heartbeat-control/"
+        },
+        {
+            "name": "wpackagist-plugin/imagify",
+            "version": "1.6.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/imagify/",
+                "reference": "tags/1.6.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.6.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/imagify/"
         },
         {
             "name": "wpackagist-plugin/insert-headers-and-footers",
@@ -2282,7 +2302,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/insert-headers-and-footers.1.4.1.zip",
-                "reference": null,
+                "reference": "tags/1.4.1",
                 "shasum": null
             },
             "require": {
@@ -2382,7 +2402,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/social-warfare.2.2.3.zip",
-                "reference": null,
+                "reference": "tags/2.2.3",
                 "shasum": null
             },
             "require": {
@@ -2402,7 +2422,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.5.2.zip",
-                "reference": null,
+                "reference": "tags/0.9.5.2",
                 "shasum": null
             },
             "require": {
