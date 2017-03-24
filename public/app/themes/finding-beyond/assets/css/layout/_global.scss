@@ -19,15 +19,18 @@ b, strong {
 }
 
 .single-content {
-    margin-top: 30px;
     font-size: 18px;
     line-height: 30px;
     p {
         font-size: 18px;
         line-height: 30px;
+        margin-bottom: 30px;
     }
     h1, h2, h3, h4, h5, h6 {
-        margin-bottom: 20px;
+        &:not(.single-content__heading) {
+            margin-top: 24px;
+            margin-bottom: 20px;
+        }
     }
 }
 .sidebar {

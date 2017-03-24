@@ -71,3 +71,18 @@ $component: 'hero';
         }
     }
 }
+
+.home {
+    .hero {
+        height: 300px;
+        max-height: 100vh;
+        @include media-sm {
+            height: 640px;
+        }
+        &__image {
+            @include media-sm {
+                height: calc(640px + #{$header-height});
+            }
+        }
+    }
+}

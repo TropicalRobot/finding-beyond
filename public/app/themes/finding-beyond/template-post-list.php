@@ -22,7 +22,7 @@ Template Name: Post List
         <div class="row flex-items-xs-middle">
             <div class="col-xs-12">
             <?php while (have_posts()): $page = tev_post_factory(); ?>
-                <h1><?php echo $page->getTitle();?></h1>
+                <h1 class="archive__heading"><?php echo $page->getTitle();?></h1>
             <?php endwhile; ?>
             </div>
             <div class="col-xs-12">

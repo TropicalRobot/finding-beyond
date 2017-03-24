@@ -2,8 +2,9 @@
 
 <?php while (have_posts()): $p = tev_post_factory(); ?>
 
+<?php if($imageSrc = get_the_post_thumbnail_url($p->getId(), 'hero')): ?>
     <div class="hero hero--single">
-        <div class="hero__image" style="background-image:url(<?php echo $p->getFeaturedImageUrl('hero');?>)"></div>
+        <div class="hero__image" style="background-image:url(<?php echo $imageSrc;?>)"></div>
         <div class="container">
             <?php $catIds = wp_get_post_categories($p->getId(), ['exclude' => '1']); ?>
             <?php if(count($catIds)): ?>
@@ -16,6 +17,7 @@
             <?php endif; ?>
         </div>
     </div>
+<?php endif; ?>
 
     <section class="full-width-section single-content">
         <div class="container">

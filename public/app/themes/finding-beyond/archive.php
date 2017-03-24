@@ -24,7 +24,7 @@ Template Name: Post List
     <div class="container">
         <div class="row flex-items-xs-middle flex-xs-middle">
             <div class="col-xs-12">
-                <h1><?php echo get_queried_object()->name; ?></h1>
+                <h1 class="archive__heading"><?php echo get_queried_object()->name; ?></h1>
             </div>
             <div class="col-xs-12">
                 <div class="row">
