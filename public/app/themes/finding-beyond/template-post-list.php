@@ -36,7 +36,7 @@ Template Name: Post List
                     <?php foreach($posts as $post):?>
                         <?php echo tev_partial('partials/card', [
                             'post' => tev_post_factory($post),
-                            'text' => false,
+                            'text' => true,
                             'slide' => true,
                             'colClass' => 'col-xs-12 col-md-4'
                         ]); ?>
