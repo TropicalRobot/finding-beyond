@@ -21,7 +21,7 @@ Template Name: Photo Galleries Landing Page
 <?php endwhile; ?>
 
 
-<?php $photoGalleries = get_posts( ['post_type' => 'fbphotos'] ); ?>
+<?php $photoGalleries = get_posts( ['post_type' => 'fbphotos', 'posts_per_page'   => -1] ); ?>
 
 
 <section class="full-width-section single-content">
