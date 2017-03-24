@@ -9,17 +9,12 @@ $component: 'cta';
         width:100%;
         background-size: cover;
         background-position: center;
-        height: 300px;
-        max-height: 80vh;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: 'futuraLight';
         text-align: center;
         color: white;
-        @include media-md {
-            height: 460px;
-        }
         .#{$component} {
             &__header {
                 border-top: 5px solid rgba(255, 255, 255, 0.7);
@@ -27,7 +22,9 @@ $component: 'cta';
                 padding: 16px;
                 z-index: 1;
                 max-width: 80%;
+                margin: 40px 0;
                 @include media-sm {
+                    margin: 80px 0;
                     padding: 38px;
                 }
                 p {
