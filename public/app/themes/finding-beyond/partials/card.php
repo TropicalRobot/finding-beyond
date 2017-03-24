@@ -14,7 +14,11 @@
             <div class="card__date-month"><?php echo $pubDate->format('M'); ?></div>
             <div class="card__date-year"><?php echo $pubDate->format('Y'); ?></div>
         </div>
-        <img class="card-img-top" src="<?php echo $post->getFeaturedImageUrl('card');?>" alt="Card image cap">
+        <?php if ($imageSrc = get_the_post_thumbnail_url($post->getId(), 'card')):?>
+            <img class="card-img-top" src="<?php echo $imageSrc;?>" alt="Card image cap">
+        <?php else: ?>
+            <div class="card-img-top card-img-holder"></div>
+        <?php endif; ?>
     </a>
     <div class="card-block">
         <?php $catIds = wp_get_post_categories($post->getId(), ['exclude' => '1']); ?>

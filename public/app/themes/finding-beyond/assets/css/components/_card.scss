@@ -120,6 +120,11 @@
     z-index: 1;
 }
 
+.card-img-holder {
+    background-color: $gray-dark;
+    padding-bottom: 67%;
+}
+
 .comments-count-bubble {
     color: $gray-light;
     .comments-count {
