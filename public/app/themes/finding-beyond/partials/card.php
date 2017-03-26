@@ -26,7 +26,7 @@
             <div class="card-tag">
             <?php foreach ($catIds as $c): ?>
                 <?php $cat = get_category( $c ); ?>
-                <a href="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+                <a href="<?php echo get_category_link($c); ?>"><?php echo $cat->name; ?></a>
             <?php endforeach; ?>
             </div>
         <?php endif; ?>

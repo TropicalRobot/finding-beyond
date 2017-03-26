@@ -20,28 +20,31 @@ Template Name: Photo Galleries Landing Page
 
 <?php endwhile; ?>
 
-
-<?php $photoGalleries = get_posts( ['post_type' => 'fbphotos', 'posts_per_page'   => -1] ); ?>
-
+<?php while (have_posts()): $p = tev_post_factory(); ?>
+<?php $photoGalleries = $p->field('galleries_selector')->val(); ?>
 
 <section class="full-width-section single-content">
     <div class="container">
         <div class="row">
             <div class="offset-md-1 col-md-10" style="margin-top: 50px;">
             <?php if(count($photoGalleries)) : ?>
-                <div class="row">
-                <?php foreach ($photoGalleries as $post): ?>
-                    <div class="col-xs-12 col-lg-6">
-                        <?php $p = tev_post_factory($post); ?>
-                        <div class="archive-cta cta cta--full-width" style="background-image:url(<?php echo $p->getFeaturedImageUrl('large');?>); margin-bottom: 20px;">
+                <div class="row flex--row">
+                <?php foreach ($photoGalleries as $key => $post): ?>
+                    <?php if($key>0 && $key%2 == 0): ?>
+                        </div>
+                        <div class="row flex--row">
+                    <?php endif;?>
+                    <div class="col-xs-12 col-lg-6 archive-cta-wrapper">
+                        <div class="archive-cta cta cta--full-width" style="background-image:url(<?php echo $post->getFeaturedImageUrl('large');?>); margin-bottom: 20px;">
                             <div class="cta__bg-overlay"></div>
                             <div class="cta__header">
-                                <h1 class="cta__heading"><?php echo $p->getTitle(); ?></h1>
+                                <h1 class="cta__heading"><?php echo $post->getTitle(); ?></h1>
                             </div>
-                            <a class="cta__link link-block" href="<?php echo $p->getUrl(); ?>"></a>
+                            <a class="cta__link link-block" href="<?php echo $post->getUrl(); ?>"></a>
                         </div>
                     </div>
                 <?php endforeach; ?>
+                </div>
                 </div>
             <?php else: ?>
             <?php endif; ?>
@@ -49,5 +52,6 @@ Template Name: Photo Galleries Landing Page
         </div>
     </div>
 </section>
+<?php endwhile; ?>
 
 <?php get_footer(); ?>
