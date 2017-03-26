@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3f246f6e4e020e988cf92cd726a7d23c",
-    "content-hash": "b0bd50d13a2ede8bb999230b830e1fcc",
+    "hash": "c16b447bd262758363e10f1fbeed5173",
+    "content-hash": "116d67729b678abcd0c5127742f7cdea",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -2470,6 +2470,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-force-https",
+            "version": "0.1.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-force-https/",
+                "reference": "tags/0.1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-force-https.0.1.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-force-https/"
         }
     ],
     "packages-dev": [],
