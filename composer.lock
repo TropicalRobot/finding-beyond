@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7cf9e8e59ec36f91c74c51442b55c110",
-    "content-hash": "e2e1675c7efbee3b021c0588f74ecb79",
+    "hash": "3f246f6e4e020e988cf92cd726a7d23c",
+    "content-hash": "b0bd50d13a2ede8bb999230b830e1fcc",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -1962,10 +1962,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.7.2",
+            "version": "4.7.3",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.7.2.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.7.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2282,7 +2282,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/imagify.1.6.3.zip",
-                "reference": null,
+                "reference": "tags/1.6.3",
                 "shasum": null
             },
             "require": {
