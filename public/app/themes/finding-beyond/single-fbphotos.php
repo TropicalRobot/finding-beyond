@@ -21,18 +21,17 @@
             <div class="offset-md-1 col-md-10" style="margin-top: 50px;">
 
                 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                <div class="masonry-grid">
-                        <?php foreach ($images as $image) : ?>
-                            <figure class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                <a href="<?php echo $image['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image['sizes']['large-width'].'x'.$image['sizes']['large-height']; ?>">
-                                    <img src="<?php echo $image['url']; ?>" itemprop="thumbnail" alt="Image description" />
-                                </a>
-                                <figcaption itemprop="caption description"><?php echo $image['caption']; ?></figcaption>
-                            </figure>
+                    <div class="masonry-grid">
+                    <?php foreach ($images as $image) : ?>
 
-                         <?php endforeach; ?>
+                        <figure class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                            <a href="<?php echo $image['sizes']['large']; ?>" itemprop="contentUrl" data-size="<?php echo $image['sizes']['large-width'].'x'.$image['sizes']['large-height']; ?>">
+                                <img src="<?php echo $image['sizes']['medium']; ?>" itemprop="thumbnail" alt="Image description" />
+                            </a>
+                            <figcaption itemprop="caption description"><?php echo $image['caption']; ?></figcaption>
+                        </figure>
+                     <?php endforeach; ?>
                     </div>
-
                 </div>
 
 
