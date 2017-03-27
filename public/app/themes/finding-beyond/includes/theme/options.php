@@ -15,7 +15,8 @@ add_filter('excerpt_more', function () {
 add_action('after_setup_theme', function () {
     register_nav_menus(array(
         'primary' => 'Header',
-        'categories' => 'Categories'
+        'categories' => 'Categories',
+        'footer_links' => 'Footer Links'
     ));
 });
 
@@ -25,7 +26,7 @@ if ( function_exists('register_sidebar') )
   register_sidebar(array(
     'id' => 'Sidebar',
     'name' => 'Sidebar',
-    'before_widget' => '<div class = "Sidebar">',
+    'before_widget' => '<div class = "widget-sidebar">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',

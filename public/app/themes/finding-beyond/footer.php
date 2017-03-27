@@ -10,6 +10,18 @@
                     <a class="social-icon-circled a-clean" href="https://twitter.com/FindingBeyond" target="_blank"><span class="icon-twitter"></span></a>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="footer-nav-wrapper">
+                        <?php wp_nav_menu([
+                            "theme_location" => "footer_links",
+                            "container" => "nav",
+                            "container_class" => "footer-nav",
+                            "menu_class"      => "footer-nav__menu list--unstyled",
+                            ]);?>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->

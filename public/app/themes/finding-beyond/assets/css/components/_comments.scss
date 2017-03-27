@@ -1,3 +1,40 @@
 .comment-list {
     @include list-unstyled;
+    .comment {
+        &:not(:last-of-type) {
+            .comment-body {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid $gray-lighter;
+            }
+        }
+        .thread-even, .thread-odd {
+            margin-bottom: 30px;
+        }
+    }
+}
+.comments-title {
+    margin-bottom: 30px;
+}
+
+.comment-author {
+    img {
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+.comment-respond {
+    padding: 20px;
+    .submit {
+        @include button-variant(white, $brand-primary, transparent);
+        @include font('alt', 'bold');
+    }
+}
+
+.comment-form {
+    .comment-form-comment {
+        display: flex;
+        flex-direction: column;
+    }
 }
