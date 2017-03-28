@@ -30,6 +30,7 @@ config/phing.properties
 # Composer
 
 vendor/
+!public/app/plugins/wordpress-seo-premium/vendor
 
 # NPM
 
