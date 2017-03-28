@@ -13,6 +13,7 @@ public/app/plugins/*
 !public/app/plugins/advanced-custom-fields-pro
 !public/app/plugins/finding-beyond-photos
 !public/app/plugins/bootstrap-ninja-forms
+!public/app/plugins/wordpress-seo-premium
 !public/app/plugins/.gitkeep
 public/app/upgrade
 public/app/uploads/*

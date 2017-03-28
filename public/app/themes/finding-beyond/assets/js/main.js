@@ -11,8 +11,11 @@ require('tether')
 
 var $ = require('jquery')
     , setupGallery= require('./setup/photo-gallery')
+    , setupAnalytics = require('./setup/google-analytics');
 
 setupGallery()
+
+require('./setup/main-nav')();
 
 require('slick-carousel')
 
