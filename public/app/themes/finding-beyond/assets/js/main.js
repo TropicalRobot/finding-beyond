@@ -15,8 +15,6 @@ var $ = require('jquery')
 
 setupGallery()
 
-require('./setup/main-nav')();
-
 require('slick-carousel')
 
 $('#slick-hero').slick();
