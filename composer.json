@@ -58,7 +58,6 @@
         "wpackagist-plugin/custom-twitter-feeds": "~1.1",
         "wpackagist-plugin/ninja-forms": "^2.9",
         "wpackagist-plugin/regenerate-thumbnails": "^2.2",
-        "wpackagist-plugin/disqus-comment-system": "~2.8",
         "wpackagist-plugin/all-in-one-wp-security-and-firewall": "~4.2",
         "wpackagist-plugin/akismet": "~3.3",
         "wpackagist-plugin/easyazon": "~4.0",

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c16b447bd262758363e10f1fbeed5173",
-    "content-hash": "116d67729b678abcd0c5127742f7cdea",
+    "hash": "e4ca0fa032f934dfaa1531b87a7db13f",
+    "content-hash": "29a22fad0fd54ed71646c4e3920f0e45",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -619,22 +619,23 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.1.0",
+            "version": "5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "48817e5f95c9d29e11513f12e43cc0223fa5eb6c"
+                "reference": "e3c9bccdc38bbd09bcac0131c00f3be58368b416"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/48817e5f95c9d29e11513f12e43cc0223fa5eb6c",
-                "reference": "48817e5f95c9d29e11513f12e43cc0223fa5eb6c",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/e3c9bccdc38bbd09bcac0131c00f3be58368b416",
+                "reference": "e3c9bccdc38bbd09bcac0131c00f3be58368b416",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.1",
                 "json-schema/json-schema-test-suite": "1.2.0",
                 "phpdocumentor/phpdocumentor": "~2",
                 "phpunit/phpunit": "^4.8.22"
@@ -681,7 +682,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2017-02-22 03:28:16"
+            "time": "2017-03-22 22:43:35"
         },
         {
             "name": "mustache/mustache",
@@ -2113,7 +2114,7 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.2.5",
+            "version": "4.2.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
@@ -2121,8 +2122,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1490341246",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -2173,16 +2174,16 @@
         },
         {
             "name": "wpackagist-plugin/custom-twitter-feeds",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-twitter-feeds/",
-                "reference": "tags/1.2.2"
+                "reference": "tags/1.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.2.2.zip",
-                "reference": "tags/1.2.2",
+                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.2.3.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -2190,26 +2191,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-twitter-feeds/"
-        },
-        {
-            "name": "wpackagist-plugin/disqus-comment-system",
-            "version": "2.86",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/disqus-comment-system/",
-                "reference": "tags/2.86"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disqus-comment-system.2.86.zip",
-                "reference": "tags/2.86",
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/disqus-comment-system/"
         },
         {
             "name": "wpackagist-plugin/easyazon",
