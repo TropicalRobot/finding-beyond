@@ -45,6 +45,9 @@
                 @include media-lg-max {
                     font-weight: bold;
                 }
+                @include media-md {
+                    line-height: 1.2;
+                }
                 padding: 0;
             }
         }
@@ -65,7 +68,6 @@
         }
     }
     .menu-item {
-        width: 100%;
         line-height: 1;
         position: relative;
         display: flex;
@@ -80,6 +82,11 @@
             padding: 10px;
             flex-wrap: wrap;
             text-align: center;
+        }
+        @include media-md {
+            a {
+                line-height: 48px;
+            }
         }
         a {
             @include link-clean();
@@ -147,7 +154,6 @@
         opacity: 1;
         top: 0;
         background-color: transparent;
-        height: 100%;
         display: flex;
     }
 }
