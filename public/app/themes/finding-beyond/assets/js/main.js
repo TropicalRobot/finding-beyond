@@ -6,28 +6,14 @@
 
 // Load the Bootstrap Javascript
 
-require('tether')
-// require('bootstrap')
+require('tether');
 
 var $ = require('jquery')
     , setupGallery= require('./setup/photo-gallery')
-    , setupAnalytics = require('./setup/google-analytics');
+    , setupAnalytics = require('./setup/google-analytics')
+    , setupNavigation = require('./setup/navigation');
 
-setupGallery()
-
-require('slick-carousel')
-
-$('#slick-hero').slick();
-
-$('.mobile-menu-trigger').click (function(){
-  $('body').toggleClass('mobile-menu-active')
-})
-
-$('.primary-nav .menu-item')
-    .click(function() {
-        $(this).toggleClass('active')
-    })
-    .hover(function() {
-        $('.primary-nav .sub-menu').addClass('animate');
-    });
+setupGallery();
+setupNavigation();
+setupAnalytics('UA-84388780-1');
 
