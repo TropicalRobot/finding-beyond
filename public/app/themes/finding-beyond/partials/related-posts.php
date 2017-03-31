@@ -2,6 +2,10 @@
     <h2 style="margin-bottom: 20px;">Related Posts</h2>
 </div>
 
+<?php if(($key = array_search(1, $cats)) !== false) {
+    unset($cats[$key]);
+} ?>
+
 <?php $query = new WP_Query([
     'post__not_in' => [$id],
     'post_type' => 'post',
