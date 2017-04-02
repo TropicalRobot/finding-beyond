@@ -14,6 +14,7 @@ public/app/plugins/*
 !public/app/plugins/finding-beyond-photos
 !public/app/plugins/bootstrap-ninja-forms
 !public/app/plugins/wordpress-seo-premium
+!public/app/plugins/easyazon-pro-4.0.17
 !public/app/plugins/.gitkeep
 public/app/upgrade
 public/app/uploads/*
@@ -29,7 +30,7 @@ config/phing.properties
 
 # Composer
 
-vendor/
+/vendor/
 !public/app/plugins/wordpress-seo-premium/vendor
 
 # NPM
