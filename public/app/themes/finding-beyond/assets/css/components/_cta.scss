@@ -76,8 +76,20 @@ $component: 'cta';
     }
 }
 
+.archive-cta-row {
+    @include media-md {
+        display: flex;
+    }
+}
+.archive-cta-wrapper {
+    margin-bottom: 20px;
+}
 .archive-cta {
     position: relative;
+    height: 100%;
+    .cta__header {
+        padding:0;
+    }
     &__btn {
         margin-top: 30px;
         background-color: $brand-secondary;

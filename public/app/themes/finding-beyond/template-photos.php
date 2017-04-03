@@ -26,13 +26,13 @@ Template Name: Photo Galleries Landing Page
 <section class="full-width-section single-content">
     <div class="container">
         <div class="row">
-            <div class="offset-md-1 col-md-10" style="margin-top: 50px;">
+            <div class="offset-xl-1 col-xl-10">
             <?php if(count($photoGalleries)) : ?>
-                <div class="row flex--row">
+                <div class="row archive-cta-row">
                 <?php foreach ($photoGalleries as $key => $post): ?>
                     <?php if($key>0 && $key%2 == 0): ?>
                         </div>
-                        <div class="row flex--row">
+                        <div class="row archive-cta-row">
                     <?php endif;?>
                     <div class="col-xs-12 col-lg-6 archive-cta-wrapper">
                         <div class="archive-cta cta cta--full-width" style="background-image:url(<?php echo $post->getFeaturedImageUrl('large');?>); margin-bottom: 20px;">
