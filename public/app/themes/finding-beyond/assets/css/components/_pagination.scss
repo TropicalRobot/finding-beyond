@@ -1,4 +1,6 @@
 .pagination {
+    display: flex;
+    flex-wrap: wrap;
     .page-numbers {
         background-color: #1e9893;
         padding: 8px 16px;
@@ -6,5 +8,17 @@
         font-family: 'Comfortaa', cursive;
         font-weight: 600;
         border-radius: 3px;
+        transition: all 0.2s;
+        margin: 0 4px 4px 0;
+        &.current {
+            background-color: $brand-secondary;
+            color: $gray;
+        }
+        &:not(.current) {
+            @include link-color-clean(white);
+            &:hover, &:focus, &:active {
+                background-color: $gray;
+            }
+        }
     }
 }
