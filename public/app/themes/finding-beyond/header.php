@@ -59,7 +59,7 @@
                     "menu_class"      => "primary-nav__menu list--unstyled",
                     ]);?>
             </div>
-            <div class="mobile-menu-trigger">
+            <div class="mobile-menu-trigger primary-nav-toggle">
                 <div class="relative">
                     <div class="icon"></div>
                 </div>

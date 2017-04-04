@@ -239,3 +239,15 @@
     }
 }
 
+@mixin media-mob-menu {
+    @media (min-width: grid-breakpoints('lg')) {
+        @content;
+    }
+}
+
+@mixin media-mob-menu-max {
+    @media (max-width: grid-breakpoints('lg') - 1) {
+        @content;
+    }
+}
+
