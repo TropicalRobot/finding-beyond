@@ -18,9 +18,10 @@ var setup = function (apiKey) {
     $('.primary-nav .menu-item')
         .click(function() {
             $(this).toggleClass('active');
-        })
+        });
+    $('.primary-nav .menu-item-has-children')
         .hover(function() {
-            $('.primary-nav .sub-menu').addClass('animate');
+            $(this).find('.sub-menu').addClass('animate');
         });
 }
 
