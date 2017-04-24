@@ -28,7 +28,7 @@
         <meta name="msapplication-wide310x150logo" content="<?php echo $faviconPath.'/widetile.png';?>" />
         <meta name="msapplication-square310x310logo" content="<?php echo $faviconPath.'/largetile.png';?>" />
 
-        <title><?php wp_title(bloginfo('name').'|', true, 'left'); ?></title>
+        <title><?php wp_title('|', true, 'left'); ?></title>
         <?php wp_head(); ?>
         <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
 
