@@ -3,11 +3,14 @@
     background-color: rgb(51, 51, 51);
     color: white;
     padding: 40px 0;
-    padding-bottom: 88px;
     text-align: center;
-    @include media-sm {
-        padding-bottom: 40px;
+    @include media-md {
         text-align: left;
+    }
+    &__col {
+        @include media-md-max {
+            width: 100%;
+        }
     }
     &__container {
         display: flex;
@@ -18,7 +21,7 @@
     &__copy {
         width: 100%;
         order: 2;
-        @include media-sm {
+        @include media-md {
             order: 1;
             width: auto;
         }
@@ -29,11 +32,16 @@
         display: flex;
         justify-content: center;
         margin-bottom: 14px;
-        @include media-sm {
+        align-items: center;
+        @include media-md {
             order: 2;
             width: auto;
             margin-bottom: 0;
         }
+    }
+    .blogmeetsbrand {
+        width: 70px;
+        margin-left: 20px;
     }
 }
 
@@ -75,8 +83,9 @@
 }
 
 .footer-nav {
-    @include media-sm-max {
-        margin-top: 20px;
+    margin-top: 20px;
+    @include media-md {
+        margin-top: 10px;
     }
     &__menu {
         display: flex;
@@ -84,10 +93,12 @@
         @include list-unstyled;
         .menu-item {
             margin-right: 20px;
-            margin-bottom: 8px;
         }
-        @include media-sm-max {
+        @include media-md-max {
             justify-content: center;
+            .menu-item {
+                margin-bottom: 12px;
+            }
         }
     }
 }

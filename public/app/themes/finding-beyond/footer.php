@@ -3,15 +3,8 @@
     <footer class="site-footer">
         <div class="container">
             <div class="site-footer__container">
-                <div class="site-footer__copy">&copy; 2016 <span class="primary-color">FINDING BEYOND</span></div>
-                <div class="site-footer__social">
-                    <a class="social-icon-circled a-clean" href="https://www.facebook.com/findingbeyond/" target="_blank"><span class="icon-facebook"></span></a>
-                    <a class="social-icon-circled a-clean" href="https://www.instagram.com/findingbeyond/" target="_blank"><span class="icon-instagram"></span></a>
-                    <a class="social-icon-circled a-clean" href="https://twitter.com/FindingBeyond" target="_blank"><span class="icon-twitter"></span></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
+                <div class="site-footer__col">
+                    <div class="site-footer__copy">&copy; 2016 <span class="primary-color">FINDING BEYOND</span></div>
                     <div class="footer-nav-wrapper">
                         <?php wp_nav_menu([
                             "theme_location" => "footer_links",
@@ -21,10 +14,43 @@
                             ]);?>
                     </div>
                 </div>
+                <div class="site-footer__col site-footer__social">
+                    <a class="social-icon-circled a-clean" href="https://www.facebook.com/findingbeyond/" target="_blank"><span class="icon-facebook"></span></a>
+                    <a class="social-icon-circled a-clean" href="https://www.instagram.com/findingbeyond/" target="_blank"><span class="icon-instagram"></span></a>
+                    <a class="social-icon-circled a-clean" href="https://twitter.com/FindingBeyond" target="_blank"><span class="icon-twitter"></span></a>
+                    <a class="blogmeetsbrand" rel="nofollow" href="http://www.blogmeetsbrand.com"><img src="http://track.blogmeetsbrand.com/badge150x150.png" /></a>
+                </div>
             </div>
         </div>
     </footer>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5780b29be2ccbb76"></script>
+
+    <script type="text/javascript">
+        var cid = '20';
+        window.onload = function() {
+          var adbackhost = (("https:" == document.location.protocol) ? "https://s.ad-back.net/adbackplugin" : "http://n.ad-back.net/adbackplugin");
+          var hostname = window.location.href;
+          var dataString = "?s=1&c="+cid+"&p="+hostname;
+          var iframesrc = adbackhost+dataString;
+
+          var tempIFrame=document.createElement("iframe");
+          tempIFrame.setAttribute("id","ADBACKPlugFrame");
+          tempIFrame.setAttribute("name","ADBACKPlugFrame");
+          tempIFrame.setAttribute("src",iframesrc);
+          tempIFrame.style.border='0px';
+          tempIFrame.style.width='0px';
+          tempIFrame.style.height='0px';
+          tempIFrame.style.display='none';
+          var IFrameObj = document.body.appendChild(tempIFrame);
+
+          if (document.frames) {
+            // this is for IE5 Mac, because it will only
+            // allow access to the document object
+            // of the IFrame if we access it through
+            // the document.frames array
+            IFrameObj = document.frames['ADBACKPlugFrame'];
+          }
+
+        }
+      </script>
     </body>
 </html>

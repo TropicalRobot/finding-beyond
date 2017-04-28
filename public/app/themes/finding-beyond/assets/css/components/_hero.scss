@@ -44,10 +44,13 @@ $component: 'hero';
             }
             &__header {
                 margin-top: calc(#{$header-height}/2);
+                border-top: 3px solid rgba(255, 255, 255, 0.8);
+                border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+                padding: 14px;
                 @include media-sm {
-                    padding: 38px;
                     border-top: 5px solid rgba(255, 255, 255, 0.8);
                     border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+                    padding: 38px;
                 }
             }
         }
