@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "32f72dab258b416cf3bfcb13bde04791",
-    "content-hash": "b2f86a50ab4139d0c3e0315c6a11238c",
+    "hash": "9ca96aba5d5715988142b4549f814e31",
+    "content-hash": "12f026f7d9868af92f20be6ad961c1a2",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -1963,10 +1963,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.7.3",
+            "version": "4.7.4",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.7.3.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.7.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2123,7 +2123,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1492216430",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
