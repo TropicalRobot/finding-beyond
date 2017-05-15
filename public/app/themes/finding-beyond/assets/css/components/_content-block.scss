@@ -3,4 +3,16 @@
         text-transform: uppercase;
         margin-bottom: 20px;
     }
+    &__images {
+        .img-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                padding: 12px;
+                width: 100%;
+                max-width: 240px;
+            }
+        }
+    }
 }
