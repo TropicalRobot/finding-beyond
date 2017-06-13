@@ -88,6 +88,13 @@
                 "operator":"==",
                 "value":"default"
               }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-content.php"
+            }
         ]
     ],
     "menu_order": 10,
