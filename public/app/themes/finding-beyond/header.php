@@ -30,20 +30,6 @@
 
         <title><?php wp_title('|', true, 'left'); ?></title>
         <?php wp_head(); ?>
-        <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
-
-        <script type="text/javascript">
-        window.onload = function() {
-            var grid = document.querySelector('.masonry-grid');
-
-            if(grid) {
-                var msnry = new Masonry( grid, {
-                    itemSelector: '.grid-item'
-                });
-                grid.style.opacity = 1;
-            }
-        }
-        </script>
     </head>
 
     <body id="body" <?php body_class(); ?>>

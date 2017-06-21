@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.4",
-    "masonry-layout": "^4.1.0",
+    "masonry-layout": "^4.2.0",
     "photoswipe": "^4.1.1",
     "slick-carousel": "^1.6.0",
     "tether": "^1.2.0"
@@ -24,7 +24,6 @@
   "browser": {
     "tether": "./node_modules/tether/dist/js/tether.js",
     "photoswipe": "./node_modules/photoswipe/dist/photoswipe.js",
-    "photoswipeUi": "./node_modules/photoswipe/dist/photoswipe-ui-default.js",
-    "masonry-layout": "./node_modules/masonry-layout/dist/masonry.pkgd.js"
+    "photoswipeUi": "./node_modules/photoswipe/dist/photoswipe-ui-default.js"
   }
 }
