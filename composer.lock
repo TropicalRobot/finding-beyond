@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44326a5d88c3e3304d5c36fc12cef18b",
-    "content-hash": "dca722e7c9ae52ab84224e9d29a8c920",
+    "hash": "32240690fbbea9580735a7b9b1b23cce",
+    "content-hash": "28878e8045b918d02569b963124f5665",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -1963,10 +1963,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.7.4",
+            "version": "4.8",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.7.4.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2383,7 +2383,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.9.9.zip",
-                "reference": null,
+                "reference": "tags/4.9.9",
                 "shasum": null
             },
             "require": {
