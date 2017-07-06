@@ -22,7 +22,7 @@
         <link rel="icon" type="image/png" href="<?php echo $faviconPath.'/favicon-16x16.png';?>" sizes="16x16">
         <link rel="icon" type="image/png" href="<?php echo $faviconPath.'/favicon-32x32.png';?>" sizes="32x32">
         <link rel="icon" type="image/png" href="<?php echo $faviconPath.'/favicon-96x96.png';?>" sizes="96x96">
-        <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="<?php echo $faviconPath.'/android-chrome-192x192.png';?>" sizes="192x192">
         <meta name="msapplication-square70x70logo" content="<?php echo $faviconPath.'/smalltile.png';?>" />
         <meta name="msapplication-square150x150logo" content="<?php echo $faviconPath.'/mediumtile.png';?>" />
         <meta name="msapplication-wide310x150logo" content="<?php echo $faviconPath.'/widetile.png';?>" />

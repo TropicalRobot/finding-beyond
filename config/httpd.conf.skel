@@ -1,27 +1,7 @@
 <VirtualHost *:80>
     ServerName ${build.url}
+    ServerAlias www.findingbeyond.com
     DocumentRoot ${build.public_dir}
-
-    <Directory ${build.public_dir}>
-      Options All Multiviews -Indexes +FollowSymLinks
-      AllowOverride All
-    </Directory>
-
-    LogFormat "[%a] %m %U %s @ %{%Y-%m-%dT%H:%M:%S}t" "${build.name}"
-    CustomLog ${build.log_dir}/request.log "${build.name}"
-    ErrorLog  ${build.log_dir}/request_error.log
-
-    AllowEncodedSlashes On
-</VirtualHost>
-
-<VirtualHost *:443>
-    ServerName ${build.url}
-    DocumentRoot ${build.public_dir}
-
-    SSLEngine On
-    SSLCertificateFile /etc/letsencrypt/live/${build.url}/cert.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/${build.url}/privkey.pem
-    SSLCertificateChainFile /etc/letsencrypt/live/${build.url}/chain.pem
 
     <Directory ${build.public_dir}>
       Options All Multiviews -Indexes +FollowSymLinks
