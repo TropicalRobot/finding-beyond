@@ -32,6 +32,11 @@ if (file_exists(APP_ROOT_DIR . '/.env')) {
 }
 
 /*
+ * Force admin to use SSL if enabled
+ */
+define('FORCE_SSL_ADMIN', (boolean) getenv('SSL_ENABLE'));
+
+/*
  * Debugging/errors
  */
 
@@ -51,8 +56,10 @@ define('SCRIPT_DEBUG', APP_DEBUG);
  * URLs
  */
 
-define('WP_HOME', getenv('WP_HOME'));
-define('WP_SITEURL', getenv('WP_SITEURL'));
+$scheme = (boolean) getenv('SSL_ENABLE') ? 'https://' : 'http://';
+define('WP_HOME', $scheme . getenv('WP_HOME'));
+define('WP_SITEURL', $scheme . getenv('WP_SITEURL'));
+define('WP_PLUGIN_URL', WP_HOME . '/app/plugins');
 
 /*
  * Custom Content Directory (/public/app)

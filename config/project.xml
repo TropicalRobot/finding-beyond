@@ -56,6 +56,22 @@
                 <phingcall target="build:save_config" />
             </then>
         </if>
+
+        <if>
+            <not>
+                <isset property="ssl.enable" />
+            </not>
+            <then>
+                <propertyPrompt
+                    propertyName="ssl.enable"
+                    defaultValue="0"
+                    promptText="Enable SSL? (1,0)"
+                    useExistingValue="true"
+                />
+
+                <phingcall target="build:save_config" />
+            </then>
+        </if>
     </target>
 
 
