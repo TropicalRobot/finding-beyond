@@ -13,7 +13,8 @@ var $ = require('jquery')
     , setupAnalytics = require('./setup/google-analytics')
     , setupNavigation = require('./setup/navigation');
 
-setupGallery();
 setupNavigation();
+setupGallery();
+
 setupAnalytics('UA-84388780-1');
 
