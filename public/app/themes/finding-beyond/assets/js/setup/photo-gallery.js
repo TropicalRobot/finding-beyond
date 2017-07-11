@@ -7,6 +7,7 @@ var $ = require('jquery')
     , wp = require('../components/wordpress')
     , PhotoSwipe = require('photoswipe')
     , PhotoSwipeUI_Default = require('photoswipeUi')
+    , Masonry = require('masonry-layout')
 
 var setup = function () {
 
@@ -215,6 +216,18 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
 // execute above function
 initPhotoSwipeFromDOM('.my-gallery');
+
+// Arrange gallery thumbnails with Masonry JS
+var masonryGrid = '.masonry-grid'
+    , $masonryGrid = $(masonryGrid);
+
+if ($masonryGrid.length) {
+    var msnry = new Masonry( masonryGrid, {
+        itemSelector: '.grid-item'
+    });
+    $masonryGrid.css('opacity', 1)
+}
+
 }
 
 module.exports = setup
