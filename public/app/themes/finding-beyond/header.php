@@ -44,6 +44,11 @@
                     "container_class" => "primary-nav",
                     "menu_class"      => "primary-nav__menu list--unstyled",
                     ]);?>
+                <div class="search-modal-toggle" data-toggle="modal" data-target="#search-modal">
+                    <div class="search-modal-toggle__inner">
+                        <span class="search-modal-toggle__text">Search</span><span class="icon icon-search"></span>
+                    </div>
+                </div>
             </div>
             <div class="mobile-menu-trigger primary-nav-toggle">
                 <div class="relative">

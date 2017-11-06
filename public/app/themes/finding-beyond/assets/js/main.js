@@ -7,6 +7,7 @@
 // Load the Bootstrap Javascript
 
 require('tether');
+require('bootstrap');
 
 var $ = require('jquery')
     , setupGallery= require('./setup/photo-gallery')

@@ -2,11 +2,8 @@
     text-transform: uppercase;
     @include media-mob-menu-max {
         @include font-size(14px);
-        height: 100vh;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
         padding-top: 20px;
-        padding-bottom: 100px;
+        border-bottom: 1px solid rgba(white, 0.7);
     }
     @include media-mob-menu {
         @include font-size(12px);
@@ -83,8 +80,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        white-space: nowrap;
         @include link-color(white);
+        .sub-menu {
+            .menu-item {
+                white-space: nowrap;
+                border-right: 0;
+                a {
+                    border: none;
+                }
+            }
+        }
         @include media-mob-menu-max {
             width: 100%;
             text-align: center;
@@ -103,10 +108,12 @@
             width: 100%;
             cursor: pointer;
             @include media-md {
-                line-height: 48px;
+                text-align: center;
+                line-height: 1.4;
             }
             @include media-mob-menu {
                 padding: 0 12px;
+                display: flex;
             }
             @include media-xl {
                 padding: 0 16px;
@@ -136,6 +143,23 @@
             }
         }
     }
+    &__menu>.menu-item {
+
+        @include media-mob-menu {
+            height: 48px;
+            &:not(:last-of-type) {
+                a {
+                    border-right: 1px solid rgba(255,255,255,0.32);
+                }
+            }
+        }
+        >a {
+            @include media-mob-menu {
+                height: 32px;
+                margin: 10px 0;
+            }
+        }
+    }
 }
 
 @keyframes flip-in{
@@ -161,6 +185,12 @@
     .mobile-menu-active & {
         visibility: visible;
         opacity: 1;
+    }
+    @include media-mob-menu-max {
+        max-height: 100vh;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 80px;
     }
     @include media-mob-menu {
         position: relative;
@@ -202,7 +232,7 @@
             border-radius: 2px;
         }
 
-        &:after{
+        &:after {
             transition-duration: 0.3s;
             position: absolute;
             width: 30px;
@@ -347,5 +377,6 @@ body {
     &.mobile-menu-active, &.cat-nav-show {
         height: 100vh;
         overflow: hidden;
+        position: fixed;
     }
 }
