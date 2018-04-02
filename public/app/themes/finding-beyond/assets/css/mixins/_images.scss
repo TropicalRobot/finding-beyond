@@ -1,0 +1,14 @@
+@mixin background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin img-mask($background-color, $opacity) {
+    &:before {
+        @include absolute-fill;
+        z-index: 1;
+        content: '';
+        background-color: rgba($background-color, $opacity);
+    }
+}

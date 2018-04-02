@@ -8,9 +8,8 @@ iframe {
 }
 
 .wp-caption-text {
+    @include font-size(13px, 1.3)
     font-weight: 600;
-    font-size: 13px;
-    line-height: 1.3;
     padding: 6px 0;
 }
 
@@ -32,13 +31,9 @@ iframe {
 
 .bg-img-cover {
     @include absolute-fill;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    @include background-image;
 }
 
 .bg-image {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    @include background-image;
 }

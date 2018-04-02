@@ -1,0 +1,46 @@
+.text-center {
+    text-align: center !important;
+}
+
+.text-nowrap {
+    white-space: no-wrap;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lg {
+    @include font-size(16px, 25px);
+    @include media(md) {
+        @include font-size(18px, 30px);
+    }
+    p {
+        margin-bottom: 20px;
+        @include media(md) {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+p.text-lg {
+    margin-bottom: 20px;
+    @include media(md) {
+        margin-bottom: 30px;
+    }
+}
+
+.link-clean {
+    @include link-clean;
+}
+
+.list {
+    &--unstyled {
+        @include list-unstyled;
+    }
+    &--inline {
+        li {
+            display: inline-block;
+        }
+    }
+}

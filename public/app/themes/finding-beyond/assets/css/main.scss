@@ -1,33 +1,40 @@
 
 // Base styles
 
-@import 'base/typography',
-        'base/icons';
+@import 'vendor/normalize',
+        'vendor/boilerplate',
+        'vendor/headroom';
 
+@import 'variables';
 
-@import 'utils/variables';
+@import 'mixins/media',
+        'mixins/layout',
+        'mixins/images',
+        'mixins/typography',
+        'mixins/buttons';
 
-// Import Bootstrap SASS
+@import 'utilities/display',
+        'utilities/flex',
+        'utilities/layout',
+        'utilities/typography',
+        'utilities/colors';
 
-@import 'bootstrap';
+@import 'content/icons',
+        'content/typography',
+        'content/images';
 
-@import 'utils/mixins',
-        'utils/helpers';
+@import 'vendor/photoswipe';
 
-@import 'base/images',
-        'base/forms';
-
-@import 'vendor/photoswipe',
-        'vendor/slick';
-
-@import 'layout/global',
+@import 'layout/grid',
+        'layout/global',
         'layout/header',
         'layout/navigation',
         'layout/footer',
         'layout/archive',
         'layout/sidebar';
 
-@import 'components/pagination',
+@import 'components/forms',
+        'components/pagination',
         'components/lists',
         'components/hero',
         'components/cta',

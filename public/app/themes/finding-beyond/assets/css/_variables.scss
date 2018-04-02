@@ -1,0 +1,190 @@
+//
+// Variables
+// --
+
+
+//== Colors
+//
+//## brand colors
+
+$palette: (
+    'easternBlue': #1e9893,
+    'Supernova': #ffd436,
+    'mineShaft': #333
+);
+
+@function palette($key: 'primary') {
+    @return map-get($palette, $key);
+}
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-dark:                 palette('mineShaft');
+$gray:                      #55595c;
+$gray-light:                #818a91;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
+
+$brand-primary:             palette('easternBlue');
+$brand-secondary:           palette('Supernova');
+$brand-success:             #5cb85c;
+$brand-info:                $brand-secondary;
+$brand-warning:             #f0ad4e;
+$brand-danger:              #d9534f;
+
+
+$brand-colors: (
+    primary: $brand-primary,
+    secondary: $brand-secondary,
+    success: $brand-success,
+    info: $brand-info,
+    warning: $brand-warning,
+    danger: $brand-danger
+);
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                    white;
+$body-color:                 $gray-dark;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                 $brand-primary;
+$link-decoration:            none;
+$link-hover-color:           darken($link-color, 15%);
+$link-hover-decoration:      underline;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grids-columns: 12;
+$grid-gutter-width: 20px;
+$grid-gutter-width-md: 40px;
+$grid-gutter-width-lg: 40px;
+$grid-gutter-width-xl: 40px;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+  xxl: 1440px
+);
+
+$grid-breakpoints-max: (
+  xs: 0,
+  sm: 543px,
+  md: 767px,
+  lg: 991px,
+  xl: 1279px,
+  xxl: 1279px
+);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: calc(100% - #{$grid-gutter-width}*2),
+  md: calc(100% - #{$grid-gutter-width-md}*2),
+  lg: calc(100% - #{$grid-gutter-width-lg}*2),
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$desktop-nav-breakpoint: 'md';
+
+// z-indexes
+
+$z-indexes: (
+    "outdated-browser",
+    "modal",
+    "site-header",
+    "page-wrapper",
+    "site-footer"
+);
+
+
+$text-color: $gray-dark;
+$font-size-base: 16px;
+
+/*
+ * Buttons
+*/
+$btn-padding-x: 20px;
+
+
+// Cards
+$card-spacer-y:                     .75rem;
+$card-spacer-x:                     1.25rem;
+$card-border-width:        1px;
+$card-border-radius:       0;
+$card-border-color:        rgba(0,0,0,.125);
+$card-border-radius-inner: $card-border-radius;
+$card-cap-bg:              #f5f5f5;
+$card-bg:                  #fff;
+
+$card-link-hover-color:    #fff;
+
+$card-img-overlay-padding: 1.25rem;
+
+$card-deck-margin:         .625rem;
+
+$card-columns-sm-up-column-gap: 1.25rem;
+
+
+
+/*
+ * Site Header
+ */
+$header-height: 50px;
+
+
+/*
+ * Hero
+ */
+$hero-height: 300px;
+$hero-height-sm: 500px;
+
+$hero-home-height: 300px;
+$hero-home-height-sm: 640px;
+
+
+/*
+ * Forms
+ */
+$input--text-height: 40px;
+$input-bg-color: #F6F6F7;
+$input-border-color: #B8B8B8;
+$input-border-width: 1px;
+
+
+// Modals
+
+// Padding applied to the modal body
+$modal-inner-padding: 40px;
+$modal-dialog-margin: .5rem;
+$modal-content-bg: white;
+$modal-content-border-color: transparent;
+$modal-content-border-width: 1px;
+
+$modal-backdrop-bg:           rgba(black, 0.7);
+$modal-header-padding:        $modal-inner-padding $modal-inner-padding 0 $modal-inner-padding;
+
+$modal-sm:                          calc(100vw - 40px);
+$modal-md:                          calc(100vw - 40px);
+$modal-lg:                          800px;
+
+$modal-transition:                  transform .3s ease-out;

@@ -1,0 +1,148 @@
+/*
+ * Grid
+*/
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: calc(100% - (#{$grid-gutter-width}*2));
+    @each $breakpoint, $width in $grid-breakpoints {
+        @include media($breakpoint) {
+            max-width: #{map-get($container-max-widths, $breakpoint)};
+        }
+    }
+}
+
+.container-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1480px;
+    padding-left: $grid-gutter-width-xl/2;
+    padding-right: $grid-gutter-width-xl/2;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-#{$grid-gutter-width}/2);
+    margin-right: calc(-#{$grid-gutter-width}/2);
+    flex: 1;
+    @include media(md) {
+        margin-left: calc(-#{$grid-gutter-width-md}/2);
+        margin-right: calc(-#{$grid-gutter-width-md}/2);
+    }
+    @include media(lg) {
+        margin-left: calc(-#{$grid-gutter-width-lg}/2);
+        margin-right: calc(-#{$grid-gutter-width-lg}/2);
+    }
+    @include media(xl) {
+        margin-left: calc(-#{$grid-gutter-width-xl}/2);
+        margin-right: calc(-#{$grid-gutter-width-xl}/2);
+    }
+    &.justify-space-between {
+        [class*="col-"] {
+            &:first-child {
+                margin-left: 0;
+                margin-right: auto;
+            }
+            &:last-child {
+                margin-right: 0;
+                margin-left: auto;
+            }
+        }
+    }
+    &--justify-center {
+        [class*="col-"] {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.row-middle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row-full {
+    height: 100%;
+}
+
+.col {
+    position: relative;
+    min-height: 1px;
+    max-width: 100%;
+    padding-left: calc(#{$grid-gutter-width}/2);
+    padding-right: calc(#{$grid-gutter-width}/2);
+    @include media(md) {
+        padding-left: calc(#{$grid-gutter-width-md}/2);
+        padding-right: calc(#{$grid-gutter-width-md}/2);
+    }
+    @include media(lg) {
+        padding-left: calc(#{$grid-gutter-width-lg}/2);
+        padding-right: calc(#{$grid-gutter-width-lg}/2);
+    }
+    @include media(xl) {
+        padding-left: calc(#{$grid-gutter-width-xl}/2);
+        padding-right: calc(#{$grid-gutter-width-xl}/2);
+    }
+}
+
+[class*="col-"] {
+    @extend .col;
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    @include media($breakpoint) {
+        .col-#{$breakpoint} {
+            flex-basis: 0px;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+    }
+}
+
+@for $i from $grids-columns through -1 {
+    $widthPercentage: percentage($i / $grids-columns);
+
+    .col-#{$i} {
+        flex: 0 0 $widthPercentage;
+        max-width: $widthPercentage;
+    }
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    @include media($breakpoint) {
+        @for $i from $grids-columns through -1 {
+            $widthPercentage: percentage($i / $grids-columns);
+            .col-#{$breakpoint}-#{$i} {
+                flex: 0 0 $widthPercentage;
+                max-width: $widthPercentage;
+            }
+        }
+    }
+}
+
+
+@for $i from $grids-columns through -1 {
+    $widthPercentage: percentage($i / $grids-columns);
+
+    .col-offset-#{$i} {
+        margin-left: $widthPercentage;
+    }
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    @include media($breakpoint) {
+        @for $i from $grids-columns through -1 {
+            $widthPercentage: percentage($i / $grids-columns);
+            .col-offset-#{$breakpoint}-#{$i} {
+                margin-left: $widthPercentage;
+            }
+        }
+    }
+}

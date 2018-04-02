@@ -1,7 +1,93 @@
-.modal-title {
-    display: inline-block;
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
 }
 
-.modal-content {
-    border-radius: 0;
+// Container that the modal scrolls within
+.modal {
+    @include absolute-fill;
+    position: fixed;
+    z-index: z('modal');
+    overflow: hidden;
+    outline: 0;
+    background-color: $modal-backdrop-bg;
+    display: none;
+
+    .modal-open & {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .modal-close {
+        @include font-size(18px);
+        pointer-events: auto;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: white;
+        margin-left: auto;
+        .icon {
+            margin-left: 8px;
+        }
+    }
+    &__dialog {
+        position: relative;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        pointer-events: none;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+
+        .modal.fade & {
+            transition: $modal-transition;
+            transform: translate(0, -25%);
+        }
+        .modal.show & {
+            transform: translate(0, 0);
+        }
+
+        @include media(md) {
+            max-width: $modal-md;
+        }
+        @include media(lg) {
+            max-width: $modal-lg;
+        }
+    }
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: $modal-content-bg;
+        background-clip: padding-box;
+        border: $modal-content-border-width solid $modal-content-border-color;
+        outline: 0;
+    }
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: $modal-header-padding;
+    }
+    &__heading {
+        @include font-size(30px, 30px, 2.5px);
+        text-transform: uppercase;
+        padding-bottom: 27px;
+        border-bottom: 2px solid $text-color;
+        margin-bottom: 0;
+    }
+    &__body {
+        position: relative;
+        flex: 1 1 auto;
+        padding: $modal-inner-padding;
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: $modal-inner-padding;
+    }
 }

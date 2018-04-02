@@ -27,7 +27,7 @@
 .comment-respond {
     padding: 20px;
     .submit {
-        @include button-variant(white, $brand-primary, transparent);
+        // @include button-variant(white, $brand-primary, transparent);
         @include font('alt', 'bold');
     }
 }

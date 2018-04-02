@@ -1,0 +1,46 @@
+.d-flex {
+    display: flex;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-row-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.flex-pull-left {
+	margin-left: 0 !important;
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    @include media($breakpoint) {
+        .flex-#{$breakpoint}-first {
+            order: -1;
+        }
+        .flex-#{$breakpoint}-unordered {
+            order: 0;
+        }
+        .flex-#{$breakpoint}-last {
+            order: 1;
+        }
+    }
+}
