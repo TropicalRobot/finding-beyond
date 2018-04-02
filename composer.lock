@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98bf43b34355458c856665ff8edee4a9",
-    "content-hash": "e30874622906f6e6d82148a2623f6267",
+    "hash": "844c9e1a414d5319a14aaefe95fa68be",
+    "content-hash": "a36daa3e2f1abc7d3fe1682bee77e83a",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -2094,16 +2094,16 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.3.4",
+            "version": "4.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.3.4"
+                "reference": "tags/4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.3.3.4.zip",
-                "reference": "tags/3.3.4",
+                "url": "https://downloads.wordpress.org/plugin/akismet.4.0.3.zip",
+                "reference": "tags/4.0.3",
                 "shasum": null
             },
             "require": {
@@ -2114,7 +2114,7 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.2.8",
+            "version": "4.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
@@ -2122,8 +2122,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1496969531",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1517558608",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -2174,16 +2174,16 @@
         },
         {
             "name": "wpackagist-plugin/custom-twitter-feeds",
-            "version": "1.2.6",
+            "version": "1.2.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-twitter-feeds/",
-                "reference": "tags/1.2.6"
+                "reference": "tags/1.2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.2.6.zip",
-                "reference": "tags/1.2.6",
+                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.2.8.zip",
+                "reference": "tags/1.2.8",
                 "shasum": null
             },
             "require": {
@@ -2194,16 +2194,16 @@
         },
         {
             "name": "wpackagist-plugin/easyazon",
-            "version": "4.0.18",
+            "version": "4.0.19",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/easyazon/",
-                "reference": "tags/4.0.18"
+                "reference": "tags/4.0.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easyazon.4.0.18.zip",
-                "reference": "tags/4.0.18",
+                "url": "https://downloads.wordpress.org/plugin/easyazon.4.0.19.zip",
+                "reference": "tags/4.0.19",
                 "shasum": null
             },
             "require": {
@@ -2214,7 +2214,7 @@
         },
         {
             "name": "wpackagist-plugin/featured-images-for-rss-feeds",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/featured-images-for-rss-feeds/",
@@ -2222,7 +2222,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/featured-images-for-rss-feeds.zip?timestamp=1494551012",
+                "url": "https://downloads.wordpress.org/plugin/featured-images-for-rss-feeds.zip?timestamp=1517881193",
                 "reference": "trunk",
                 "shasum": null
             },
@@ -2234,16 +2234,16 @@
         },
         {
             "name": "wpackagist-plugin/heartbeat-control",
-            "version": "1.0.3",
+            "version": "1.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/heartbeat-control/",
-                "reference": "trunk"
+                "reference": "tags/1.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/heartbeat-control.zip",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/heartbeat-control.1.2.3.zip",
+                "reference": "tags/1.2.3",
                 "shasum": null
             },
             "require": {
@@ -2254,16 +2254,16 @@
         },
         {
             "name": "wpackagist-plugin/imagify",
-            "version": "1.6.6",
+            "version": "1.6.14.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/imagify/",
-                "reference": "tags/1.6.6"
+                "reference": "tags/1.6.14.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imagify.1.6.6.zip",
-                "reference": "tags/1.6.6",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.6.14.2.zip",
+                "reference": "tags/1.6.14.2",
                 "shasum": null
             },
             "require": {
@@ -2294,16 +2294,16 @@
         },
         {
             "name": "wpackagist-plugin/instagram-feed",
-            "version": "1.4.9",
+            "version": "1.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/instagram-feed/",
-                "reference": "tags/1.4.9"
+                "reference": "tags/1.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/instagram-feed.1.4.9.zip",
-                "reference": "tags/1.4.9",
+                "url": "https://downloads.wordpress.org/plugin/instagram-feed.1.6.1.zip",
+                "reference": "tags/1.6.1",
                 "shasum": null
             },
             "require": {
@@ -2314,16 +2314,16 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-forms-by-mailmunch",
-            "version": "3.0.5",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/mailchimp-forms-by-mailmunch/",
-                "reference": "tags/3.0.5"
+                "reference": "tags/3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-forms-by-mailmunch.3.0.5.zip",
-                "reference": "tags/3.0.5",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-forms-by-mailmunch.3.1.0.zip",
+                "reference": "tags/3.1.0",
                 "shasum": null
             },
             "require": {
@@ -2334,16 +2334,16 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.1.9",
+            "version": "3.2.16",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.1.9"
+                "reference": "tags/3.2.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.1.9.zip",
-                "reference": "tags/3.1.9",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.2.16.zip",
+                "reference": "tags/3.2.16",
                 "shasum": null
             },
             "require": {
@@ -2354,16 +2354,16 @@
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "2.2.6",
+            "version": "3.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/2.2.6"
+                "reference": "tags/3.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
-                "reference": "tags/2.2.6",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.0.2.zip",
+                "reference": "tags/3.0.2",
                 "shasum": null
             },
             "require": {
@@ -2374,16 +2374,16 @@
         },
         {
             "name": "wpackagist-plugin/shortcodes-ultimate",
-            "version": "4.10.2",
+            "version": "5.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortcodes-ultimate/",
-                "reference": "tags/4.10.2"
+                "reference": "tags/5.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.10.2.zip",
-                "reference": "tags/4.10.2",
+                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.5.0.3.zip",
+                "reference": "tags/5.0.3",
                 "shasum": null
             },
             "require": {
@@ -2394,16 +2394,16 @@
         },
         {
             "name": "wpackagist-plugin/social-warfare",
-            "version": "2.2.11",
+            "version": "2.3.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/social-warfare/",
-                "reference": "tags/2.2.11"
+                "reference": "tags/2.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/social-warfare.2.2.11.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/social-warfare.2.3.5.zip",
+                "reference": "tags/2.3.5",
                 "shasum": null
             },
             "require": {
@@ -2414,16 +2414,16 @@
         },
         {
             "name": "wpackagist-plugin/w3-total-cache",
-            "version": "0.9.5.4",
+            "version": "0.9.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/w3-total-cache/",
-                "reference": "tags/0.9.5.4"
+                "reference": "tags/0.9.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.5.4.zip",
-                "reference": "tags/0.9.5.4",
+                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.6.zip",
+                "reference": "tags/0.9.6",
                 "shasum": null
             },
             "require": {
@@ -2434,16 +2434,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
-            "version": "0.6.3",
+            "version": "0.6.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
-                "reference": "tags/0.6.3"
+                "reference": "tags/0.6.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.3.zip",
-                "reference": "tags/0.6.3",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.4.zip",
+                "reference": "tags/0.6.4",
                 "shasum": null
             },
             "require": {
