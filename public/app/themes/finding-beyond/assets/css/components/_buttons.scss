@@ -6,7 +6,7 @@ button {
 }
 
 a.btn, .btn, a.button, .button {
-    @include font-size(12px, 16px);
+    @include font-size(16px, 16px);
     font-weight: normal;
     text-transform: uppercase;
     height: 40px;

@@ -127,7 +127,6 @@
     }
 }
 
-
 @for $i from $grids-columns through -1 {
     $widthPercentage: percentage($i / $grids-columns);
 

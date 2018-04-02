@@ -1,4 +1,4 @@
-<div class="full-width-section">
+<section class="full-width-section">
     <div class="container social-bar">
         <div class="row">
         <!--     <div class="col-xs-12 text-xs-center">
@@ -26,4 +26,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

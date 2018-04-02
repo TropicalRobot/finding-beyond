@@ -40,14 +40,6 @@
         display: flex;
         flex-direction: column;
 
-        .modal.fade & {
-            transition: $modal-transition;
-            transform: translate(0, -25%);
-        }
-        .modal.show & {
-            transform: translate(0, 0);
-        }
-
         @include media(md) {
             max-width: $modal-md;
         }
@@ -89,5 +81,9 @@
         align-items: center;
         justify-content: flex-end;
         padding: $modal-inner-padding;
+    }
+    &__h1 {
+        font-size: 26px;
+        text-transform: uppercase;
     }
 }

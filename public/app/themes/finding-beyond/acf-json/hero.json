@@ -92,6 +92,13 @@
               {
                 "param":"page_template",
                 "operator":"==",
+                "value":"template-flex.php"
+              }
+        ],
+        [
+              {
+                "param":"page_template",
+                "operator":"==",
                 "value":"default"
               }
         ]
