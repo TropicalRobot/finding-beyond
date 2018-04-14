@@ -11,10 +11,8 @@ Template Name: Photo Galleries Landing Page
 
     <div class="hero hero--full-height">
         <div class="hero__image" style="background-image:url(<?php echo $p->getFeaturedImageUrl('large');?>)"></div>
-        <div class="container">
-            <div class="hero__header">
-                <h1 class="hero__title"><?php echo $p->getTitle(); ?></h1>
-            </div>
+        <div class="hero__content">
+            <h1 class="hero__title"><?php echo $p->getTitle(); ?></h1>
         </div>
     </div>
 
@@ -26,7 +24,7 @@ Template Name: Photo Galleries Landing Page
 <section class="full-width-section single-content">
     <div class="container">
         <div class="row">
-            <div class="offset-xl-1 col-xl-10">
+            <div class="col-offset-xl-1 col-xl-10">
             <?php if(count($photoGalleries)) : ?>
                 <div class="row archive-cta-row">
                 <?php foreach ($photoGalleries as $key => $post): ?>

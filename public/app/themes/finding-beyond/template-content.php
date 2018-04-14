@@ -15,7 +15,7 @@ Template Name: Content Page
     <section class="full-width-section single-content">
         <div class="container">
             <div class="row">
-                <div class="offset-lg-2 col-lg-8">
+                <div class="col-offset-lg-2 col-lg-8">
                     <?php if ($p->field('content_heading')->val() != ''): ?>
                         <h2 class="content-block__heading"><?php echo $p->field('content_heading'); ?></h2>
                     <?php endif; ?>

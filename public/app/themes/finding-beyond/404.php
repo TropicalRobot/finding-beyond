@@ -9,7 +9,7 @@ get_header(); ?>
 <section class="content-404">
     <div class="container">
         <div class="row">
-        <div class="col-xs-12 col-md-8 offset-md-2">
+        <div class="col-xs-12 col-md-8 col-offset-md-2">
             <h2>404 Not Found</h2>
             <br>
             <p>This might be because you have typed the web address incorrectly, or

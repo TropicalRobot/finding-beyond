@@ -9,12 +9,11 @@ a.btn, .btn, a.button, .button {
     @include font-size(16px, 16px);
     font-weight: normal;
     text-transform: uppercase;
-    height: 40px;
     background-color: transparent;
     color: black;
     border: 1px solid black;
     border-radius: 0;
-    padding: 0 #{$btn-padding-x};
+    padding: 16px #{$btn-padding-x};
     white-space: nowrap;
     display: inline-flex;
     align-items: center;

@@ -19,19 +19,32 @@
     </div>
 <?php endif; ?>
 
-    <section class="full-width-section single-content">
+    <section class="single-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-xs-12">
+                <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb('
+                    <p class="breadcrumbs">','</p>
+                    ');
+                    }
+                ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-8">
                     <h1 class="single-content__heading"><?php echo $p->getTitle(); ?></h1>
                     <div class="single-content__body">
                         <?php echo $p->getContent(); ?>
                     </div>
                 </div>
 
-                <div class="offset-lg-1 col-lg-3">
-                    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar') ) : ?>
-                    <?php endif;?>
+                <div class="col-xl-4">
+                    <div>
+                        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar') ) : ?>
+                        <?php endif;?>
+                    </div>
                 </div>
 
             </div>
@@ -78,7 +91,7 @@
     <section class="full-width-section">
         <div class="container">
             <div class="row">
-                <div class="offset-md-2 col-md-8">
+                <div class="col-offset-md-2 col-md-8">
                     <?php comments_template(); ?>
                 </div>
             </div>
