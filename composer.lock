@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98bf43b34355458c856665ff8edee4a9",
-    "content-hash": "e30874622906f6e6d82148a2623f6267",
+    "hash": "6603f285b742c4f71834adee0e3f9af0",
+    "content-hash": "47bfd66f9a43c6bb10230b2541e90a3a",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -2333,6 +2333,26 @@
             "homepage": "https://wordpress.org/plugins/mailchimp-forms-by-mailmunch/"
         },
         {
+            "name": "wpackagist-plugin/mediavine-control-panel",
+            "version": "1.8.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/mediavine-control-panel/",
+                "reference": "tags/1.8.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/mediavine-control-panel.1.8.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/mediavine-control-panel/"
+        },
+        {
             "name": "wpackagist-plugin/ninja-forms",
             "version": "3.1.9",
             "source": {
@@ -2403,7 +2423,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/social-warfare.2.2.11.zip",
-                "reference": null,
+                "reference": "tags/2.2.11",
                 "shasum": null
             },
             "require": {

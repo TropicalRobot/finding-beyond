@@ -67,7 +67,8 @@
         "wpackagist-plugin/insert-headers-and-footers": "~1.4",
         "wpackagist-plugin/social-warfare": "~2.2",
         "wpackagist-plugin/imagify": "~1.6",
-        "wpackagist-plugin/shortcodes-ultimate": "~4.10"
+        "wpackagist-plugin/shortcodes-ultimate": "~4.10",
+        "wpackagist-plugin/mediavine-control-panel": "~1.8"
     },
 
     "autoload": {
