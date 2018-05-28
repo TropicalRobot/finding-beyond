@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b84a1506b6c20dd509dc02f960fde432",
-    "content-hash": "c74f952e5d4e3af290065331a90a2100",
+    "hash": "9ed74e5a50b7f5dc4818e8367c7e5089",
+    "content-hash": "01dc6372e061b6a33afc522e1215462a",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -1963,10 +1963,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.8.1",
+            "version": "4.9.6",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.8.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.9.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2423,7 +2423,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/social-warfare.3.0.8.zip",
-                "reference": null,
+                "reference": "tags/3.0.8",
                 "shasum": null
             },
             "require": {
