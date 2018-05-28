@@ -1,4 +1,179 @@
 (function($){
+	
+	// comon
+	acf.pro = acf.model.extend({
+		
+		actions: {
+			'refresh': 	'refresh',
+		},
+		
+		filters: {
+			'get_fields' : 'get_fields',
+		},
+		
+		get_fields: function( $fields ){
+			
+			// remove clone fields
+			$fields = $fields.not('.acf-clone .acf-field');
+			
+			// return
+			return $fields;
+		
+		},
+		
+		
+		/*
+		*  refresh
+		*
+		*  This function will run when acf detects a refresh is needed on the UI
+		*  Most commonly after ready / conditional logic change
+		*
+		*  @type	function
+		*  @date	10/11/2014
+		*  @since	5.0.9
+		*
+		*  @param	n/a
+		*  @return	n/a
+		*/
+		
+		refresh: function( $el ){
+			
+			// reference
+			var self = this;
+			
+			
+			// defaults
+			$el = $el || false;
+			
+			
+			// if is row
+			if( $el && $el.is('tr') ) {
+				
+				self.render_table( $el.closest('table') );
+				
+				return;
+				
+			}
+			
+			
+			// find and rener all tables
+			$('.acf-table', $el).each(function(){
+				
+				self.render_table( $(this) );
+				
+			});
+			
+		},
+		
+		render_table: function( $table ){
+			
+			// vars
+			var $ths = $table.find('> thead th.acf-th'),
+				colspan = 1,
+				available_width = 100;
+			
+			
+			// bail early if no $ths
+			if( !$ths.exists() ) {
+				
+				return;
+				
+			}
+			
+			
+			// render th/td visibility
+			$ths.each(function(){
+				
+				// vars
+				var $th = $(this),
+					key = $th.attr('data-key'),
+					$td = $table.find('td[data-key="' + key + '"]');
+				
+				
+				// clear class
+				$td.removeClass('appear-empty');
+				$th.removeClass('hidden-by-conditional-logic');
+				
+				
+				// no td
+				if( !$td.exists() ) {
+					
+					// do nothing
+				
+				// if all td are hidden
+				} else if( $td.not('.hidden-by-conditional-logic').length == 0 ) {
+					
+					$th.addClass('hidden-by-conditional-logic');
+				
+				// if 1 or more td are visible
+				} else {
+					
+					$td.filter('.hidden-by-conditional-logic').addClass('appear-empty');
+					
+				}
+				
+			});
+			
+			
+			
+			// clear widths
+			$ths.css('width', 'auto');
+			
+			
+			// update $ths
+			$ths = $ths.not('.hidden-by-conditional-logic');
+			
+			
+			// set colspan
+			colspan = $ths.length;
+			
+			
+			// set custom widths first
+			$ths.filter('[data-width]').each(function(){
+				
+				// vars
+				var width = parseInt( $(this).attr('data-width') );
+				
+				
+				// remove from available
+				available_width -= width;
+				
+				
+				// set width
+				$(this).css('width', width + '%');
+				
+			});
+			
+			
+			// update $ths
+			$ths = $ths.not('[data-width]');
+			
+			
+			// set custom widths first
+			$ths.each(function(){
+				
+				// cal width
+				var width = available_width / $ths.length;
+				
+				
+				// set width
+				$(this).css('width', width + '%');
+				
+			});
+			
+			
+			// update colspan
+			$table.find('.acf-row .acf-field.-collapsed-target').removeAttr('colspan');
+			$table.find('.acf-row.-collapsed .acf-field.-collapsed-target').attr('colspan', colspan);
+			
+		},
+		
+		
+	});
+
+})(jQuery);
+
+(function($){
 		
 	acf.fields.repeater = acf.field.extend({
 		
@@ -26,29 +201,26 @@
 			
 			// vars
 			this.$el = this.$field.find('.acf-repeater:first');
-			this.$input = this.$el.children('input');
-			this.$table = this.$el.children('table');
+			this.$input = this.$field.find('input:first');
+			this.$table = this.$field.find('table:first');
 			this.$tbody = this.$table.children('tbody');
 			this.$clone = this.$tbody.children('tr.acf-clone');
 			
 			
 			// get options
-			this.o = acf.get_data(this.$el, {
-				'min':	0,
-				'max':	0
-			});
+			this.o = acf.get_data( this.$el );
 			
 			
 			// min / max
-			this.o.min = parseInt(this.o.min);
-			this.o.max = parseInt(this.o.max);
+			this.o.min = this.o.min || 0;
+			this.o.max = this.o.max || 0;
 			
 		},
 		
 		initialize: function(){
 			
-			// disable clone
-			acf.disable_form( this.$clone, 'repeater' );
+			// disable clone inputs
+			this.$clone.find('input, textarea, select').attr('disabled', 'disabled');
 						
 			
 			// render
@@ -74,10 +246,6 @@
 		
 		render: function(){
 			
-			// vars
-			var $button = this.$el.find('> .acf-actions .button');
-			
-			
 			// update order numbers
 			this.$tbody.children().each(function(i){
 				
@@ -101,11 +269,11 @@
 			// row limit reached
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
 				
-				$button.addClass('disabled');
+				this.$el.find('> .acf-actions .button').addClass('disabled');
 				
 			} else {
 				
-				$button.removeClass('disabled');
+				this.$el.find('> .acf-actions .button').removeClass('disabled');
 				
 			}
 			
@@ -138,8 +306,8 @@
 			$el.removeClass('acf-clone');
 			
 			
-			// enable 
-			acf.enable_form( $el, 'repeater' );
+			// enable inputs (ignore inputs disabled for life)
+			$el.find('input, textarea, select').not('.acf-disabled').removeAttr('disabled');
 			
 			
 			// move row
@@ -266,10 +434,17 @@
 				forceHelperSize: true,
 				forcePlaceholderSize: true,
 				scroll: true,
+				start: function(event, ui) {
+					
+					acf.do_action('sortstart', ui.item, ui.placeholder);
+					
+	   			},
 	   			stop: function(event, ui) {
 					
 					// render
 					self.render();
+					
+					acf.do_action('sortstop', ui.item, ui.placeholder);
 					
 	   			},
 	   			update: function(event, ui) {
@@ -304,30 +479,7 @@
 		
 		_remove: function( e ){ //console.log('_remove');
 			
-			// reference
-			var self = this;
-			
-			
-			// vars
-			var $row = e.$el.closest('.acf-row');
-			
-			
-			// add -open class to show controlls
-			$row.addClass('-hover');
-			
-			
-			// confirm
-			acf.tooltip.confirm_remove( e.$el, function( result ){
-				
-				$row.removeClass('-hover');
-				
-				if( result ) {
-					
-					self.remove( $row );
-					
-				}
-				
-			});
+			this.remove( e.$el.closest('.acf-row') );
 			
 		},
 		
@@ -387,9 +539,12 @@
 		},
 		
 		events: {
-			'click [data-name="add-layout"]': 			'_open',
-			'click [data-name="remove-layout"]': 		'_remove',
-			'click [data-name="collapse-layout"]':		'_collapse',
+			'click [data-event="add-layout"]': 			'_open',
+			'click [data-event="remove-layout"]': 		'_remove',
+			'click [data-event="collapse-layout"]':		'_collapse',
+			'click .acf-fc-layout-handle':				'_collapse',
+			'click .acf-fc-popup a':					'_add',
+			'blur .acf-fc-popup .focus':				'_close',
 			'mouseenter .acf-fc-layout-handle': 		'_mouseenter'
 		},
 		
@@ -397,7 +552,7 @@
 			
 			// vars
 			this.$el = this.$field.find('.acf-flexible-content:first');
-			this.$input = this.$el.children('input');
+			this.$input = this.$el.siblings('input');
 			this.$values = this.$el.children('.values');
 			this.$clones = this.$el.children('.clones');
 			
@@ -420,8 +575,8 @@
 		
 		initialize: function(){
 			
-			// disable clone
-			acf.disable_form( this.$clones, 'flexible_content' );
+			// disable clone inputs
+			this.$clones.find('input, textarea, select').attr('disabled', 'disabled');
 						
 			
 			// render
@@ -443,7 +598,6 @@
 			
 			// vars
 			var self = this;
-			var $button = this.$el.find('> .acf-actions .button');
 			
 			
 			// update order numbers
@@ -469,74 +623,43 @@
 			// row limit reached
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
 				
-				$button.addClass('disabled');
+				this.$el.find('> .acf-actions .button').addClass('disabled');
 				
 			} else {
 				
-				$button.removeClass('disabled');
+				this.$el.find('> .acf-actions .button').removeClass('disabled');
 				
 			}
 			
 		},
 		
-		render_layout_title: function( $layout ){
+		render_layout: function( $layout ){
 			
-			// vars
-			var $input = $layout.children('input');
-			var prefix = $input.attr('name').replace('[acf_fc_layout]', '');
+			// update order number
 			
 			
-			// ajax data
-			var ajaxdata = {
-				action: 	'acf/fields/flexible_content/layout_title',
-				field_key: 	this.$field.data('key'),
-				i: 			$layout.index(),
-				layout:		$input.val(),
-				value:		acf.serialize( $layout, prefix )
-			};
 			
+			// update text
+/*
+			var data = acf.serialize_form($layout);
 			
-			// ajax get title HTML
-			$.ajax({
-		    	url:		acf.get('ajaxurl'),
-		    	data:		acf.prepare_for_ajax(ajaxdata),
-				dataType:	'html',
-				type:		'post',
-				success: function( html ){
-					
-					// bail early if no html
-					if( !html ) return;
-					
-					
-					// update html
-					$layout.find('> .acf-fc-layout-handle').html( html );
-					
-				}
-			});
-				
+			console.log( data );
+*/
+			
 		},
 			
 		validate_add: function( layout ){
 			
-			// defaults
-			layout = layout || '';
-			
-			
-			// vars
-			var max = this.o.max,
-				count = this.count();
-				
-			
 			// vadiate max
-			if( max && count >= max ) {
+			if( this.o.max > 0 && this.count() >= this.o.max ) {
 				
 				// vars
-				var identifier	= ( max == 1 ) ? 'layout' : 'layouts',
+				var identifier	= ( this.o.max == 1 ) ? 'layout' : 'layouts',
 					s 			= acf._e('flexible_content', 'max');
 				
 				
 				// translate
-				s = s.replace('{max}', max);
+				s = s.replace('{max}', this.o.max);
 				s = s.replace('{identifier}', acf._e('flexible_content', identifier));
 				
 				
@@ -546,41 +669,35 @@
 				
 				// return
 				return false;
-				
 			}
 			
 			
 			// vadiate max layout
-			if( layout ) {
+			var $popup			= $( this.$el.children('.tmpl-popup').html() ),
+				$a				= $popup.find('[data-layout="' + layout + '"]'),
+				layout_max		= parseInt( $a.attr('data-max') ),
+				layout_count	= this.$values.children('.layout[data-layout="' + layout + '"]').length;
+			
+			
+			if( layout_max > 0 && layout_count >= layout_max ) {
 				
 				// vars
-				var $popup			= $( this.$el.children('.tmpl-popup').html() ),
-					$a				= $popup.find('[data-layout="' + layout + '"]'),
-					layout_max		= parseInt( $a.attr('data-max') ),
-					layout_count	= this.$values.children('.layout[data-layout="' + layout + '"]').length;
+				var identifier	= ( layout_max == 1 ) ? 'layout' : 'layouts',
+					s 			= acf._e('flexible_content', 'max_layout');
 				
 				
-				if( layout_max > 0 && layout_count >= layout_max ) {
-					
-					// vars
-					var identifier	= ( layout_max == 1 ) ? 'layout' : 'layouts',
-						s 			= acf._e('flexible_content', 'max_layout');
-					
-					
-					// translate
-					s = s.replace('{max}', layout_count);
-					s = s.replace('{label}', '"' + $a.text() + '"');
-					s = s.replace('{identifier}', acf._e('flexible_content', identifier));
-					
-					
-					// alert
-					alert( s );
-					
-					
-					// return
-					return false;
-				}
+				// translate
+				s = s.replace('{max}', layout_count);
+				s = s.replace('{label}', '"' + $a.text() + '"');
+				s = s.replace('{identifier}', acf._e('flexible_content', identifier));
 				
+				
+				// alert
+				alert( s );
+				
+				
+				// return
+				return false;
 			}
 			
 			
@@ -591,25 +708,16 @@
 		
 		validate_remove: function( layout ){
 			
-			// defaults
-			layout = layout || '';
-			
-			
-			// vars
-			var min = this.o.min,
-				count = this.count();
-				
-				
 			// vadiate min
-			if( min > 0 && count <= min ) {
+			if( this.o.min > 0 && this.count() <= this.o.min ) {
 				
 				// vars
-				var identifier	= ( min == 1 ) ? 'layout' : 'layouts',
+				var identifier	= ( this.o.min == 1 ) ? 'layout' : 'layouts',
 					s 			= acf._e('flexible_content', 'min') + ', ' + acf._e('flexible_content', 'remove');
 				
 				
 				// translate
-				s = s.replace('{min}', min);
+				s = s.replace('{min}', this.o.min);
 				s = s.replace('{identifier}', acf._e('flexible_content', identifier));
 				s = s.replace('{layout}', acf._e('flexible_content', 'layout'));
 				
@@ -620,35 +728,29 @@
 			}
 			
 			
-			// vadiate min layout
-			if( layout ) {
+			// vadiate max layout
+			var $popup			= $( this.$el.children('.tmpl-popup').html() ),
+				$a				= $popup.find('[data-layout="' + layout + '"]'),
+				layout_min		= parseInt( $a.attr('data-min') ),
+				layout_count	= this.$values.children('.layout[data-layout="' + layout + '"]').length;
+			
+			
+			if( layout_min > 0 && layout_count <= layout_min ) {
 				
 				// vars
-				var $popup			= $( this.$el.children('.tmpl-popup').html() ),
-					$a				= $popup.find('[data-layout="' + layout + '"]'),
-					layout_min		= parseInt( $a.attr('data-min') ),
-					layout_count	= this.$values.children('.layout[data-layout="' + layout + '"]').length;
+				var identifier	= ( layout_min == 1 ) ? 'layout' : 'layouts',
+					s 			= acf._e('flexible_content', 'min_layout') + ', ' + acf._e('flexible_content', 'remove');
 				
 				
-				if( layout_min > 0 && layout_count <= layout_min ) {
-					
-					// vars
-					var identifier	= ( layout_min == 1 ) ? 'layout' : 'layouts',
-						s 			= acf._e('flexible_content', 'min_layout') + ', ' + acf._e('flexible_content', 'remove');
-					
-					
-					// translate
-					s = s.replace('{min}', layout_count);
-					s = s.replace('{label}', '"' + $a.text() + '"');
-					s = s.replace('{identifier}', acf._e('flexible_content', identifier));
-					s = s.replace('{layout}', acf._e('flexible_content', 'layout'));
-					
-					
-					// return
-					return confirm( s );
-					
-				}
+				// translate
+				s = s.replace('{min}', layout_count);
+				s = s.replace('{label}', '"' + $a.text() + '"');
+				s = s.replace('{identifier}', acf._e('flexible_content', identifier));
+				s = s.replace('{layout}', acf._e('flexible_content', 'layout'));
 				
+				
+				// return
+				return confirm( s );
 			}
 			
 			
@@ -707,8 +809,8 @@
 			$el = acf.duplicate( $clone );
 			
 			
-			// enable 
-			acf.enable_form( $el, 'flexible_content' );
+			// enable inputs (ignore inputs disabled for life)
+			$el.find('input, textarea, select').not('.acf-disabled').removeAttr('disabled');
 			
 				
 			// hide no values message
@@ -779,10 +881,17 @@
 				forceHelperSize: true,
 				forcePlaceholderSize: true,
 				scroll: true,
+				start: function(event, ui) {
+					
+					acf.do_action('sortstart', ui.item, ui.placeholder);
+					
+	   			},
 	   			stop: function(event, ui) {
 					
 					// render
 					self.render();
+					
+					acf.do_action('sortstop', ui.item, ui.placeholder);
 					
 	   			},
 	   			update: function(event, ui) {
@@ -797,48 +906,56 @@
 		
 		_open: function( e ){ //console.log('_open');
 			
-			// bail early if validation fails
-			if( !this.validate_add() ) return false;
-			
-			
 			// reference
-			var self = this;
+			var $values = this.$values;
 			
 			
 			// vars
 			var $popup = $( this.$el.children('.tmpl-popup').html() );
 			
 			
-			// count layouts
-			var layouts = {};
-			this.$values.children('.layout').each(function(){
-				var k = $(this).data('layout');
-				layouts[ k ] = layouts[ k ] ? layouts[ k ] + 1 : 1;
-			});
-			
-			
 			// modify popup
 			$popup.find('a').each(function(){
 				
 				// vars
-				var $a = $(this),
-					min = $a.data('min') || 0,
-					max = $a.data('max') || 0,
-					name = $a.data('layout'),
-					count = layouts[name] || 0;
+				var min		= parseInt( $(this).attr('data-min') ),
+					max		= parseInt( $(this).attr('data-max') ),
+					name	= $(this).attr('data-layout'),
+					label	= $(this).text(),
+					count	= $values.children('.layout[data-layout="' + name + '"]').length,
+					$status = $(this).children('.status');
 				
 				
-				// max
-				if( max && count >= max) {
+				if( max > 0 ) {
 					
-					$a.addClass('disabled');
-					return;
+					// find diff
+					var available	= max - count,
+						s			= acf._e('flexible_content', 'available'),
+						identifier	= ( available == 1 ) ? 'layout' : 'layouts',
+				
+					
+					// translate
+					s = s.replace('{available}', available);
+					s = s.replace('{max}', max);
+					s = s.replace('{label}', '"' + label + '"');
+					s = s.replace('{identifier}', acf._e('flexible_content', identifier));
+					
+					
+					// show status
+					$status.show().text( available ).attr('title', s);
+					
+					
+					// limit reached?
+					if( available == 0 ) {
+					
+						$status.addClass('warning');
+						
+					}
 					
 				}
 				
 				
-				// min
-				if( min ) {
+				if( min > 0 ) {
 					
 					// find diff
 					var required	= min - count,
@@ -849,15 +966,14 @@
 					// translate
 					s = s.replace('{required}', required);
 					s = s.replace('{min}', min);
-					s = s.replace('{label} ', ''); // remove label since 5.5.0
+					s = s.replace('{label}', '"' + label + '"');
 					s = s.replace('{identifier}', acf._e('flexible_content', identifier));
 					
 					
 					// limit reached?
 					if( required > 0 ) {
-						
-						var $badge = $('<span class="badge"></span>').attr('title', s).text(required);
-						$a.append( $badge );
+					
+						$status.addClass('warning').show().text( required ).attr('title', s);
 						
 					}
 					
@@ -866,200 +982,118 @@
 			});
 			
 			
+			// add popup
+			e.$el.after( $popup );
+			
+			
 			// within layout?
-			var $layout = null;
-			if( e.$el.hasClass('acf-icon') ) {
-
-				$layout = e.$el.closest('.layout');
-				$layout.addClass('-open');
+			if( e.$el.closest('.acf-fc-layout-controlls').exists() ) {
+				
+				$popup.closest('.layout').addClass('-open');
 				
 			}
 			
 			
-			// append
-			$('body').append( $popup );
+			// vars
+			$popup.css({
+				'margin-top' : 0 - $popup.height() - e.$el.outerHeight() - 14,
+				'margin-left' : ( e.$el.outerWidth() - $popup.width() ) / 2,
+			});
 			
 			
-			// position
-			this.position_popup( $popup, e.$el );
+			// check distance to top
+			var offset = $popup.offset().top;
+			
+			if( offset < 30 ) {
+				
+				$popup.css({
+					'margin-top' : 15
+				});
+				
+				$popup.find('.bit').addClass('top');
+			}
 			
 			
-			// events
-			var event = function( e, layout ){
+			// focus
+			$popup.children('.focus').trigger('focus');
+			
+		},
+		
+		_close: function( e ){ //console.log('_close');
+			
+			var $popup = e.$el.parent(),
+				$layout = $popup.closest('.layout');
+			
+			
+			// hide controlls?
+			$layout.removeClass('-open');
+			
+			
+			// remove popup
+			setTimeout(function(){
 				
-				// prevent all listeners
-				e.preventDefault();
-				e.stopImmediatePropagation();
-				
-				
-				// remove events
-				$popup.off('click', 'a', event_y);
-				$('body').off('click', event_n);
-				
-				
-				// remove tooltip
 				$popup.remove();
 				
-				
-				// hide controlls?
-				if( $layout !== null ) {
-					$layout.removeClass('-open');
-				}
-			
-				
-				// callback
-				if( layout !== null ) {
-					self.add( layout, $layout );
-				}
-				
-			};
-			
-			var event_y = function( e ){
-				event( e, $(this).attr('data-layout') );
-			};
-			
-			var event_n = function( e ){
-				event( e, null );
-			};
-			
-			
-			// add events
-			$popup.on('click', 'a', event_y);
-			$('body').on('click', event_n);
+			}, 200);
 			
 		},
 		
-		
-		/*
-		*  position_popup
-		*
-		*  This function will position a $popup to another element (button)
-		*
-		*  @type	function
-		*  @date	8/6/17
-		*  @since	5.6.0
-		*
-		*  @param	$popup (element)
-		*  @param	$el (element)
-		*  @return	n/a
-		*/
-		
-		position_popup: function( $popup, $el ){
-			
-			// position
-			var tolerance = 10;
-				target_w = $el.outerWidth(),
-				target_h = $el.outerHeight(),
-				target_t = $el.offset().top,
-				target_l = $el.offset().left,
-				popup_w = $popup.outerWidth(),
-				popup_h = $popup.outerHeight();
+		_add: function( e ){ //console.log('_add');
+						
+			// vars
+			var $popup = e.$el.closest('.acf-fc-popup'),
+				layout = e.$el.attr('data-layout'),
+				$before = false;
 			
 			
-			// calculate top
-			var top = target_t - popup_h,
-				left = target_l + (target_w / 2) - (popup_w / 2);
+			// move row
+			if( $popup.closest('.acf-fc-layout-controlls').exists() ) {
 			
-			
-			// too far top
-			if( top - $(window).scrollTop() < tolerance ) {
-				
-				$popup.addClass('-bottom');
-				top = target_t + target_h;
-			
-			// default
-			} else {
-				
-				$popup.addClass('-top');
-				
-			}
-			
-			
-			// too far left
-			if( left < tolerance ) {
-				
-				$popup.addClass('-right');
-				left = target_l;
-			
-			
-			// too far right
-			} else if( (left + popup_w + tolerance) > $(window).width() ) {
-				
-				$popup.addClass('-left');
-				left = target_l + target_w - popup_w;
+				$before = $popup.closest('.layout');
 			
 			}
 			
 			
-			// update css
-			$popup.css({ 'top': top, 'left': left });
+			// add row
+			this.add( layout, $before );
 			
 		},
 		
-		_remove: function( e ){ console.log('flex _remove');
+		_remove: function( e ){ //console.log('_remove');
 			
 			// reference
 			var self = this;
 			
 			
 			// vars
-			var $layout = e.$el.closest('.layout');
-			
-			
-			// add -open class to show controlls
-			$layout.addClass('-open');
-			
-			
-			// confirm
-			acf.tooltip.confirm_remove( e.$el, function( result ){
-				
-				if( result ) {
-					
-					self.remove_layout( $layout );
-					
-				} else {
-					
-					$layout.removeClass('-open');
-					
-				}
-				
-				
-			});
-			
-		},
-		
-		remove_layout: function( $layout ){
-			
-			// reference
-			var self = this;
+			var $layout	= e.$el.closest('.layout');
 			
 			
 			// bail early if validation fails
 			if( !this.validate_remove( $layout.attr('data-layout') ) ) {
+			
 				return;
+				
 			}
 			
 			
-			// vars
-			var $message = null,
-				end_height = 0;
-			
-			
-			// show message if no values
-			if( this.count() == 1 ) {
+			// close field
+			var end_height = 0,
 				$message = this.$el.children('.no-value-message');
+			
+			if( $layout.siblings('.layout').length == 0 ) {
+			
 				end_height = $message.outerHeight();
+				
 			}
+			
+			
+			// action for 3rd party customization
+			acf.do_action('remove', $layout);
 			
 			
 			// remove
 			acf.remove_el( $layout, function(){
-				
-				// show message
-				if( $message !== null ) {
-					$message.show();
-				}
-				
 				
 				// update order
 				self.render();
@@ -1067,6 +1101,13 @@
 			
 				// trigger change to allow attachment save
 				self.$input.trigger('change');
+				
+			
+				if( end_height > 0 ) {
+				
+					$message.show();
+					
+				}
 				
 				
 				// sync collapsed order
@@ -1079,26 +1120,60 @@
 		_collapse: function( e ){ //console.log('_collapse');
 			
 			// vars
-			var $layout	= e.$el.closest('.layout'),
-				collapsed = $layout.hasClass('-collapsed'),
-				action = collapsed ? 'show' : 'hide';
+			var $layout	= e.$el.closest('.layout');
 			
 			
-			// render
-			// - do this before calling actions to avoif focusing on the wrong field
-			this.render_layout_title( $layout );
+			// open
+			if( $layout.hasClass('-collapsed') ) {
 			
+				$layout.removeClass('-collapsed');
+				
+				acf.do_action('refresh', $layout);
 			
-			// toggle class
-			$layout.toggleClass('-collapsed');
+			// close
+			} else {
+				
+				$layout.addClass('-collapsed');
+				
+			}
 			
 			
 			// sync collapsed order
 			this.sync();
 			
 			
-			// action
-			acf.do_action(action, $layout, 'collapse');
+			// vars
+			var data = acf.serialize( $layout );
+			
+			
+			// append
+			$.extend(data, {
+				action: 	'acf/fields/flexible_content/layout_title',
+				field_key: 	this.$field.data('key'),
+				post_id: 	acf.get('post_id'),
+				i: 			$layout.index(),
+				layout:		$layout.data('layout'),
+			});
+			
+			
+			// ajax get title HTML
+			$.ajax({
+		    	url			: acf.get('ajaxurl'),
+				dataType	: 'html',
+				type		: 'post',
+				data		: data,
+				success: function( html ){
+					
+					// bail early if no html
+					if( !html ) return;
+					
+					
+					// update html
+					$layout.find('> .acf-fc-layout-handle').html( html );
+					
+				}
+			});
+
 			
 		}
 		
@@ -1116,12 +1191,12 @@
 		$main: null,
 		$side: null,
 		$attachments: null,
-		$input: null,
 		//$attachment: null,
 		
 		actions: {
 			'ready':	'initialize',
 			'append':	'initialize',
+			'submit':	'close_sidebar',
 			'show': 	'resize'
 		},
 		
@@ -1160,7 +1235,6 @@
 			this.$main = this.$el.children('.acf-gallery-main');
 			this.$side = this.$el.children('.acf-gallery-side');
 			this.$attachments = this.$main.children('.acf-gallery-attachments');
-			this.$input = this.$el.find('input:first');
 			
 			
 			// get options
@@ -1197,17 +1271,25 @@
 			// sortable
 			this.$attachments.unbind('sortable').sortable({
 				
-				items: '.acf-gallery-attachment',
-				forceHelperSize: true,
-				forcePlaceholderSize: true,
-				scroll: true,
+				items					: '.acf-gallery-attachment',
+				forceHelperSize			: true,
+				forcePlaceholderSize	: true,
+				scroll					: true,
+				
 				start: function (event, ui) {
 					
 					ui.placeholder.html( ui.item.html() );
 					ui.placeholder.removeAttr('style');
+								
+					acf.do_action('sortstart', ui.item, ui.placeholder);
+					
+	   			},
+	   			
+	   			stop: function (event, ui) {
+				
+					acf.do_action('sortstop', ui.item, ui.placeholder);
 					
 	   			}
-	   			
 			});
 			
 			
@@ -1479,40 +1561,6 @@
 		
 		
 		/*
-		*  get_value
-		*
-		*  description
-		*
-		*  @type	function
-		*  @date	27/6/17
-		*  @since	5.6.0
-		*
-		*  @param	$post_id (int)
-		*  @return	$post_id (int)
-		*/
-		
-		get_value: function(){
-			
-			// vars
-			var value = [];
-			
-			
-			// find and add attachment ids
-			this.get_attachments().each(function(){
-				
-				// vars
-				value.push( $(this).data('id') );
-				
-			});
-			
-			
-			// return
-			return value;
-			
-		},
-		
-		
-		/*
 		*  get_attachment
 		*
 		*  This function will return an attachment
@@ -1562,14 +1610,14 @@
 		*  @return	$post_id (int)
 		*/
 		
-		render_attachment: function( data ){
+		render_attachment: function( id, data ){
 			
 			// prepare
 			data = this.prepare(data);
 			
 			
 			// vars
-			var $attachment = this.get_attachment(data.id),
+			var $attachment = this.get_attachment(id),
 				$margin = $attachment.find('.margin'),
 				$img = $attachment.find('img'),
 				$filename = $attachment.find('.filename'),
@@ -1580,29 +1628,11 @@
 			var thumbnail = data.url;
 			
 			
-			// image
-			if( data.type == 'image' ) {
-				
-				// remove filename	
-				$filename.remove();
-			
-			// other (video)	
-			} else {	
-				
-				// attempt to find attachment thumbnail
-				thumbnail = acf.maybe_get(data, 'thumb.src');
-				
-				
-				// update filenmae text
-				$filename.text( data.filename );
-				
-			}
-			
-			
-			// default icon
-			if( !thumbnail ) {
+			// icon
+			if( data.type !== 'image' ) {
 				
 				thumbnail = acf._e('media', 'default_icon');
+				
 				$attachment.addClass('-icon');
 				
 			}
@@ -1614,10 +1644,23 @@
 			 	'alt': data.alt,
 			 	'title': data.title
 			});
+		 	$filename.text(data.filename);
 		 	
 		 	
+			// vars
+			var val = '';
+			
+			
+			// WP attachment
+			if( data.id ) {
+				
+				val = data.id;
+			
+			}
+			
+			
 			// update val
-		 	acf.val( $input, data.id );
+		 	acf.val( $input, val );
 		 				
 		},
 		
@@ -1628,6 +1671,7 @@
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
 			
 				acf.validation.add_warning( this.$field, acf._e('gallery', 'max'));
+				
 				return;
 				
 			}
@@ -1637,12 +1681,6 @@
 			var self = this,
 				$field = this.$field;
 			
-			
-			// get selected values
-			this.get_attachments().each(function(){
-				
-				
-			})
 			
 			// popup
 			var frame = acf.media.popup({
@@ -1654,13 +1692,26 @@
 				multiple:	'add',
 				library:	this.o.library,
 				mime_types: this.o.mime_types,
-				selected:	this.get_value(),
 				select: function( attachment, i ) {
 					
 					// add
 					self.set('$field', $field).add_attachment( attachment, i );
 					
 				}
+			});
+			
+			
+			// modify DOM
+			frame.on('content:activate:browse', function(){
+				
+				self.render_collection( frame );
+				
+				frame.content.get().collection.on( 'reset add', function(){
+				    
+					self.render_collection( frame );
+				    
+			    });
+				
 			});
 			
 		},
@@ -1703,7 +1754,7 @@
 			
 			// html
 			var html = [
-			'<div class="acf-gallery-attachment" data-id="' + data.id + '">',
+			'<div class="acf-gallery-attachment acf-soh" data-id="' + data.id + '">',
 				'<input type="hidden" value="' + data.id + '" name="' + name + '[]">',
 				'<div class="margin" title="">',
 					'<div class="thumbnail">',
@@ -1711,7 +1762,7 @@
 					'</div>',
 					'<div class="filename"></div>',
 				'</div>',
-				'<div class="actions">',
+				'<div class="actions acf-soh-target">',
 					'<a href="#" class="acf-icon -cancel dark acf-gallery-remove" data-id="' + data.id + '"></a>',
 				'</div>',
 			'</div>'].join('');
@@ -1741,15 +1792,11 @@
 						
 			
 			// render data
-			this.render_attachment( data );
+			this.render_attachment( data.id, data );
 			
 			
 			// render
 			this.render();	
-			
-			
-			// trigger change
-			this.$input.trigger('change');
 			
 		},
 		
@@ -1800,10 +1847,6 @@
 			
 			// bail early if already active
 			if( $attachment.hasClass('active') ) return;
-			
-			
-			// save any changes in sidebar
-			this.$side.find(':focus').trigger('blur');
 			
 			
 			// clear selection
@@ -1867,7 +1910,7 @@
 				
 				
 				// maybe get preview size
-				data.url = acf.maybe_get(data, 'sizes.medium.url', data.url);
+				data.url = acf.maybe_get(data, 'sizes.'+this.o.preview_size+'.url', data.url);
 				
 			}
 			
@@ -1898,11 +1941,13 @@
 		fetch: function( id ){
 			
 			// vars
-			var ajaxdata = {
+			var data = acf.prepare_for_ajax({
 				action		: 'acf/fields/gallery/get_attachment',
 				field_key	: this.$field.data('key'),
+				nonce		: acf.get('nonce'),
+				post_id		: acf.get('post_id'),
 				id			: id
-			};
+			});
 			
 			
 			// abort XHR if this field is already loading AJAX data
@@ -1925,7 +1970,7 @@
 				
 				
 				// append
-				ajaxdata.attachment = val;
+				data.attachment = val;
 				
 			}
 			
@@ -1936,7 +1981,7 @@
 				dataType	: 'html',
 				type		: 'post',
 				cache		: false,
-				data		: acf.prepare_for_ajax(ajaxdata),
+				data		: data,
 				context		: this,
 				success		: this.fetch_success
 			});
@@ -2007,12 +2052,13 @@
 			
 			
 			// vars
-			var ajaxdata = {
+			var data = acf.prepare_for_ajax({
 				action		: 'acf/fields/gallery/get_sort_order',
 				field_key	: this.$field.data('key'),
+				post_id		: acf.get('post_id'),
 				ids			: [],
 				sort		: sort
-			};
+			});
 			
 			
 			// find and add attachment ids
@@ -2027,7 +2073,7 @@
 				
 				
 				// append
-				ajaxdata.ids.push(id);
+				data.ids.push(id);
 				
 			});
 			
@@ -2038,7 +2084,7 @@
 				dataType:	'json',
 				type:		'post',
 				cache:		false,
-				data:		acf.prepare_for_ajax(ajaxdata),
+				data:		data,
 				context:	this,
 				success:	this._sort_success
 			});
@@ -2088,7 +2134,7 @@
 				$edit = this.$side.find('.acf-gallery-edit'),
 				$form = this.$side.find('.acf-gallery-side-data'),
 				id = $edit.data('id'),
-				ajaxdata = acf.serialize( $form );
+				data = acf.serialize_form( $form );
 			
 			
 			// validate
@@ -2101,13 +2147,17 @@
 			
 			
 			// append AJAX action		
-			ajaxdata.action = 'acf/fields/gallery/update_attachment';
+			data.action = 'acf/fields/gallery/update_attachment';
+			
+			
+			// prepare for ajax
+			acf.prepare_for_ajax(data);
 			
 			
 			// ajax
 			$.ajax({
 				url			: acf.get('ajaxurl'),
-				data		: acf.prepare_for_ajax(ajaxdata),
+				data		: data,
 				type		: 'post',
 				dataType	: 'json',
 				complete	: function( json ){
@@ -2176,10 +2226,6 @@
 			// render (update classes)
 			this.render();
 			
-			
-			// trigger change
-			this.$input.trigger('change');
-			
 		},
 		
 		
@@ -2228,16 +2274,21 @@
 				$field = this.$field;
 			
 			
+			// vars
+			var attachment = id,
+				$attachment = this.get_attachment(id);
+			
+			
 			// popup
 			var frame = acf.media.popup({
 				mode:		'edit',
 				title:		acf._e('image', 'edit'),
 				button:		acf._e('image', 'update'),
-				attachment:	id,
+				attachment:	attachment,
 				select:		function( attachment ){
 					
 					// render attachment
-					self.set('$field', $field).render_attachment( attachment );
+					self.set('$field', $field).render_attachment( id, attachment );
 					
 				 	
 				 	// render sidebar
@@ -2246,103 +2297,59 @@
 				}
 			});
 			
-		}
-		
-	});
-	
-	
-	/*
-	*  acf_gallery_manager
-	*
-	*  Priveds some global functionality for the gallery field
-	*
-	*  @type	function
-	*  @date	25/11/2015
-	*  @since	5.3.2
-	*
-	*  @param	n/a
-	*  @return	n/a
-	*/
-	
-	var acf_gallery_manager = acf.model.extend({
-		
-		actions: {
-			'ready':				'ready',
-			'validation_begin': 	'validation_begin',
-			'validation_failure': 	'validation_failure'
 		},
 		
-		ready: function(){
-			
-			// customize wp.media views
-			if( acf.isset(window, 'wp', 'media', 'view') ) {
-				
-				this.customize_Attachment();
-			
-			}
-		},
 		
-		validation_begin: function(){
-			
-			// lock all gallery forms
-			$('.acf-gallery-side-data').each(function(){
-				
-				acf.disable_form( $(this), 'gallery' );
-				
-			});
-			
-		},
 		
-		validation_failure: function(){
+		render_collection: function( frame ){
 			
-			// lock all gallery forms
-			$('.acf-gallery-side-data').each(function(){
-				
-				acf.enable_form( $(this), 'gallery' );
-				
-			});
-			
-		},
-		
-		customize_Attachment: function(){
-			
-			// vars
-			var AttachmentLibrary = wp.media.view.Attachment.Library;
+			var self = this;
 			
 			
-			// extend
-			wp.media.view.Attachment.Library = AttachmentLibrary.extend({
-				
-				render: function() {
+			// Note: Need to find a differen 'on' event. Now that attachments load custom fields, this function can't rely on a timeout. Instead, hook into a render function foreach item
+			
+			// set timeout for 0, then it will always run last after the add event
+			setTimeout(function(){
+			
+			
+				// vars
+				var $content	= frame.content.get().$el
+					collection	= frame.content.get().collection || null;
 					
-					// vars
-					var frame = acf.media.frame();
-					var selected = acf.maybe_get(frame, 'acf.selected');
-					var id = acf.maybe_get(this, 'model.attributes.id');
+
+				
+				if( collection ) {
 					
+					var i = -1;
 					
-					// select
-					if( selected && selected.indexOf(id) > -1 ) {
+					collection.each(function( item ){
+					
+						i++;
 						
-						this.$el.addClass('acf-selected');
+						var $li = $content.find('.attachments > .attachment:eq(' + i + ')');
 						
-					}
-					
 						
-					// return
-					return AttachmentLibrary.prototype.render.apply( this, arguments );
+						// if image is already inside the gallery, disable it!
+						if( self.get_attachment(item.id).exists() ) {
+						
+							item.off('selection:single');
+							$li.addClass('acf-selected');
+							
+						}
+						
+					});
 					
 				}
-				
-			});
+			
+			}, 10);
 			
 		}
 		
 	});
-	
 	
 })(jQuery);
 
+// @codekit-prepend "../js/acf-pro.js";
 // @codekit-prepend "../js/acf-repeater.js";
 // @codekit-prepend "../js/acf-flexible-content.js";
 // @codekit-prepend "../js/acf-gallery.js";
