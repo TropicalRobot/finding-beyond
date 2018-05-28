@@ -28,10 +28,10 @@
             "package": {
                 "name": "wordpress",
                 "type": "webroot",
-                "version": "4.8.1",
+                "version": "4.9.6",
                 "dist": {
                 "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.8.1.zip"
+                    "url": "https://github.com/WordPress/WordPress/archive/4.9.6.zip"
                 },
                 "require": {
                     "fancyguy/webroot-installer": "1.1"
@@ -42,7 +42,7 @@
 
     "require": {
         "php": ">=5.5.9",
-        "wordpress": "4.8.1",
+        "wordpress": "4.9.6",
         "fancyguy/webroot-installer": "~1.1",
         "vlucas/phpdotenv": "~2.2",
         "3ev/phingy": "~3.0",
@@ -52,10 +52,10 @@
         "wpackagist-plugin/w3-total-cache": "*",
         "aaemnnosttv/wp-cli-dotenv-command": "~0.1",
         "wpackagist-plugin/wordpress-importer": "~0.6",
-        "wpackagist-plugin/custom-facebook-feed": "~2.4.6",
-        "wpackagist-plugin/instagram-feed": "~1.6",
+        "wpackagist-plugin/custom-facebook-feed": "~2.6",
+        "wpackagist-plugin/instagram-feed": "~1.8",
         "wpackagist-plugin/custom-twitter-feeds": "~1.2",
-        "wpackagist-plugin/ninja-forms": "^3.2",
+        "wpackagist-plugin/ninja-forms": "^3.3",
         "wpackagist-plugin/regenerate-thumbnails": "^3.0",
         "wpackagist-plugin/all-in-one-wp-security-and-firewall": "~4.3",
         "wpackagist-plugin/akismet": "~4.0",
@@ -65,9 +65,10 @@
         "wpackagist-plugin/mailchimp-forms-by-mailmunch": "~3.1",
         "wpackagist-plugin/heartbeat-control": "~1.2",
         "wpackagist-plugin/insert-headers-and-footers": "~1.4",
-        "wpackagist-plugin/social-warfare": "~2.3",
+        "wpackagist-plugin/social-warfare": "~3.0",
         "wpackagist-plugin/imagify": "~1.6",
-        "wpackagist-plugin/shortcodes-ultimate": "~5.0"
+        "wpackagist-plugin/shortcodes-ultimate": "~5.0",
+        "wpackagist-plugin/mediavine-control-panel": "~1.8"
     },
 
     "autoload": {

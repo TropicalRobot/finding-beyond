@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "844c9e1a414d5319a14aaefe95fa68be",
-    "content-hash": "a36daa3e2f1abc7d3fe1682bee77e83a",
+    "hash": "9ed74e5a50b7f5dc4818e8367c7e5089",
+    "content-hash": "01dc6372e061b6a33afc522e1215462a",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -1963,10 +1963,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.8.1",
+            "version": "4.9.6",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.8.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.9.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2094,16 +2094,16 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "4.0.3",
+            "version": "4.0.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/4.0.3"
+                "reference": "tags/4.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.4.0.3.zip",
-                "reference": "tags/4.0.3",
+                "url": "https://downloads.wordpress.org/plugin/akismet.4.0.7.zip",
+                "reference": "tags/4.0.7",
                 "shasum": null
             },
             "require": {
@@ -2114,7 +2114,7 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.3.2",
+            "version": "4.3.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
@@ -2122,8 +2122,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1517558608",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1524732748",
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -2154,16 +2154,16 @@
         },
         {
             "name": "wpackagist-plugin/custom-facebook-feed",
-            "version": "2.4.6",
+            "version": "2.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-facebook-feed/",
-                "reference": "tags/2.4.6"
+                "reference": "tags/2.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-facebook-feed.2.4.6.zip",
-                "reference": "tags/2.4.6",
+                "url": "https://downloads.wordpress.org/plugin/custom-facebook-feed.2.6.1.zip",
+                "reference": "tags/2.6.1",
                 "shasum": null
             },
             "require": {
@@ -2174,16 +2174,16 @@
         },
         {
             "name": "wpackagist-plugin/custom-twitter-feeds",
-            "version": "1.2.8",
+            "version": "1.2.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-twitter-feeds/",
-                "reference": "tags/1.2.8"
+                "reference": "tags/1.2.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.2.8.zip",
-                "reference": "tags/1.2.8",
+                "url": "https://downloads.wordpress.org/plugin/custom-twitter-feeds.1.2.9.zip",
+                "reference": "tags/1.2.9",
                 "shasum": null
             },
             "require": {
@@ -2254,16 +2254,16 @@
         },
         {
             "name": "wpackagist-plugin/imagify",
-            "version": "1.6.14.2",
+            "version": "1.6.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/imagify/",
-                "reference": "tags/1.6.14.2"
+                "reference": "tags/1.6.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imagify.1.6.14.2.zip",
-                "reference": "tags/1.6.14.2",
+                "url": "https://downloads.wordpress.org/plugin/imagify.1.6.6.zip",
+                "reference": "tags/1.6.6",
                 "shasum": null
             },
             "require": {
@@ -2294,16 +2294,16 @@
         },
         {
             "name": "wpackagist-plugin/instagram-feed",
-            "version": "1.6.1",
+            "version": "1.8.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/instagram-feed/",
-                "reference": "tags/1.6.1"
+                "reference": "tags/1.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/instagram-feed.1.6.1.zip",
-                "reference": "tags/1.6.1",
+                "url": "https://downloads.wordpress.org/plugin/instagram-feed.1.8.3.zip",
+                "reference": "tags/1.8.3",
                 "shasum": null
             },
             "require": {
@@ -2333,17 +2333,37 @@
             "homepage": "https://wordpress.org/plugins/mailchimp-forms-by-mailmunch/"
         },
         {
-            "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.2.16",
+            "name": "wpackagist-plugin/mediavine-control-panel",
+            "version": "1.8.3",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.2.16"
+                "url": "https://plugins.svn.wordpress.org/mediavine-control-panel/",
+                "reference": "tags/1.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.2.16.zip",
-                "reference": "tags/3.2.16",
+                "url": "https://downloads.wordpress.org/plugin/mediavine-control-panel.1.8.3.zip",
+                "reference": "tags/1.8.3",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/mediavine-control-panel/"
+        },
+        {
+            "name": "wpackagist-plugin/ninja-forms",
+            "version": "3.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ninja-forms/",
+                "reference": "tags/3.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.3.1.zip",
+                "reference": "tags/3.3.1",
                 "shasum": null
             },
             "require": {
@@ -2394,16 +2414,16 @@
         },
         {
             "name": "wpackagist-plugin/social-warfare",
-            "version": "2.3.5",
+            "version": "3.0.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/social-warfare/",
-                "reference": "tags/2.3.5"
+                "reference": "tags/3.0.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/social-warfare.2.3.5.zip",
-                "reference": "tags/2.3.5",
+                "url": "https://downloads.wordpress.org/plugin/social-warfare.3.0.8.zip",
+                "reference": "tags/3.0.8",
                 "shasum": null
             },
             "require": {
@@ -2414,16 +2434,16 @@
         },
         {
             "name": "wpackagist-plugin/w3-total-cache",
-            "version": "0.9.6",
+            "version": "0.9.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/w3-total-cache/",
-                "reference": "tags/0.9.6"
+                "reference": "tags/0.9.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.6.zip",
-                "reference": "tags/0.9.6",
+                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.7.zip",
+                "reference": "tags/0.9.7",
                 "shasum": null
             },
             "require": {
