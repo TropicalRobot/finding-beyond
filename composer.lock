@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "80cace45ee671b163f607536511a1674",
-    "content-hash": "4c52e8e7fe4ec645267cf32df985d762",
+    "hash": "b84a1506b6c20dd509dc02f960fde432",
+    "content-hash": "c74f952e5d4e3af290065331a90a2100",
     "packages": [
         {
             "name": "3ev/phingy",
@@ -2094,16 +2094,16 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.3.4",
+            "version": "4.0.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.3.4"
+                "reference": "tags/4.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.3.3.4.zip",
-                "reference": "tags/3.3.4",
+                "url": "https://downloads.wordpress.org/plugin/akismet.4.0.7.zip",
+                "reference": "tags/4.0.7",
                 "shasum": null
             },
             "require": {
@@ -2114,7 +2114,7 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.2.8",
+            "version": "4.3.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
@@ -2122,7 +2122,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1496969531",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1524732748",
                 "reference": "trunk",
                 "shasum": null
             },
@@ -2214,7 +2214,7 @@
         },
         {
             "name": "wpackagist-plugin/featured-images-for-rss-feeds",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/featured-images-for-rss-feeds/",
@@ -2222,7 +2222,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/featured-images-for-rss-feeds.zip?timestamp=1494551012",
+                "url": "https://downloads.wordpress.org/plugin/featured-images-for-rss-feeds.zip?timestamp=1517881193",
                 "reference": "trunk",
                 "shasum": null
             },
@@ -2234,16 +2234,16 @@
         },
         {
             "name": "wpackagist-plugin/heartbeat-control",
-            "version": "1.0.3",
+            "version": "1.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/heartbeat-control/",
-                "reference": "trunk"
+                "reference": "tags/1.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/heartbeat-control.zip",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/heartbeat-control.1.2.3.zip",
+                "reference": "tags/1.2.3",
                 "shasum": null
             },
             "require": {
@@ -2314,16 +2314,16 @@
         },
         {
             "name": "wpackagist-plugin/mailchimp-forms-by-mailmunch",
-            "version": "3.0.5",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/mailchimp-forms-by-mailmunch/",
-                "reference": "tags/3.0.5"
+                "reference": "tags/3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailchimp-forms-by-mailmunch.3.0.5.zip",
-                "reference": "tags/3.0.5",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-forms-by-mailmunch.3.1.0.zip",
+                "reference": "tags/3.1.0",
                 "shasum": null
             },
             "require": {
@@ -2334,16 +2334,16 @@
         },
         {
             "name": "wpackagist-plugin/mediavine-control-panel",
-            "version": "1.8.1",
+            "version": "1.8.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/mediavine-control-panel/",
-                "reference": "tags/1.8.1"
+                "reference": "tags/1.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mediavine-control-panel.1.8.1.zip",
-                "reference": "tags/1.8.1",
+                "url": "https://downloads.wordpress.org/plugin/mediavine-control-panel.1.8.3.zip",
+                "reference": "tags/1.8.3",
                 "shasum": null
             },
             "require": {
@@ -2354,16 +2354,16 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.1.9",
+            "version": "3.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.1.9"
+                "reference": "tags/3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.1.9.zip",
-                "reference": "tags/3.1.9",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.3.1.zip",
+                "reference": "tags/3.3.1",
                 "shasum": null
             },
             "require": {
@@ -2394,16 +2394,16 @@
         },
         {
             "name": "wpackagist-plugin/shortcodes-ultimate",
-            "version": "4.10.2",
+            "version": "5.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortcodes-ultimate/",
-                "reference": "tags/4.10.2"
+                "reference": "tags/5.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.10.2.zip",
-                "reference": "tags/4.10.2",
+                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.5.0.3.zip",
+                "reference": "tags/5.0.3",
                 "shasum": null
             },
             "require": {
@@ -2414,16 +2414,16 @@
         },
         {
             "name": "wpackagist-plugin/social-warfare",
-            "version": "2.2.11",
+            "version": "3.0.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/social-warfare/",
-                "reference": "tags/2.2.11"
+                "reference": "tags/3.0.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/social-warfare.2.2.11.zip",
-                "reference": "tags/2.2.11",
+                "url": "https://downloads.wordpress.org/plugin/social-warfare.3.0.8.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
