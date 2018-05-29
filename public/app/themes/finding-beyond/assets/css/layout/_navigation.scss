@@ -275,7 +275,7 @@
         z-index: 1000;
     }
     @include media-desk-nav {
-        z-index: 10;
+        z-index: 1;
         margin-top: $header-height;
         background-color: $brand-secondary;
         border-bottom: 2px solid #e2bb2c;

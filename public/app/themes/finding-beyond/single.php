@@ -33,15 +33,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-8">
+                <div class="col-lg-7 col-xl-8 single-content__main">
                     <h1 class="single-content__heading"><?php echo $p->getTitle(); ?></h1>
                     <div class="single-content__body">
                         <?php echo $p->getContent(); ?>
                     </div>
                 </div>
 
-                <div class="col-xl-4">
-                    <div>
+                <div class="col-lg-5 col-xl-4 single-content__sidebar">
+                    <div class="single-content__sidebar-inner">
                         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar') ) : ?>
                         <?php endif;?>
                     </div>

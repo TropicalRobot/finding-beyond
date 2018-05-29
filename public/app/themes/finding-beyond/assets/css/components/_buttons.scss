@@ -20,7 +20,7 @@ a.btn, .btn, a.button, .button {
     cursor: pointer;
     transition: all 0.15s;
     text-decoration: none;
-
+    height: auto;
     &:hover, &:active {
         text-decoration: none;
     }
@@ -31,6 +31,15 @@ a.btn, .btn, a.button, .button {
         background-color: $brand-primary;
         &:hover, &:active, &:focus {
             background-color: darken($brand-primary, 15%);
+        }
+    }
+
+    &--secondary {
+        border: none;
+        color: white;
+        background-color: $brand-secondary;
+        &:hover, &:active, &:focus {
+            background-color: darken($brand-secondary, 15%);
         }
     }
 

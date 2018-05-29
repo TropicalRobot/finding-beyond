@@ -5,10 +5,10 @@ $component: 'cta';
     &__bg-img {
         @include absolute-fill;
         @include background-image;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
     }
     &--full-width {
-        width:100%;
+        width: 100%;
         background-size: cover;
         background-position: center;
         display: flex;
@@ -55,7 +55,7 @@ $component: 'cta';
             &__link {
                 @include absolute-fill;
                 z-index: 1;
-                transition: all 0.3s ease;
+                transition: all 0.4s ease;
             }
         }
         &:hover {

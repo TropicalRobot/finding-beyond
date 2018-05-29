@@ -9,7 +9,9 @@ $component: 'hero';
     justify-content: center;
     @include media(sm) {
         height: $hero-height-sm;
-        .#{$component}--home & {
+    }
+    &--home {
+        @include media(sm) {
             height: $hero-home-height-sm;
             max-height: 100vh;
         }
@@ -18,8 +20,15 @@ $component: 'hero';
         @include absolute-fill;
         @include background-image;
         background-color: $brand-primary;
-        height: 100%;
+        height: $hero-height;
         z-index: -1;
+        @include media(sm) {
+            height: $hero-height-sm;
+            .#{$component}--home & {
+                height: $hero-home-height-sm;
+                max-height: 100vh;
+            }
+        }
         @include media(lg) {
             position: fixed;
         }
@@ -52,6 +61,8 @@ $component: 'hero';
                 margin-top: calc(#{$header-height}/2);
                 border-top: 3px solid rgba(255, 255, 255, 0.8);
                 border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+                margin-left: 14px;
+                margin-right: 14px;
                 padding: 14px;
                 @include media(sm) {
                     border-top: 5px solid rgba(255, 255, 255, 0.8);

@@ -37,6 +37,16 @@ body {
             margin-bottom: 20px;
         }
     }
+    &__heading {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+    &__sidebar-inner {
+        @include media(lg) {
+            padding-left: 60px;
+        }
+    }
 }
 .sidebar {
     p {
@@ -50,8 +60,11 @@ body {
 }
 
 .full-width-section {
-    padding: 40px 0;
+    padding: 22px 0;
     background: white;
+    @include media(sm){
+        padding: 40px 0;
+    }
 }
 
 .link-block {

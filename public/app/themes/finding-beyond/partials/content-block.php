@@ -9,7 +9,7 @@
                     <h2 class="content-block__heading"><?php echo $p->field('content_heading'); ?></h2>
                     <div><?php echo $p->field('content_text'); ?></div>
                 </div>
-                <div class="offset-lg-1 col-lg-4">
+                <div class="col-offset-lg-1 col-lg-4">
                     <?php echo do_shortcode('[ninja_forms id=1]'); ?>
                 </div>
             </div>
