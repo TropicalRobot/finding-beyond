@@ -22,14 +22,14 @@
     <section class="full-width-section single-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-xl-8 single-content__main">
                     <h1 class="single-content__heading"><?php echo $p->getTitle(); ?></h1>
                     <div class="single-content__body">
                         <?php echo $p->getContent(); ?>
                     </div>
                 </div>
 
-                <div class="offset-lg-1 col-lg-3">
+                <div class="col-xl-4 single-content__sidebar">
                     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar') ) : ?>
                     <?php endif;?>
                 </div>
