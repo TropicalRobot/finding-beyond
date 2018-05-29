@@ -54,15 +54,12 @@ $component: 'cta';
         .#{$component} {
             &__link {
                 @include absolute-fill;
-                z-index: 0;
+                z-index: 1;
                 transition: all 0.3s ease;
             }
         }
         &:hover {
             .#{$component} {
-                &__link {
-                    background-color: rgba(black, 0.2);
-                }
                 &__bg-img {
                     transform: scale3d(1.1, 1.1, 1.1);
                 }
