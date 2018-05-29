@@ -15,19 +15,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include font-size(32px, 30px);
+    @include font-size(32px, 40px);
     @include media(lg) {
-        @include font-size(32px, 30px);
+        @include font-size(32px, 40px);
     }
     @include media(xl) {
-        @include font-size(40px, 1.1);
+        @include font-size(40px, 50px);
     }
 }
 
 h2 {
     @include font-size(24px, 30px);
-    @include media(lg) {
-        @include font-size(24px, 30px);
+    @include media(md) {
+        @include font-size(28px, 34px);
     }
     @include media(xl) {
         @include font-size(32px, 40px);

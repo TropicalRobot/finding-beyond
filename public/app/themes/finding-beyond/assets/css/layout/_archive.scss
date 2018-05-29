@@ -18,6 +18,13 @@
     }
 }
 
+.search-container {
+    padding-top: 30px;
+    @include media(lg) {
+        padding-top: 40px;
+    }
+}
+
 .toggle-cat-menu-wrapper {
     margin-bottom: 20px;
 }
