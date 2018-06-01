@@ -10,5 +10,5 @@ require('./setup/modals')();
 require('./setup/navigation')();
 require('./setup/photo-gallery')();
 
-// setupAnalytics('UA-84388780-1');
+setupAnalytics('UA-84388780-1');
 
