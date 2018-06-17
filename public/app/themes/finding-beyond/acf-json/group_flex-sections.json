@@ -88,6 +88,25 @@
                             "disabled": 0
                         },
                         {
+                            "key": "field_flex-sections-cta-link-text",
+                            "label": "Card Link Text",
+                            "name": "link_text",
+                            "type": "text",
+                            "instructions": "link button text",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_flex-sections-cta-link-type",
                             "label": "Card link type",
                             "name": "link-type",

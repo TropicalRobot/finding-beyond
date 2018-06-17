@@ -7,6 +7,7 @@ button {
 
 a.btn, .btn, a.button, .button {
     @include font-size(16px, 16px);
+    @include font('body');
     font-weight: normal;
     text-transform: uppercase;
     background-color: transparent;
@@ -20,7 +21,7 @@ a.btn, .btn, a.button, .button {
     cursor: pointer;
     transition: all 0.15s;
     text-decoration: none;
-    height: auto;
+    height: 50px;
     &:hover, &:active {
         text-decoration: none;
     }
@@ -43,6 +44,15 @@ a.btn, .btn, a.button, .button {
         }
     }
 
+    &--white {
+        border-color: white;
+        color: white;
+        background-color: transparent;
+        &:hover, &:active, &:focus {
+            background-color: white;
+            color: $body-color;
+        }
+    }
 }
 
 .btn-group {
@@ -54,3 +64,6 @@ a.btn, .btn, a.button, .button {
     }
 }
 
+.btn--go {
+    @include btn-icon($icon-chevron-right, 22px, 18px, 18px);
+}

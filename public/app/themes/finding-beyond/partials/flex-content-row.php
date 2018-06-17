@@ -18,7 +18,7 @@
                                     <?php $btn = $repeater->current(); ?>
                                     <?php $link = getACFLink($btn); ?>
 
-                                    <a class="btn btn--primary" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $btn->field('link-text'); ?></a>
+                                    <a class="btn btn--primary btn--go" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $btn->field('link-text'); ?></a>
 
                                     <?php $repeater->next();?>
                                 <?php endwhile; ?>
