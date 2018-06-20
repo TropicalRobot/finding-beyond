@@ -50,6 +50,7 @@ $component: 'cta';
                 p {
                     @include font('body', 400);
                     margin-bottom: 0;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
                 }
             }
             &__heading {
@@ -65,6 +66,9 @@ $component: 'cta';
                     font-size: 48px;
                 }
             }
+        }
+        .btn {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
     }
     &--full-width-linked {
@@ -84,6 +88,7 @@ $component: 'cta';
             .btn {
                 background-color: white;
                 color: $body-color;
+                text-shadow: none;
             }
         }
     }
