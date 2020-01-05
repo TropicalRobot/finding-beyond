@@ -13,12 +13,6 @@
         <?php else: ?>
             <div class="card-img-top card-img-holder"></div>
         <?php endif; ?>
-        <div class="card__date">
-            <?php $pubDate = $post->getPublishedDate(); ?>
-            <div class="card__date-day"><?php echo $pubDate->format('j'); ?></div>
-            <div class="card__date-month"><?php echo $pubDate->format('M'); ?></div>
-            <div class="card__date-year"><?php echo $pubDate->format('Y'); ?></div>
-        </div>
     </a>
     <div class="card-block">
         <?php $catIds = wp_get_post_categories($post->getId(), ['exclude' => '1']); ?>

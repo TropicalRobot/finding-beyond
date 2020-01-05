@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Frontpage Template (OLD)
+*/
+?>
+
 <?php get_header(); ?>
 
 <?php echo tev_partial('partials/hero'); ?>

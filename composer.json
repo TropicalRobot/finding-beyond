@@ -11,9 +11,8 @@
 
     "authors": [
         {
-            "name": "3ev",
-            "email": "info@3ev.com",
-            "homepage": "http://www.3ev.com"
+            "name": "Ryan",
+            "email": "ryandeangriffiths@gmail.com"
         }
     ],
 
@@ -28,10 +27,10 @@
             "package": {
                 "name": "wordpress",
                 "type": "webroot",
-                "version": "4.9.6",
+                "version": "4.9.8",
                 "dist": {
                 "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.9.6.zip"
+                    "url": "https://github.com/WordPress/WordPress/archive/4.9.8.zip"
                 },
                 "require": {
                     "fancyguy/webroot-installer": "1.1"
@@ -42,33 +41,31 @@
 
     "require": {
         "php": ">=5.5.9",
-        "wordpress": "4.9.6",
+        "wordpress": "4.9.8",
         "fancyguy/webroot-installer": "~1.1",
         "vlucas/phpdotenv": "~2.2",
         "3ev/phingy": "~3.0",
         "3ev/wordpress-core": "dev-master",
         "wp-cli/wp-cli": "~0.22",
-        "3ev/zencache-cli": "~1.0",
         "wpackagist-plugin/w3-total-cache": "*",
         "aaemnnosttv/wp-cli-dotenv-command": "~0.1",
         "wpackagist-plugin/wordpress-importer": "~0.6",
         "wpackagist-plugin/custom-facebook-feed": "~2.6",
-        "wpackagist-plugin/instagram-feed": "~1.8",
-        "wpackagist-plugin/custom-twitter-feeds": "~1.2",
+        "wpackagist-plugin/instagram-feed": "^2.1",
+        "wpackagist-plugin/custom-twitter-feeds": "^1.4",
         "wpackagist-plugin/ninja-forms": "^3.3",
-        "wpackagist-plugin/regenerate-thumbnails": "^3.0",
-        "wpackagist-plugin/all-in-one-wp-security-and-firewall": "~4.3",
-        "wpackagist-plugin/akismet": "~4.0",
+        "wpackagist-plugin/regenerate-thumbnails": "^3.1",
+        "wpackagist-plugin/all-in-one-wp-security-and-firewall": "^4.4",
+        "wpackagist-plugin/akismet": "^4.1",
         "wpackagist-plugin/easyazon": "~4.0",
-        "wpackagist-plugin/featured-images-for-rss-feeds": "~1.4",
-        "wpackagist-plugin/commentluv": "~2.94",
+        "wpackagist-plugin/featured-images-for-rss-feeds": "~1.5",
         "wpackagist-plugin/mailchimp-forms-by-mailmunch": "~3.1",
         "wpackagist-plugin/heartbeat-control": "~1.2",
         "wpackagist-plugin/insert-headers-and-footers": "~1.4",
-        "wpackagist-plugin/social-warfare": "~3.0",
-        "wpackagist-plugin/imagify": "~1.6",
-        "wpackagist-plugin/shortcodes-ultimate": "~5.0",
-        "wpackagist-plugin/mediavine-control-panel": "~1.8"
+        "wpackagist-plugin/social-warfare": "^3.6",
+        "wpackagist-plugin/shortcodes-ultimate": "^5.0",
+        "wpackagist-plugin/mediavine-control-panel": "~1.8",
+        "symfony/dependency-injection": "2.8.50"
     },
 
     "autoload": {
