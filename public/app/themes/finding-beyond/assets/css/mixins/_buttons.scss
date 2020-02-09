@@ -1,0 +1,28 @@
+@mixin btn-icon($icon: "\69", $fontSize: 18px, $icon-width: 18px, $padding-left: 14px) {
+    justify-content: space-between;
+    &:after {
+        @include icon-font;
+        @include font-size($fontSize);
+        content: $icon;
+        color: inherit;
+        padding-left: $padding-left;
+        width: $icon-width;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@mixin btn-icon-before($icon: "\69", $fontSize: 18px, $icon-width: 18px) {
+    justify-content: space-between;
+    &:before {
+        @include icon-font;
+        @include font-size($fontSize);
+        content: $icon;
+        color: inherit;
+        padding-right: 14px;
+        width: $icon-width;
+        display: flex;
+        justify-content: center;
+    }
+}
+

@@ -1,12 +1,28 @@
 $component: 'cta';
 .#{$component} {
     position: relative;
-    &__bg-overlay {
+    overflow: hidden;
+    &--bg-overlay {
+        &:before {
+            @include absolute-fill;
+            content: '';
+            background-color: rgba(black, 0.2);
+            z-index: 1;
+        }
+    }
+    &__link-button-row {
+        width: 100%;
+        z-index: 2;
+        margin-top: 30px;
+        margin-bottom: -30px;
+    }
+    &__bg-img {
         @include absolute-fill;
-        background-color: rgba(black, 0.1);
+        @include background-image;
+        transition: all 0.4s ease;
     }
     &--full-width {
-        width:100%;
+        width: 100%;
         background-size: cover;
         background-position: center;
         display: flex;
@@ -15,6 +31,12 @@ $component: 'cta';
         font-family: 'futuraLight';
         text-align: center;
         color: white;
+        position: relative;
+        flex-wrap: wrap;
+        padding: 62px 0;
+        @include media(sm) {
+            padding: 120px 0;
+        }
         .#{$component} {
             &__header {
                 border-top: 5px solid rgba(255, 255, 255, 0.7);
@@ -22,14 +44,13 @@ $component: 'cta';
                 padding: 16px;
                 z-index: 1;
                 max-width: 80%;
-                margin: 40px 0;
-                @include media-sm {
-                    margin: 80px 0;
+                @include media(sm) {
                     padding: 38px;
                 }
                 p {
                     @include font('body', 400);
                     margin-bottom: 0;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
                 }
             }
             &__heading {
@@ -38,15 +59,40 @@ $component: 'cta';
                 text-transform: uppercase;
                 margin-bottom: 0;
                 @include text-shadow;
-                @include media-sm {
+                @include media(sm) {
                     font-size: 36px;
                 }
-                @include media-md {
+                @include media(md) {
                     font-size: 48px;
                 }
             }
         }
+        .btn {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
     }
+    &--full-width-linked {
+        .#{$component} {
+            &__link {
+                @include absolute-fill;
+                z-index: 1;
+                transition: all 0.4s ease;
+            }
+        }
+         &:hover, &:active, &:focus  {
+            .#{$component} {
+                &__bg-img {
+                    transform: scale3d(1.05, 1.05, 1.05);
+                }
+            }
+            .btn {
+                background-color: white;
+                color: $body-color;
+                text-shadow: none;
+            }
+        }
+    }
+
     &--card {
         background-size: cover;
         background-position: center;
@@ -73,30 +119,5 @@ $component: 'cta';
                 font-size: 22px;
             }
         }
-    }
-}
-
-.archive-cta-row {
-    @include media-md {
-        display: flex;
-    }
-}
-.archive-cta-wrapper {
-    margin-bottom: 20px;
-}
-.archive-cta {
-    position: relative;
-    height: 100%;
-    .cta__header {
-        padding:0;
-    }
-    &__btn {
-        margin-top: 30px;
-        background-color: $brand-secondary;
-        padding: 14px 24px;
-    }
-    &__bg-overlay {
-        @include absolute-fill;
-        background-color: rgba($brand-primary, 0.5);
     }
 }

@@ -1,29 +1,28 @@
 {
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.4",
+    "headroom.js": "^0.9.4",
     "masonry-layout": "^4.2.0",
     "photoswipe": "^4.1.1",
-    "slick-carousel": "^1.6.0",
-    "tether": "^1.2.0"
+    "scrollreveal": "^3.3.6"
   },
   "browserify-shim": "./public/app/themes/finding-beyond/assets/js/shim.js",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
-    "browserify": "^13.0.0",
+    "browserify": "^16.0.0",
     "browserify-shim": "^3.8.12",
     "del": "^2.2.0",
-    "es6-promise": "^3.1.2",
+    "es6-promise": "^4.2.4",
     "gulp": "^3.9.1",
-    "gulp-postcss": "^6.1.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-uglify": "^1.5.3",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "browser": {
-    "tether": "./node_modules/tether/dist/js/tether.js",
     "photoswipe": "./node_modules/photoswipe/dist/photoswipe.js",
     "photoswipeUi": "./node_modules/photoswipe/dist/photoswipe-ui-default.js"
-  }
+  },
+  "false": {}
 }

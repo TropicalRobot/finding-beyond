@@ -1,0 +1,39 @@
+/*
+ * Media queries
+*/
+
+@mixin media($breakpoint) {
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+        @media (min-width: #{map-get($grid-breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$grid-breakpoints` map.";
+    }
+}
+
+@mixin media-max($breakpoint) {
+    @if map-has-key($grid-breakpoints-max, $breakpoint) {
+        @media (max-width: #{map-get($grid-breakpoints-max, $breakpoint)}) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$grid-breakpoints-max` map.";
+    }
+}
+
+@mixin media-desk-nav {
+    @media (min-width: #{map-get($grid-breakpoints, $desktop-nav-breakpoint)}) {
+        @content;
+    }
+}
+
+@mixin media-mob-nav {
+    @media (max-width: #{map-get($grid-breakpoints-max, $desktop-nav-breakpoint)}) {
+        @content;
+    }
+}

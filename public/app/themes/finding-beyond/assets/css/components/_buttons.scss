@@ -1,0 +1,69 @@
+button {
+    -webkit-appearance: none;
+    &:focus, &:active {
+        outline: none;
+    }
+}
+
+a.btn, .btn, a.button, .button {
+    @include font-size(16px, 16px);
+    @include font('body');
+    font-weight: normal;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 16px #{$btn-padding-x};
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-decoration: none;
+    height: 50px;
+    &:hover, &:active {
+        text-decoration: none;
+    }
+
+    &--primary {
+        border: none;
+        color: white;
+        background-color: $brand-primary;
+        &:hover, &:active, &:focus {
+            background-color: darken($brand-primary, 15%);
+        }
+    }
+
+    &--secondary {
+        border: none;
+        color: white;
+        background-color: $brand-secondary;
+        &:hover, &:active, &:focus {
+            background-color: darken($brand-secondary, 15%);
+        }
+    }
+
+    &--white {
+        border-color: white;
+        color: white;
+        background-color: transparent;
+        &:hover, &:active, &:focus {
+            background-color: white;
+            color: $body-color;
+        }
+    }
+}
+
+.btn-group {
+    .btn, a.btn {
+        display: inline-flex;
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}
+
+.btn--go {
+    @include btn-icon($icon-chevron-right, 22px, 18px, 18px);
+}

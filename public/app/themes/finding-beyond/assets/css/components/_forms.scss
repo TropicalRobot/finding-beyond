@@ -1,0 +1,73 @@
+form {
+    label {
+        @include font-size(14px, 16px);
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    select {
+        width: 100%;
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &--inline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        label {
+            margin-right: 18px;
+        }
+    }
+    &.has-error {
+        input {
+            border-color: $brand-danger;
+        }
+    }
+
+}
+
+input,
+textarea,
+select,
+input[placeholder]{
+    @include font-size(14px, 1);
+    background: $input-bg-color;
+    border: #{$input-border-width} solid #{$input-border-color};
+    padding: 10px 15px;
+    width: 100%;
+    &::-webkit-input-placeholder {
+        text-transform: uppercase;
+        color: $body-color;
+    }
+}
+
+input,
+select {
+    height: 40px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    @include media(lg) {
+        height: 50px;
+    }
+}
+
+input:focus {
+    outline: 0;
+}
+
+input[type="submit"] {
+    @extend .btn--primary;
+}
+
+.ninja-forms-required-items {
+    display: none;
+}
+
+.ninja-forms-form-title {
+    text-transform: uppercase;
+}

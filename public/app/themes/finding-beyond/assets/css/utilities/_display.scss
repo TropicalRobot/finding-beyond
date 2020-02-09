@@ -1,0 +1,56 @@
+//== Breakpoint show / hide
+//
+
+@each $breakpoint, $width in $grid-breakpoints {
+    .show-#{$breakpoint}-block {
+        display: none!important;
+        @include media($breakpoint) {
+            display: block!important;
+        }
+    }
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    .hide-#{$breakpoint}-block {
+        display: block!important;
+        @include media($breakpoint) {
+            display: none!important;
+        }
+    }
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    .show-#{$breakpoint}-inline-block {
+        display: none!important;
+        @include media($breakpoint) {
+            display: inline-block!important;
+        }
+    }
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    .hide-#{$breakpoint}-inline-block {
+        display: inline-block!important;
+        @include media($breakpoint) {
+            display: none!important;
+        }
+    }
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    .show-#{$breakpoint}-flex {
+        display: none!important;
+        @include media($breakpoint) {
+            display: flex!important;
+        }
+    }
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+    .hide-#{$breakpoint}-flex {
+        display: flex!important;
+        @include media($breakpoint) {
+            display: none!important;
+        }
+    }
+}

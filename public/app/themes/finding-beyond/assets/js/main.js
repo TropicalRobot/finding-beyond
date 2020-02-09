@@ -4,18 +4,11 @@
 
 
 
-// Load the Bootstrap Javascript
+var setupAnalytics = require('./setup/google-analytics');
 
-require('tether');
-require('bootstrap');
-
-var $ = require('jquery')
-    , setupGallery= require('./setup/photo-gallery')
-    , setupAnalytics = require('./setup/google-analytics')
-    , setupNavigation = require('./setup/navigation');
-
-setupNavigation();
-setupGallery();
+require('./setup/modals')();
+require('./setup/navigation')();
+require('./setup/photo-gallery')();
 
 setupAnalytics('UA-84388780-1');
 

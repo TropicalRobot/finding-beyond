@@ -1,0 +1,80 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include font('alt');
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+h1 {
+    @include font-size(32px, 40px);
+    @include media(lg) {
+        @include font-size(32px, 40px);
+    }
+    @include media(xl) {
+        @include font-size(40px, 50px);
+    }
+}
+
+h2 {
+    @include font-size(24px, 30px);
+    @include media(md) {
+        @include font-size(28px, 34px);
+    }
+    @include media(xl) {
+        @include font-size(32px, 40px);
+    }
+}
+
+
+p {
+    display: block;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    margin-bottom: 10px;
+}
+
+ul {
+    display: block;
+    list-style-type: bullet;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+
+a {
+    color: $body-color;
+    text-decoration: underline;
+    &:hover, &:active, &:focus {
+        color: darken($body-color, 10%);
+        text-decoration: none;
+    }
+}
+
+a[class^="icon"],
+a[class*=" icon-"], {
+    text-decoration: none;
+    &:hover, &:active, &:focus, &:visited {
+        text-decoration: none;
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+b, strong {
+    font-weight: 600;
+}

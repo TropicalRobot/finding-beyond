@@ -4,11 +4,11 @@
     color: white;
     padding: 40px 0;
     text-align: center;
-    @include media-md {
+    @include media(md) {
         text-align: left;
     }
     &__col {
-        @include media-md-max {
+        @include media-max(md) {
             width: 100%;
         }
     }
@@ -21,7 +21,7 @@
     &__copy {
         width: 100%;
         order: 2;
-        @include media-md {
+        @include media(md) {
             order: 1;
             width: auto;
         }
@@ -33,7 +33,7 @@
         justify-content: center;
         margin-bottom: 14px;
         align-items: center;
-        @include media-md {
+        @include media(md) {
             order: 2;
             width: auto;
             margin-bottom: 0;
@@ -84,18 +84,25 @@
 
 .footer-nav {
     margin-top: 20px;
-    @include media-md {
+    @include media(md) {
         margin-top: 10px;
     }
     &__menu {
         display: flex;
         flex-wrap: wrap;
         @include list-unstyled;
+
         .menu-item {
             margin-right: 20px;
+
+            a {
+                color: white;
+            }
         }
-        @include media-md-max {
+
+        @include media-max(md) {
             justify-content: center;
+
             .menu-item {
                 margin-bottom: 12px;
             }

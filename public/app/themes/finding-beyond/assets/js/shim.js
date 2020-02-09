@@ -9,12 +9,4 @@ module.exports = {
     'jquery': {
         exports: 'global:jQuery'
     }
-
-  , 'modernizr': {
-        exports: 'global:Modernizr'
-    }
-
-  , 'tether': {
-        exports: 'Tether'
-    }
 }

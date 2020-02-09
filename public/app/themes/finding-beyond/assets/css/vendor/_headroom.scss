@@ -1,0 +1,26 @@
+/*
+ * Custom headroom CSS
+ * http://wicky.nillia.ms/headroom.js/
+ */
+
+// initially
+.headroom {
+    transition: transform .25s ease-in-out;
+    will-change: transform;
+    // scrolling down
+    &--unpinned {
+        transform: translateY(-100%);
+    }
+    // scrolling up
+    &--pinned {
+        transform: translateY(0);
+    }
+    // when above offset
+    &--headroom--top {}
+    // when below offset
+    &--headroom--not-top {}
+    // when at bottom of scoll area
+    &--headroom--bottom {}
+    // when not at bottom of scroll area
+    &--headroom--not-bottom {}
+}

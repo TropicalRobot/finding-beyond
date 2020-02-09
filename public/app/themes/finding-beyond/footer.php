@@ -1,18 +1,6 @@
-<div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Search</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <?php get_search_form(); ?>
-      </div>
-    </div>
-  </div>
-</div>
+    </main>
+
+    <?php echo tev_partial('partials/modals/search'); ?>
 
     <?php wp_footer(); ?>
 
@@ -20,21 +8,23 @@
         <div class="container">
             <div class="site-footer__container">
                 <div class="site-footer__col">
-                    <div class="site-footer__copy">&copy; 2016 <span class="primary-color">FINDING BEYOND</span></div>
+                    <div class="site-footer__copy">
+                        &copy; <?php echo date('Y'); ?>
+                        <span class="color--primary text-uppercase"><?php _e('Finding Beyond'); ?></span>
+                    </div>
                     <div class="footer-nav-wrapper">
                         <?php wp_nav_menu([
                             "theme_location" => "footer_links",
                             "container" => "nav",
                             "container_class" => "footer-nav",
-                            "menu_class"      => "footer-nav__menu list--unstyled",
+                            "menu_class"      => "footer-nav__menu list--unstyled"
                             ]);?>
                     </div>
                 </div>
                 <div class="site-footer__col site-footer__social">
-                    <a class="social-icon-circled a-clean" href="https://www.facebook.com/findingbeyond/" target="_blank"><span class="icon-facebook"></span></a>
-                    <a class="social-icon-circled a-clean" href="https://www.instagram.com/findingbeyond/" target="_blank"><span class="icon-instagram"></span></a>
-                    <a class="social-icon-circled a-clean" href="https://twitter.com/FindingBeyond" target="_blank"><span class="icon-twitter"></span></a>
-                    <a class="blogmeetsbrand" rel="nofollow" href="https://www.blogmeetsbrand.com"><img src="https://track.blogmeetsbrand.com/badge150x150.png" /></a>
+                    <a class="social-icon-circled link-clean" href="https://www.facebook.com/findingbeyond/" target="_blank"><span class="icon-facebook"></span></a>
+                    <a class="social-icon-circled link-clean" href="https://www.instagram.com/findingbeyond/" target="_blank"><span class="icon-instagram"></span></a>
+                    <a class="social-icon-circled link-clean" href="https://twitter.com/FindingBeyond" target="_blank"><span class="icon-twitter"></span></a>
                 </div>
             </div>
         </div>

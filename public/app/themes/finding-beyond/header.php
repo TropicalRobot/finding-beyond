@@ -36,7 +36,9 @@
 
     <header id="site-header" class="site-header">
         <div class="container site-header__container">
-            <div class="site-logo"><a class="a-clean" href="<?php echo get_home_url(); ?>">Finding Beyond</a></div>
+            <div class="site-logo">
+                <a class="link-clean" href="<?php echo get_home_url(); ?>"><?php _e('Finding Beyond'); ?></a>
+            </div>
             <div class="primary-nav-wrapper">
                 <?php wp_nav_menu([
                     "theme_location" => "primary",
@@ -46,7 +48,7 @@
                     ]);?>
                 <div class="search-modal-toggle" data-toggle="modal" data-target="#search-modal">
                     <div class="search-modal-toggle__inner">
-                        <span class="search-modal-toggle__text">Search</span><span class="icon icon-search"></span>
+                        <span class="search-modal-toggle__text"><?php _e('Search'); ?></span><span class="icon icon-search"></span>
                     </div>
                 </div>
             </div>
@@ -57,3 +59,5 @@
             </div>
         </div>
     </header>
+
+    <main>

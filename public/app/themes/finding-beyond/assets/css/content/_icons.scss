@@ -30,6 +30,8 @@ a:hover, a:focus {
     @include icon-font;
 }
 
+$icon-chevron-right: "\6a";
+
 .icon-plane:before {
   content: "\61";
 }
@@ -58,7 +60,7 @@ a:hover, a:focus {
   content: "\69";
 }
 .icon-chevron-right:before {
-  content: "\6a";
+  content: $icon-chevron-right;
 }
 .icon-chevron-left:before {
   content: "\6b";

@@ -32,12 +32,12 @@ Template Name: Post List
 
     <section class="page-section">
         <div class="container">
-            <div class="row flex-items-xs-middle flex-xs-middle">
+            <div class="row justify-content-center">
                 <div class="col-xs-12">
                     <h1 class="archive__heading"><?php echo get_queried_object()->name; ?></h1>
                 </div>
                 <div class="col-xs-12 text-center toggle-cat-menu-wrapper">
-                    <button class="btn btn-info toggle-cat-menu">Browse Categories</button>
+                    <button class="btn btn--secondary toggle-cat-menu">Browse Categories</button>
                 </div>
                 <div class="col-xs-12">
                     <div class="row">
@@ -52,8 +52,10 @@ Template Name: Post List
                     </div>
                 </div>
             </div>
-            <div class="row flex-items-xs-around">
-                <?php echo tev_partial('partials/pagination');?>
+            <div class="row justify-content-center">
+                <div class="col-xs-12 d-flex justify-content-center">
+                    <?php echo tev_partial('partials/pagination'); ?>
+                </div>
             </div>
         </div>
     </section>

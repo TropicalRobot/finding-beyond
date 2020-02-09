@@ -5,7 +5,7 @@
         margin-top: 6px;
         text-align: center;
         text-transform: uppercase;
-        @include media-lg {
+        @include media(lg) {
             margin-bottom: 30px;
         }
     }
@@ -13,8 +13,15 @@
 
 .archive-container {
     padding-top: 30px;
-    @include media-lg {
+    @include media(lg) {
         padding-top: 80px;
+    }
+}
+
+.search-container {
+    padding-top: 30px;
+    @include media(lg) {
+        padding-top: 40px;
     }
 }
 

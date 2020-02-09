@@ -29,14 +29,14 @@ Template Name: Post List
 
     <section class="page-section">
         <div class="container">
-            <div class="row flex-items-xs-middle">
+            <div class="row">
                 <div class="col-xs-12">
                 <?php while (have_posts()): $page = tev_post_factory(); ?>
                     <h1 class="archive__heading"><?php echo $page->getTitle();?></h1>
                 <?php endwhile; ?>
                 </div>
                 <div class="col-xs-12 text-center toggle-cat-menu-wrapper">
-                    <button class="btn btn-info toggle-cat-menu">Browse Categories</button>
+                    <button class="btn btn--secondary toggle-cat-menu">Browse Categories</button>
                 </div>
                 <div class="col-xs-12">
                     <div class="row">
@@ -57,8 +57,10 @@ Template Name: Post List
                     </div>
                 </div>
             </div>
-            <div class="row flex-items-xs-around">
-                <?php echo tev_partial('partials/pagination', ['options' => ['total' => $query->max_num_pages]]);?>
+            <div class="row">
+                <div class="col-xs-12 d-flex justify-content-center">
+                    <?php echo tev_partial('partials/pagination', ['options' => ['total' => $query->max_num_pages]]);?>
+                </div>
             </div>
         </div>
     </section>

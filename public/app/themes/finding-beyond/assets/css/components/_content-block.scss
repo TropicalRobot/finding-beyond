@@ -15,4 +15,9 @@
             }
         }
     }
+    &__col {
+        @include media-max(lg) {
+            margin-bottom: 20px
+        }
+    }
 }

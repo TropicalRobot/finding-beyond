@@ -1,0 +1,82 @@
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.width-full {
+    width: 100%;
+}
+
+.d-inline {
+    display: inline;
+}
+
+.hidden,
+.no-display {
+  display: none;
+}
+
+.border-0 {
+    border: none !important;
+}
+
+//== REM margins
+//
+
+@for $i from 0 through 4 {
+    .mt-#{$i} {
+        margin-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 0 through 4 {
+    .mb-#{$i} {
+        margin-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 0 through 4 {
+    .ml-#{$i} {
+        margin-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 0 through 4 {
+    .mr-#{$i} {
+        margin-bottom: #{$i}rem;
+    }
+}
+
+//== REM padding
+//
+
+@for $i from 0 through 4 {
+    .pt-#{$i} {
+        padding-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 0 through 4 {
+    .pb-#{$i} {
+        padding-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 0 through 4 {
+    .pl-#{$i} {
+        padding-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 0 through 4 {
+    .pr-#{$i} {
+        padding-bottom: #{$i}rem;
+    }
+}
