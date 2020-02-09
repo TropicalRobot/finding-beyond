@@ -25,7 +25,6 @@
                     <a class="social-icon-circled link-clean" href="https://www.facebook.com/findingbeyond/" target="_blank"><span class="icon-facebook"></span></a>
                     <a class="social-icon-circled link-clean" href="https://www.instagram.com/findingbeyond/" target="_blank"><span class="icon-instagram"></span></a>
                     <a class="social-icon-circled link-clean" href="https://twitter.com/FindingBeyond" target="_blank"><span class="icon-twitter"></span></a>
-                    <a class="blogmeetsbrand" rel="nofollow" href="https://www.blogmeetsbrand.com"><img src="https://track.blogmeetsbrand.com/badge150x150.png" /></a>
                 </div>
             </div>
         </div>

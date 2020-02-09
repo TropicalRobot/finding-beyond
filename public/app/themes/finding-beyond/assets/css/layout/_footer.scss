@@ -91,11 +91,18 @@
         display: flex;
         flex-wrap: wrap;
         @include list-unstyled;
+
         .menu-item {
             margin-right: 20px;
+
+            a {
+                color: white;
+            }
         }
+
         @include media-max(md) {
             justify-content: center;
+
             .menu-item {
                 margin-bottom: 12px;
             }
