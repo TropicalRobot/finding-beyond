@@ -1,8 +1,8 @@
-#Finding Beyond - Travel Blog
+## Finding Beyond - Travel Blog
 
 This blog is build upon the [3ev Wordpress Starter](https://github.com/3ev/wordpress-starter).
 
-##Requirements
+### Requirements
 
 * PHP `>=5.5.9`
 * Composer
